@@ -2,5 +2,9 @@
 
 
 body {
-  background: rgb(245, 245, 240);
+  background: #f5f5f0;
+}
+
+.font-linden {
+  @apply font-['Linden_Hill','Linden_Hill_Placeholder',serif];
 }
