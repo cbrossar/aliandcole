@@ -1,8 +1,20 @@
+import Image from "next/image";
 
 export default function Home() {
   return (
       <div className="w-full flex flex-col items-center">
-        <h1 className="text-4xl font-bold mb-8">Ali and Cole are getting married!</h1>
+        <div className="relative w-full">
+          <Image 
+            src="/images/ciragan.avif" 
+            alt="Ciragan Palace" 
+            width={1920}
+            height={1080}
+            className="w-full"
+          />
+          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[3.25rem] leading-[3.25rem] text-white font-['HeleneHess-Regular','fallback-1','fallback-2','fallback-3',serif]">
+            Ali + Cole
+          </h1>
+        </div>
       </div>
   );
 }
