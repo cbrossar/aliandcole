@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-      <div className="w-full flex flex-col items-center">
-        <div className="relative w-full">
+      <div className="w-full flex flex-col items-center p-8">
+        <div className="relative w-full max-w-7xl">
           <Image 
             src="/images/ciragan.avif" 
             alt="Ciragan Palace" 
