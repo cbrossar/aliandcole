@@ -16,13 +16,13 @@ export default function NavBar() {
 
     return (
         <div className="fixed top-0 left-0 right-0 z-50">
-            <div className="flex items-center justify-between bg-[#edede4] text-black p-4 px-4 md:px-8 lg:px-[42px] lg:py-[22px] font-linden shadow-lg">
+            <div className="flex items-center justify-between bg-[rgb(248,245,239)] text-black p-4 px-4 md:px-8 lg:px-[42px] lg:py-[22px] shadow-lg">
                 <Link href="/" className={styles.title}>
                     Meet us at the palace
                 </Link>
                 <div className="flex items-center gap-6">
                     <div className="flex items-center gap-24">
-                        <div className="hidden md:flex gap-16">
+                        <div className="hidden md:flex gap-24">
                             <Link href="/" className={`${styles.navLink} ${isActive("/") ? styles.navLinkActive : ""}`}>
                                 Schedule
                             </Link>
