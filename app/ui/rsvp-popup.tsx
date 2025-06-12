@@ -3,13 +3,29 @@
 import { searchWeddingGuests } from "@/app/data/wedding";
 import { useState, useTransition } from "react";
 
+interface Guest {
+    id: string;
+    first_name: string;
+    last_name: string;
+    is_attending_wedding: boolean | null;
+    is_attending_rehersal_dinner: boolean | null;
+}
+
+interface RsvpGroup {
+    rsvp_id: string;
+    counter: number;
+    stay: string | null;
+    song: string | null;
+    guests: Guest[];
+}
+
 interface RsvpPopupProps {
     onClose: () => void;
 }
 
 export default function RsvpPopup({ onClose }: RsvpPopupProps) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState<any[]>([]);
+    const [searchResults, setSearchResults] = useState<RsvpGroup[]>([]);
     const [isPending, startTransition] = useTransition();
     const [hasSearched, setHasSearched] = useState(false);
 
@@ -19,7 +35,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
         startTransition(async () => {
             try {
                 const results = await searchWeddingGuests(searchTerm);
-                setSearchResults(results);
+                setSearchResults(results as RsvpGroup[]);
                 setHasSearched(true);
             } catch (error) {
                 console.error('Error searching guests:', error);
@@ -81,7 +97,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
                                 {searchResults.map((rsvp) => (
                                     <div key={rsvp.rsvp_id} className="p-3 border border-gray-200 rounded-lg mb-2">
                                         <div className="mb-2">
-                                            {rsvp.guests.map((guest: any, index: number) => (
+                                            {rsvp.guests.map((guest: Guest, index: number) => (
                                                 <span key={guest.id} className="font-medium">
                                                     {guest.first_name} {guest.last_name}
                                                     {index < rsvp.guests.length - 1 ? " & " : ""}
