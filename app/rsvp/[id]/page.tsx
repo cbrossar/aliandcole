@@ -34,7 +34,7 @@ export default async function RsvpPage({ params }: { params: { id: string } }) {
                     </h1>
                     
                     <p className="text-xl lg:text-2xl leading-relaxed font-['Almarai',sans-serif] font-light mb-12">
-                        Whether you're coming for the whole weekend, or just the big day, we're excited to have you there.
+                    Whether you&apos;re coming for the whole weekend, or just the big day, we&apos;re excited to have you there.
                     </p>
                 </div>
             </div>
