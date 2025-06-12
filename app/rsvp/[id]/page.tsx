@@ -33,7 +33,7 @@ export default async function RsvpPage({ params }: { params: Promise<{ id: strin
                         RSVP
                     </h1>
                     
-                    <p className="text-xl lg:text-2xl leading-relaxed font-['Almarai',sans-serif] font-light mb-12">
+                    <p className="text-xl lg:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-12">
                     Whether you&apos;re coming for the whole weekend, or just the big day, we&apos;re excited to have you there.
                     </p>
                 </div>

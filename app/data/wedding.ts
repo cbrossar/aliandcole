@@ -13,6 +13,7 @@ export async function searchWeddingGuests(searchTerm: string) {
                 WHERE 
                     LOWER(wg.first_name) LIKE LOWER(${`%${searchTerm}%`}) 
                     OR LOWER(wg.last_name) LIKE LOWER(${`%${searchTerm}%`})
+                    OR LOWER(CONCAT(wg.first_name, ' ', wg.last_name)) LIKE LOWER(${`%${searchTerm}%`})
             )
             SELECT 
                 wr.id as rsvp_id,
