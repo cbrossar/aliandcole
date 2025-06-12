@@ -7,3 +7,6 @@ run:
  
 format:
 	npm run lint && npx prettier . --write
+
+seed:
+	npm run seed

@@ -4,10 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import styles from "./navbar.module.css";
+import RsvpPopup from "./rsvp-popup";
 
 export default function NavBar() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isRsvpPopupOpen, setIsRsvpPopupOpen] = useState(false);
     
     const isActive = (path: string) => {
         // Schedule is the homepage, so it's active on "/"
@@ -22,6 +24,15 @@ export default function NavBar() {
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
+    };
+
+    const openRsvpPopup = () => {
+        setIsRsvpPopupOpen(true);
+        closeMobileMenu(); // Close mobile menu if open
+    };
+
+    const closeRsvpPopup = () => {
+        setIsRsvpPopupOpen(false);
     };
 
     return (
@@ -51,9 +62,9 @@ export default function NavBar() {
                                 FAQs
                             </Link>
                         </div>
-                        <Link href="/rsvp" className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition-colors">
+                        <button onClick={openRsvpPopup} className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition-colors">
                             RSVP
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
@@ -107,16 +118,18 @@ export default function NavBar() {
                         >
                             FAQs
                         </Link>
-                        <Link 
-                            href="/rsvp" 
+                        <button 
+                            onClick={openRsvpPopup}
                             className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition-colors text-center w-fit"
-                            onClick={closeMobileMenu}
                         >
                             RSVP
-                        </Link>
+                        </button>
                     </div>
                 </div>
             )}
+
+            {/* RSVP Popup */}
+            {isRsvpPopupOpen && <RsvpPopup onClose={closeRsvpPopup} />}
         </div>
     );  
 }
