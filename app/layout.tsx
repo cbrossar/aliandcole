@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
         <body className={inter.className}>
             <NavBar />
-            <main className="min-h-screen flex flex-col items-center pt-20 md:pt-24">
+            <main className="min-h-screen flex flex-col items-center">
                 {children}
             </main>
         </body>
