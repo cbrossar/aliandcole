@@ -27,7 +27,7 @@ export default function HowWeMet() {
             <div className="w-full max-w-sm lg:max-w-2xl">
               <iframe 
                 style={{borderRadius:"12px"}} 
-                src="https://open.spotify.com/embed/track/2cmRpmO04TLaKPzmAzySYZ" 
+                src="https://open.spotify.com/embed/track/2cmRpmO04TLaKPzmAzySYZ?start=180" 
                 width="100%" 
                 height="80" 
                 frameBorder="0" 
