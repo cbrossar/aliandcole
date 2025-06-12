@@ -96,7 +96,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
                             </div>
                         ) : (
                             <div className="text-center text-gray-600">
-                                <p>No RSVP found for "{searchTerm}"</p>
+                                <p>No RSVP found for &quot;{searchTerm}&quot;</p>
                                 <p className="text-sm mt-1">Try searching by first name or last name</p>
                             </div>
                         )}
