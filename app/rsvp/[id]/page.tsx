@@ -2,7 +2,7 @@ import { getRsvpById } from "@/app/data/wedding";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export default async function RsvpPage({ params }: { params: { id: string } }) {
+export default async function RsvpPage({ params }: { params: Promise<{ id: string }> }) {
 
     const id = (await params).id;
     const rsvp = await getRsvpById(id);
