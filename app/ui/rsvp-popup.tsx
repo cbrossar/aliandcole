@@ -2,6 +2,7 @@
 
 import { searchWeddingGuests } from "@/app/data/wedding";
 import { useState, useTransition } from "react";
+import Link from "next/link";
 
 interface Guest {
     id: string;
@@ -104,9 +105,13 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
                                                 </span>
                                             ))}
                                         </div>
-                                        <button className="mt-2 text-sm bg-[rgb(51,51,51)] text-white px-3 py-1 rounded-full hover:bg-gray-700 transition-colors">
+                                        <Link 
+                                            href={`/rsvp/${rsvp.rsvp_id}`}
+                                            onClick={onClose}
+                                            className="mt-2 inline-block text-sm bg-[rgb(51,51,51)] text-white px-3 py-1 rounded-full hover:bg-gray-700 transition-colors"
+                                        >
                                             Update RSVP
-                                        </button>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>

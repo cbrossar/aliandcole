@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function HowWeMet() {
   return (
     <div className="w-full min-h-screen">
-      <div className="w-full h-screen p-8">
+      <div className="w-full h-screen px-8">
         <div className="relative w-full h-full">
           <Image
             src="/images/how-we-met/popsicle.jpg"

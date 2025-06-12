@@ -1,12 +1,11 @@
 'use server'
 
-import { db } from '@vercel/postgres';
+import { sql } from '@vercel/postgres';
 
 export async function searchWeddingGuests(searchTerm: string) {
-    const client = await db.connect();
     
     try {
-        const result = await client.sql`
+        const result = await sql`
             WITH matching_rsvps AS (
                 SELECT DISTINCT wr.id as rsvp_id
                 FROM wedding_guests wg
@@ -43,13 +42,18 @@ export async function searchWeddingGuests(searchTerm: string) {
     }
 }
 
-export async function getRsvpByCounter(counter: number) {
-    const client = await db.connect();
+
+export async function getRsvpById(id: string) {
     
     try {
-        const result = await client.sql`
+        const result = await sql`
             SELECT 
-                wr.*,
+                wr.id as rsvp_id,
+                wr.counter,
+                wr.stay,
+                wr.song,
+                wr.last_updated,
+                wr.updated_count,
                 json_agg(
                     json_build_object(
                         'id', wg.id,
@@ -57,17 +61,17 @@ export async function getRsvpByCounter(counter: number) {
                         'last_name', wg.last_name,
                         'is_attending_wedding', wg.is_attending_wedding,
                         'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner
-                    )
+                    ) ORDER BY wg.first_name
                 ) as guests
             FROM wedding_rsvps wr
             LEFT JOIN wedding_guests wg ON wg.wedding_rsvp_fk = wr.id
-            WHERE wr.counter = ${counter}
+            WHERE wr.id = ${id}
             GROUP BY wr.id, wr.counter, wr.stay, wr.song, wr.last_updated, wr.updated_count
         `;
-        
+
         return result.rows[0] || null;
     } catch (error) {
-        console.error('Error getting RSVP by counter:', error);
+        console.error('Error getting RSVP by id:', error);
         throw error;
     }
 }
