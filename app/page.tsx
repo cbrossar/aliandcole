@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import RsvpPopup from "./ui/rsvp-popup";
 import "./home.css";
@@ -68,7 +69,7 @@ export default function Home() {
             {/* Right side - Wedding announcement */}
             <div className="flex flex-col space-y-6 text-center lg:text-left">
               <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-['Alice',serif] leading-relaxed">
-                We're getting married! Join us for a weekend of celebration and love.
+                We&apos;re getting married! Join us for a weekend of celebration and love.
               </h3>
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-['Alice',serif] leading-tight">
                 05.23.2026
@@ -91,7 +92,7 @@ export default function Home() {
                 All wedding events will take place at 123 Demo St. Sonoma, CA
               </p>
               <p className="text-white text-lg md:text-xl">
-                See <span className="underline" style={{ color: 'rgb(221, 197, 118)' }}>here</span> for more info.
+                See <Link href="/location" className="underline" style={{ color: 'rgb(221, 197, 118)' }}>here</Link> for more info.
               </p>
             </div>
           </div>
@@ -189,7 +190,7 @@ export default function Home() {
                 RSVP
               </h1>
               <p className="text-white text-lg md:text-xl leading-relaxed">
-                We can't wait to celebrate with you! Please let us know if you'll be joining us for our special weekend.
+                We can&apos;t wait to celebrate with you! Please let us know if you&apos;ll be joining us for our special weekend.
               </p>
               <div>
                 <button 
