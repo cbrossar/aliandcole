@@ -1,7 +1,21 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import RsvpPopup from "./ui/rsvp-popup";
 import "./home.css";
 
 export default function Home() {
+  const [isRsvpPopupOpen, setIsRsvpPopupOpen] = useState(false);
+
+  const openRsvpPopup = () => {
+    setIsRsvpPopupOpen(true);
+  };
+
+  const closeRsvpPopup = () => {
+    setIsRsvpPopupOpen(false);
+  };
+
   return (
     <>
       <div className="w-full min-h-screen px-6 md:px-8 lg:px-12 pt-8 md:pt-12 lg:pt-16">
@@ -178,12 +192,12 @@ export default function Home() {
                 We can't wait to celebrate with you! Please let us know if you'll be joining us for our special weekend.
               </p>
               <div>
-                <a 
-                  href="/rsvp"
+                <button 
+                  onClick={openRsvpPopup}
                   className="rsvp-button inline-block px-12 py-5 text-lg md:text-xl font-bold rounded-full"
                 >
                   RSVP
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -201,6 +215,9 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      {/* RSVP Popup */}
+      {isRsvpPopupOpen && <RsvpPopup onClose={closeRsvpPopup} />}
     </>
   );
 }

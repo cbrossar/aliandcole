@@ -63,7 +63,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
             >
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-[rgb(51,51,51)] hover:text-gray-700 text-xl font-bold"
+                    className="absolute top-4 right-4 text-[rgb(51,51,51)] hover:text-[rgb(51,51,51)] text-xl font-bold"
                     aria-label="Close popup"
                 >
                     ×
@@ -99,7 +99,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
                                     <div key={rsvp.rsvp_id} className="p-3 border border-gray-200 rounded-lg mb-2">
                                         <div className="mb-2">
                                             {rsvp.guests.map((guest: Guest, index: number) => (
-                                                <span key={guest.id} className="font-medium">
+                                                <span key={guest.id} className="font-medium text-[rgb(51,51,51)]">
                                                     {guest.first_name} {guest.last_name}
                                                     {index < rsvp.guests.length - 1 ? " & " : ""}
                                                 </span>
@@ -116,7 +116,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
                                 ))}
                             </div>
                         ) : (
-                            <div className="text-center text-gray-600">
+                            <div className="text-center text-[rgb(51,51,51)]">
                                 <p>No RSVP found for &quot;{searchTerm}&quot;</p>
                                 <p className="text-sm mt-1">Try searching by first name or last name</p>
                             </div>
