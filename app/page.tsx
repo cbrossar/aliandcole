@@ -52,7 +52,7 @@ export default function Home() {
       <div className="w-full py-24 md:py-32 lg:py-40" style={{ backgroundColor: 'rgb(142, 155, 142)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
           {/* Top section - Flowers image and Wedding announcement */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             {/* Left side - Flowers image */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl">
