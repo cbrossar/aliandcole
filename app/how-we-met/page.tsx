@@ -85,8 +85,8 @@ export default function HowWeMet() {
       <div className="px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           <div className="lg:pr-8">
-            <blockquote className="text-[28px] leading-relaxed font-['Alice',serif]">
-              We're going to completely change as people from 22 to 28. We'll either grow together or grow apart. We'll just have to wait and see.
+          <blockquote className="text-[28px] leading-relaxed font-['Alice',serif]">
+          We&apos;re going to completely change as people from 22 to 28. We&apos;ll either grow together or grow apart. We&apos;ll just have to wait and see.
             </blockquote>
             <p className="text-lg mt-4 italic">-Ali to Cole age 21</p>
           </div>
