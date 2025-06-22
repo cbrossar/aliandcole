@@ -7,7 +7,7 @@ export default function HowWeMet() {
   return (
     <div className="w-full min-h-screen">
       <FadeInOnScroll direction="up" duration={1000}>
-      <div className="w-full h-screen px-8">
+      <div className="w-full h-screen md:h-screen px-4 md:px-8">
         <div className="relative w-full h-full">
           <Image
             src="/images/how-we-met/popsicle.jpg"
@@ -16,8 +16,8 @@ export default function HowWeMet() {
             className="object-cover rounded-lg"
             priority
           />
-          <div className="absolute bottom-8 left-8">
-            <h1 className="text-white text-[58px] font-['Alice',serif]">How we met</h1>
+          <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 right-4 md:right-auto">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-['Alice',serif] leading-tight">How we met</h1>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function HowWeMet() {
       
       {/* The Proposal Section */}
       <FadeInOnScroll direction="up" duration={1000}>
-      <div className="w-full h-screen px-8">
+      <div className="w-full h-screen md:h-screen px-4 md:px-8">
         <div className="relative w-full h-full">
           <Image
             src="/images/how-we-met/zion.jpg"
@@ -78,8 +78,8 @@ export default function HowWeMet() {
             fill
             className="object-cover rounded-lg"
           />
-          <div className="absolute bottom-8 left-8">
-            <h2 className="text-white text-[58px] font-['Alice',serif]">The Proposal</h2>
+          <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 right-4 md:right-auto">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-['Alice',serif] leading-tight">The Proposal</h2>
           </div>
         </div>
       </div>
