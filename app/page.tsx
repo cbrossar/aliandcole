@@ -20,23 +20,36 @@ export default function Home() {
 
   return (
     <>
-      {/* Full-width hero image section */}
-      <div className="w-full px-6 md:px-8 lg:px-12 pt-6 md:pt-8 lg:pt-12">
-        <FadeInOnScroll direction="up" duration={1000}>
-          <div className="relative w-full h-[80vh] md:h-[85vh] lg:h-[90vh]">
-            <Image 
-              src="/images/home/look-back1.jpg" 
-              alt="Ali and Cole" 
-              fill
-              className="object-cover rounded-lg"
-              priority
-            />
-              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 right-4 md:right-auto">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-['Alice',serif] leading-tight" style={{ color: 'rgb(51, 51, 51)' }}>Ali and Cole</h1>
+      <div className="w-full min-h-screen px-6 md:px-8 lg:px-12 pt-8 md:pt-12 lg:pt-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-1 lg:gap-16 min-h-[80vh] pt-8 lg:pt-12">
+            {/* Text content - order-1 on mobile, order-1 on desktop */}
+            <div className="flex flex-col justify-start space-y-0 lg:space-y-8 pt-4 pb-0 lg:pt-36 col-span-1 lg:col-span-2 order-1 lg:order-1">
+              <FadeInOnScroll direction="left" delay={200}>
+                <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#333333] font-['Alice',serif]">
+                  Celebrating Ali & Cole
+                </h1>
+              </FadeInOnScroll>
+            </div>
+
+            {/* Image - order-2 on mobile, order-2 on desktop */}
+            <div className="flex justify-center lg:justify-end col-span-1 lg:col-span-4 order-2 lg:order-2">
+              <FadeInOnScroll direction="right" delay={400}>
+                <div className="relative w-full max-w-sm lg:max-w-4xl xl:max-w-5xl">
+                  <Image 
+                    src="/images/home/wildflower.jpeg" 
+                    alt="Ali and Cole" 
+                    width={1000}
+                    height={1500}
+                    className="w-full h-auto shadow-lg object-cover aspect-square lg:aspect-[4/7] object-center"
+                    priority
+                  />
+                  </div>
+                </FadeInOnScroll>
               </div>
+            </div>
           </div>
-        </FadeInOnScroll>
-      </div>
+        </div>
 
       {/* New section with green background */}
       <div className="w-full py-24 md:py-32 lg:py-40" style={{ backgroundColor: 'rgb(142, 155, 142)' }}>
