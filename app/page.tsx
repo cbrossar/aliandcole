@@ -37,11 +37,11 @@ export default function Home() {
               <FadeInOnScroll direction="right" delay={400}>
                 <div className="relative w-full max-w-sm lg:max-w-4xl xl:max-w-5xl">
                   <Image 
-                    src="/images/home/wildflower.jpeg" 
+                    src="/images/home/look-back.jpg" 
                     alt="Ali and Cole" 
                     width={1000}
                     height={1500}
-                    className="w-full h-auto shadow-lg object-cover aspect-square lg:aspect-[4/7] object-center"
+                    className="w-full h-auto shadow-lg object-cover object-center"
                     priority
                   />
                   </div>
