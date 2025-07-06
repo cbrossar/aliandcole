@@ -25,7 +25,7 @@ export default function Home() {
             {/* Text content - order-1 on mobile, order-1 on desktop */}
             <div className="flex flex-col justify-start space-y-0 lg:space-y-8 pt-4 pb-0 lg:pt-36 col-span-1 lg:col-span-2 order-1 lg:order-1">
               <FadeInOnScroll direction="left" delay={200}>
-                <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#333333] font-['Alice',serif]">
+                <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#555555] font-['Alice',serif]">
                   Celebrating<br/>Ali & Cole
                 </h1>
               </FadeInOnScroll>
