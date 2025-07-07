@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import styles from "./navbar.module.css";
@@ -38,7 +39,14 @@ export default function NavBar() {
     return (
         <div className="fixed top-0 left-0 right-0 z-50">
             <div className="flex items-center justify-between bg-[rgb(248,245,239)] text-black p-4 px-4 md:px-8 lg:px-[42px] lg:py-[22px] shadow-lg text-base md:text-lg">
-                <Link href="/" className={`${styles.title}`}>
+                <Link href="/" className={`${styles.title} flex items-center gap-3`}>
+                    <Image 
+                        src="/C-and-A.png" 
+                        alt="C and A Logo" 
+                        width={40} 
+                        height={40} 
+                        className="w-8 h-8 md:w-10 md:h-10"
+                    />
                     Meet us at the palace
                 </Link>
                 
