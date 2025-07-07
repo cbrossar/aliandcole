@@ -43,8 +43,8 @@ export default function NavBar() {
                     <Image 
                         src="/C-and-A.png" 
                         alt="C and A Logo" 
-                        width={40} 
-                        height={40} 
+                        width={50} 
+                        height={50} 
                         className="w-8 h-8 md:w-10 md:h-10"
                     />
                     Meet us at the palace
