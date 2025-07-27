@@ -1,6 +1,7 @@
 'use server'
 
 import { sql } from '@vercel/postgres';
+import { WeddingRsvp } from '@/lib/definitions';
 
 export async function searchWeddingGuests(searchTerm: string) {
     
@@ -73,6 +74,41 @@ export async function getRsvpById(id: string) {
         return result.rows[0] || null;
     } catch (error) {
         console.error('Error getting RSVP by id:', error);
+        throw error;
+    }
+}
+
+
+export async function updateRsvp(rsvp: WeddingRsvp) {
+
+    console.log('Updating RSVP:', rsvp);
+    try {
+        //update guests
+        for (const guest of rsvp.guests) {
+            console.log('Updating guest:', guest);
+            await sql`
+                UPDATE wedding_guests
+                SET
+                    is_attending_wedding = ${guest.is_attending_wedding},
+                    is_attending_rehersal_dinner = ${guest.is_attending_rehersal_dinner},
+                    food_selection = ${guest.food_selection},
+                    dietary_restrictions = ${guest.dietary_restrictions}
+                WHERE id = ${guest.id}
+            `;
+        }
+
+        //update rsvp
+        await sql`
+            UPDATE wedding_rsvps
+            SET
+                stay = ${rsvp.stay},
+                song = ${rsvp.song}
+            WHERE id = ${rsvp.id}
+        `;
+
+        return rsvp;
+    } catch (error) {
+        console.error('Error updating RSVP:', error);
         throw error;
     }
 }

@@ -32,8 +32,11 @@ async function createWeddingTables(client) {
             id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
             first_name TEXT NOT NULL,
             last_name TEXT NOT NULL,
+            is_attending_welcome_party BOOLEAN,
             is_attending_wedding BOOLEAN,
             is_attending_rehersal_dinner BOOLEAN,
+            food_selection TEXT CHECK (food_selection IN ('beef', 'fish', 'vegetarian', '')),
+            dietary_restrictions TEXT,
             wedding_rsvp_fk UUID REFERENCES wedding_rsvps(id)
         )
         `;
