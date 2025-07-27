@@ -50,155 +50,134 @@ export default function EditRSVPForm({
                                     Guest {index + 1}
                                 </h3>
                                 
-                                <div className="space-y-6">
-                                    {/* Name Fields */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        {/* First Name */}
-                                        <div>
+                                                                    <div className="space-y-6">
+                                        {/* Name Field */}
+                                        <div className="mb-6">
                                             <label className="block text-sm font-medium mb-2 font-['Almarai'] text-gray-700">
-                                                First Name
+                                                Name
                                             </label>
                                             <input
                                                 type="text"
-                                                defaultValue={guest.first_name}
+                                                defaultValue={`${guest.first_name} ${guest.last_name}`}
                                                 readOnly
                                                 className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-800 cursor-not-allowed"
                                             />
                                         </div>
-                                        
-                                        {/* Last Name */}
-                                        <div>
-                                            <label className="block text-sm font-medium mb-2 font-['Almarai'] text-gray-700">
-                                                Last Name
+
+                                                                        {/* Welcome Party Attendance */}
+                                    <div className="mb-6">
+                                        <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
+                                            Will you attend the Welcome Party?
+                                        </label>
+                                        <div className="space-y-2">
+                                            <label className="flex items-center">
+                                                <input
+                                                    type="radio"
+                                                    name={`welcome_party_${guest.id}`}
+                                                    value="yes"
+                                                    defaultChecked={guest.is_attending_rehersal_dinner}
+                                                    className="mr-2 text-pink-600"
+                                                />
+                                                <span className="text-sm font-['Almarai'] text-gray-700">Yes, I'll be there!</span>
                                             </label>
-                                            <input
-                                                type="text"
-                                                defaultValue={guest.last_name}
-                                                readOnly
-                                                className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-800 cursor-not-allowed"
-                                            />
+                                            <label className="flex items-center">
+                                                <input
+                                                    type="radio"
+                                                    name={`welcome_party_${guest.id}`}
+                                                    value="no"
+                                                    defaultChecked={!guest.is_attending_rehersal_dinner}
+                                                    className="mr-2 text-pink-600"
+                                                />
+                                                <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can't make it</span>
+                                            </label>
                                         </div>
                                     </div>
 
-                                    {/* Attendance Fields */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        {/* Welcome Party Attendance */}
-                                        <div>
-                                            <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
-                                                Will you attend the Welcome Party?
+                                    {/* Wedding Attendance */}
+                                    <div className="mb-6">
+                                        <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
+                                            Will you attend the Wedding?
+                                        </label>
+                                        <div className="space-y-2">
+                                            <label className="flex items-center">
+                                                <input
+                                                    type="radio"
+                                                    name={`wedding_${guest.id}`}
+                                                    value="yes"
+                                                    defaultChecked={guest.is_attending_wedding}
+                                                    onChange={() => handleWeddingAttendanceChange(guest.id, true)}
+                                                    className="mr-2 text-pink-600"
+                                                />
+                                                <span className="text-sm font-['Almarai'] text-gray-700">Yes, I'll be there!</span>
                                             </label>
-                                            <div className="space-y-2">
-                                                <label className="flex items-center">
-                                                    <input
-                                                        type="radio"
-                                                        name={`welcome_party_${guest.id}`}
-                                                        value="yes"
-                                                        defaultChecked={guest.is_attending_rehersal_dinner}
-                                                        className="mr-2 text-pink-600"
-                                                    />
-                                                    <span className="text-sm font-['Almarai'] text-gray-700">Yes, I'll be there!</span>
-                                                </label>
-                                                <label className="flex items-center">
-                                                    <input
-                                                        type="radio"
-                                                        name={`welcome_party_${guest.id}`}
-                                                        value="no"
-                                                        defaultChecked={!guest.is_attending_rehersal_dinner}
-                                                        className="mr-2 text-pink-600"
-                                                    />
-                                                    <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can't make it</span>
-                                                </label>
-                                            </div>
+                                            <label className="flex items-center">
+                                                <input
+                                                    type="radio"
+                                                    name={`wedding_${guest.id}`}
+                                                    value="no"
+                                                    defaultChecked={!guest.is_attending_wedding}
+                                                    onChange={() => handleWeddingAttendanceChange(guest.id, false)}
+                                                    className="mr-2 text-pink-600"
+                                                />
+                                                <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can't make it</span>
+                                            </label>
                                         </div>
+                                    </div>
 
-                                                                                    {/* Wedding Attendance */}
+                                    {/* Wedding Dinner Selection - Only show if attending wedding */}
+                                    {weddingAttendance[guest.id] && (
+                                        <div className="mt-6 pt-6 border-t border-gray-200 space-y-6">
+                                            {/* Dinner Selection */}
                                             <div>
                                                 <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
-                                                    Will you attend the Wedding?
+                                                    Wedding Dinner Selection
                                                 </label>
                                                 <div className="space-y-2">
                                                     <label className="flex items-center">
                                                         <input
                                                             type="radio"
-                                                            name={`wedding_${guest.id}`}
-                                                            value="yes"
-                                                            defaultChecked={guest.is_attending_wedding}
-                                                            onChange={() => handleWeddingAttendanceChange(guest.id, true)}
+                                                            name={`dinner_${guest.id}`}
+                                                            value="beef"
+                                                            defaultChecked={guest.food_selection === 'beef'}
                                                             className="mr-2 text-pink-600"
                                                         />
-                                                        <span className="text-sm font-['Almarai'] text-gray-700">Yes, I'll be there!</span>
+                                                        <span className="text-sm font-['Almarai'] text-gray-700">Beef</span>
                                                     </label>
                                                     <label className="flex items-center">
                                                         <input
                                                             type="radio"
-                                                            name={`wedding_${guest.id}`}
-                                                            value="no"
-                                                            defaultChecked={!guest.is_attending_wedding}
-                                                            onChange={() => handleWeddingAttendanceChange(guest.id, false)}
+                                                            name={`dinner_${guest.id}`}
+                                                            value="fish"
+                                                            defaultChecked={guest.food_selection === 'fish'}
                                                             className="mr-2 text-pink-600"
                                                         />
-                                                        <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can't make it</span>
+                                                        <span className="text-sm font-['Almarai'] text-gray-700">Fish</span>
+                                                    </label>
+                                                    <label className="flex items-center">
+                                                        <input
+                                                            type="radio"
+                                                            name={`dinner_${guest.id}`}
+                                                            value="vegetarian"
+                                                            defaultChecked={guest.food_selection === 'vegetarian'}
+                                                            className="mr-2 text-pink-600"
+                                                        />
+                                                        <span className="text-sm font-['Almarai'] text-gray-700">Vegetarian</span>
                                                     </label>
                                                 </div>
                                             </div>
-                                    </div>
 
-                                    {/* Wedding Dinner Selection - Only show if attending wedding */}
-                                    {weddingAttendance[guest.id] && (
-                                        <div className="mt-6 pt-6 border-t border-gray-200">
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                {/* Dinner Selection */}
-                                                <div>
-                                                    <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
-                                                        Wedding Dinner Selection
-                                                    </label>
-                                                    <div className="space-y-2">
-                                                        <label className="flex items-center">
-                                                            <input
-                                                                type="radio"
-                                                                name={`dinner_${guest.id}`}
-                                                                value="beef"
-                                                                defaultChecked={guest.food_selection === 'beef'}
-                                                                className="mr-2 text-pink-600"
-                                                            />
-                                                            <span className="text-sm font-['Almarai'] text-gray-700">Beef</span>
-                                                        </label>
-                                                        <label className="flex items-center">
-                                                            <input
-                                                                type="radio"
-                                                                name={`dinner_${guest.id}`}
-                                                                value="fish"
-                                                                defaultChecked={guest.food_selection === 'fish'}
-                                                                className="mr-2 text-pink-600"
-                                                            />
-                                                            <span className="text-sm font-['Almarai'] text-gray-700">Fish</span>
-                                                        </label>
-                                                        <label className="flex items-center">
-                                                            <input
-                                                                type="radio"
-                                                                name={`dinner_${guest.id}`}
-                                                                value="vegetarian"
-                                                                defaultChecked={guest.food_selection === 'vegetarian'}
-                                                                className="mr-2 text-pink-600"
-                                                            />
-                                                            <span className="text-sm font-['Almarai'] text-gray-700">Vegetarian</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                {/* Dietary Restrictions */}
-                                                <div>
-                                                    <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
-                                                        Dietary Restrictions
-                                                    </label>
-                                                    <textarea
-                                                        name={`dietary_restrictions_${guest.id}`}
-                                                        defaultValue={guest.dietary_restrictions || ''}
-                                                        placeholder="Please list any allergies or dietary restrictions..."
-                                                        rows={4}
-                                                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 placeholder-gray-500 font-['Almarai'] text-sm resize-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
-                                                    />
-                                                </div>
+                                            {/* Dietary Restrictions */}
+                                            <div>
+                                                <label className="block text-sm font-medium mb-3 font-['Almarai'] text-gray-700">
+                                                    Dietary Restrictions
+                                                </label>
+                                                <textarea
+                                                    name={`dietary_restrictions_${guest.id}`}
+                                                    defaultValue={guest.dietary_restrictions || ''}
+                                                    placeholder="Please list any allergies or dietary restrictions..."
+                                                    rows={3}
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 placeholder-gray-500 font-['Almarai'] text-sm resize-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                                                />
                                             </div>
                                         </div>
                                     )}
