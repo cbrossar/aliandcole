@@ -19,8 +19,6 @@ export default function EditRSVPForm({
         initialState,
     );
 
-    console.log(rsvp);
-
     // Track wedding attendance for each guest to show/hide dinner selection
     const [weddingAttendance, setWeddingAttendance] = useState<{[key: string]: boolean}>(
         rsvp.guests.reduce((acc, guest) => {
