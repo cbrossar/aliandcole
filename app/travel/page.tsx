@@ -4,4 +4,4 @@ export default function Travel() {
       <h1 className="text-4xl font-bold mb-8">Travel</h1>
     </div>
   );
-} 
+}

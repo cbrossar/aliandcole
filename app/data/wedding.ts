@@ -1,12 +1,11 @@
-'use server'
+"use server";
 
-import { sql } from '@vercel/postgres';
-import { WeddingRsvp } from '@/lib/definitions';
+import { sql } from "@vercel/postgres";
+import { WeddingRsvp } from "@/lib/definitions";
 
 export async function searchWeddingGuests(searchTerm: string) {
-    
-    try {
-        const result = await sql`
+  try {
+    const result = await sql`
             WITH matching_rsvps AS (
                 SELECT DISTINCT wr.id as rsvp_id
                 FROM wedding_guests wg
@@ -38,19 +37,17 @@ export async function searchWeddingGuests(searchTerm: string) {
             GROUP BY wr.id, wr.counter, wr.stay, wr.song
             ORDER BY wr.counter
         `;
-        
-        return result.rows;
-    } catch (error) {
-        console.error('Error searching wedding guests:', error);
-        throw error;
-    }
+
+    return result.rows;
+  } catch (error) {
+    console.error("Error searching wedding guests:", error);
+    throw error;
+  }
 }
 
-
 export async function getRsvpById(id: string) {
-    
-    try {
-        const result = await sql`
+  try {
+    const result = await sql`
             SELECT 
                 wr.id as rsvp_id,
                 wr.counter,
@@ -75,22 +72,20 @@ export async function getRsvpById(id: string) {
             GROUP BY wr.id, wr.counter, wr.stay, wr.song, wr.last_updated, wr.updated_count
         `;
 
-        return result.rows[0] || null;
-    } catch (error) {
-        console.error('Error getting RSVP by id:', error);
-        throw error;
-    }
+    return result.rows[0] || null;
+  } catch (error) {
+    console.error("Error getting RSVP by id:", error);
+    throw error;
+  }
 }
 
-
 export async function updateRsvp(rsvp: WeddingRsvp) {
-
-    console.log('Updating RSVP:', rsvp);
-    try {
-        //update guests
-        for (const guest of rsvp.guests) {
-            console.log('Updating guest:', guest);
-            await sql`
+  console.log("Updating RSVP:", rsvp);
+  try {
+    //update guests
+    for (const guest of rsvp.guests) {
+      console.log("Updating guest:", guest);
+      await sql`
                 UPDATE wedding_guests
                 SET
                     is_attending_wedding = ${guest.is_attending_wedding},
@@ -99,10 +94,10 @@ export async function updateRsvp(rsvp: WeddingRsvp) {
                     dietary_restrictions = ${guest.dietary_restrictions}
                 WHERE id = ${guest.id}
             `;
-        }
+    }
 
-        //update rsvp
-        await sql`
+    //update rsvp
+    await sql`
             UPDATE wedding_rsvps
             SET
                 stay = ${rsvp.stay},
@@ -110,9 +105,9 @@ export async function updateRsvp(rsvp: WeddingRsvp) {
             WHERE id = ${rsvp.id}
         `;
 
-        return rsvp;
-    } catch (error) {
-        console.error('Error updating RSVP:', error);
-        throw error;
-    }
+    return rsvp;
+  } catch (error) {
+    console.error("Error updating RSVP:", error);
+    throw error;
+  }
 }
