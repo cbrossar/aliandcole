@@ -8,7 +8,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   const initialState = { message: "", errors: {} };
   const updateRSVPWithId = updateRSVP.bind(null, rsvp.id);
   const [state, dispatch] = useActionState(updateRSVPWithId, initialState);
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   // Track wedding attendance for each guest to show/hide dinner selection
   const [weddingAttendance, setWeddingAttendance] = useState<{
