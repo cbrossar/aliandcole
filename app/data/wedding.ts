@@ -27,7 +27,9 @@ export async function searchWeddingGuests(searchTerm: string) {
                         'first_name', wg.first_name,
                         'last_name', wg.last_name,
                         'is_attending_wedding', wg.is_attending_wedding,
-                        'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner
+                        'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner,
+                        'food_selection', wg.food_selection,
+                        'dietary_restrictions', wg.dietary_restrictions
                     ) ORDER BY wg.first_name
                 ) as guests
             FROM wedding_rsvps wr
@@ -62,7 +64,9 @@ export async function getRsvpById(id: string) {
                         'first_name', wg.first_name,
                         'last_name', wg.last_name,
                         'is_attending_wedding', wg.is_attending_wedding,
-                        'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner
+                        'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner,
+                        'food_selection', wg.food_selection,
+                        'dietary_restrictions', wg.dietary_restrictions
                     ) ORDER BY wg.first_name
                 ) as guests
             FROM wedding_rsvps wr

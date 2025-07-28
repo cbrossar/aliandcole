@@ -231,7 +231,7 @@ export default function EditRSVPForm({
                     <div className="text-center space-y-4">
                         <button
                             type="submit"
-                            className="bg-pink-600 hover:bg-pink-700 text-white font-['Almarai'] font-medium px-8 py-3 rounded-lg transition-colors duration-200"
+                            className="bg-gray-600 hover:bg-gray-700 text-white font-['Almarai'] font-medium px-8 py-3 rounded-lg transition-colors duration-200 cursor-pointer"
                         >
                             Submit RSVP
                         </button>
