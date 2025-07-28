@@ -45,10 +45,16 @@ export async function updateRSVP(
             `;
         }
 
-        // Update RSVP table
+        // Get optional information
+        const stay = formData.get('stay') as string || '';
+        const song = formData.get('song') as string || '';
+
+        // Update RSVP table with optional information
         await sql`
             UPDATE wedding_rsvps
             SET
+                stay = ${stay},
+                song = ${song},
                 updated_count = updated_count + 1,
                 last_updated = CURRENT_TIMESTAMP
             WHERE id = ${id}

@@ -35,14 +35,18 @@ export default function EditRSVPForm({
     };
 
     return (
-        <div className="px-8 lg:px-16 py-12" style={{backgroundColor: 'rgb(248, 232, 224)'}}>
-            <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl lg:text-4xl font-['Alice',serif] mb-8 text-center text-gray-800">
+        <div className="py-12" style={{backgroundColor: 'rgb(248, 232, 224)'}}>
+            {/* Centered Header */}
+            <div className="text-center mb-12">
+                <h2 className="text-3xl lg:text-4xl font-['Alice',serif] text-gray-800">
                     Please RSVP for your party
                 </h2>
-                
-                <form action={dispatch} className="space-y-8">
-                    {/* Guest Blocks */}
+            </div>
+
+            <div className="px-8 lg:px-16 py-8">
+                <div className="max-w-4xl mx-auto">
+                    <form action={dispatch} className="space-y-8">
+                            {/* Guest Blocks */}
                     <div className="space-y-6">
                         {rsvp.guests.map((guest: WeddingGuest, index: number) => (
                             <div key={guest.id} className="bg-white/80 rounded-lg p-6 shadow-sm border border-gray-200">
@@ -78,17 +82,17 @@ export default function EditRSVPForm({
                                                     defaultChecked={guest.is_attending_rehersal_dinner}
                                                     className="mr-2 text-pink-600"
                                                 />
-                                                <span className="text-sm font-['Almarai'] text-gray-700">Yes, I'll be there!</span>
-                                            </label>
-                                            <label className="flex items-center">
-                                                <input
-                                                    type="radio"
-                                                    name={`welcome_party_${guest.id}`}
-                                                    value="no"
-                                                    defaultChecked={!guest.is_attending_rehersal_dinner}
-                                                    className="mr-2 text-pink-600"
-                                                />
-                                                <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can't make it</span>
+                                                                                                    <span className="text-sm font-['Almarai'] text-gray-700">Yes, I&apos;ll be there!</span>
+                                                </label>
+                                                <label className="flex items-center">
+                                                    <input
+                                                        type="radio"
+                                                        name={`welcome_party_${guest.id}`}
+                                                        value="no"
+                                                        defaultChecked={!guest.is_attending_rehersal_dinner}
+                                                        className="mr-2 text-pink-600"
+                                                    />
+                                                    <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can&apos;t make it</span>
                                             </label>
                                         </div>
                                     </div>
@@ -108,7 +112,7 @@ export default function EditRSVPForm({
                                                     onChange={() => handleWeddingAttendanceChange(guest.id, true)}
                                                     className="mr-2 text-pink-600"
                                                 />
-                                                <span className="text-sm font-['Almarai'] text-gray-700">Yes, I'll be there!</span>
+                                                <span className="text-sm font-['Almarai'] text-gray-700">Yes, I&apos;ll be there!</span>
                                             </label>
                                             <label className="flex items-center">
                                                 <input
@@ -119,7 +123,7 @@ export default function EditRSVPForm({
                                                     onChange={() => handleWeddingAttendanceChange(guest.id, false)}
                                                     className="mr-2 text-pink-600"
                                                 />
-                                                <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can't make it</span>
+                                                <span className="text-sm font-['Almarai'] text-gray-700">Sorry, can&apos;t make it</span>
                                             </label>
                                         </div>
                                     </div>
@@ -184,6 +188,43 @@ export default function EditRSVPForm({
                                 </div>
                             </div>
                         ))}
+                                        </div>
+
+                    {/* Optional Information Section */}
+                    <div className="bg-white/80 rounded-lg p-6 shadow-sm border border-gray-200">
+                        <h3 className="text-xl font-['Alice',serif] mb-6 text-gray-800">
+                            Optional Information
+                        </h3>
+                        
+                        <div className="space-y-6">
+                            {/* Where are you staying */}
+                            <div>
+                                <label className="block text-sm font-medium mb-2 font-['Almarai'] text-gray-700">
+                                    Where are you staying? (Optional)
+                                </label>
+                                <input
+                                    type="text"
+                                    name="stay"
+                                    defaultValue={rsvp.stay || ''}
+                                    placeholder="Hotel name, Airbnb, etc."
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 placeholder-gray-500 font-['Almarai'] text-sm focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                                />
+                            </div>
+
+                            {/* Song request */}
+                            <div>
+                                <label className="block text-sm font-medium mb-2 font-['Almarai'] text-gray-700">
+                                    Song request for the wedding (Optional)
+                                </label>
+                                <input
+                                    type="text"
+                                    name="song"
+                                    defaultValue={rsvp.song || ''}
+                                    placeholder="Artist - Song Title"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 placeholder-gray-500 font-['Almarai'] text-sm focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                                />
+                            </div>
+                        </div>
                     </div>
 
                     {/* Submit Button */}
@@ -204,8 +245,9 @@ export default function EditRSVPForm({
                                 {state.message}
                             </p>
                         )}
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );
