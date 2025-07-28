@@ -1,13 +1,14 @@
 "use client";
 
 import { WeddingRsvp, WeddingGuest } from "@/lib/definitions";
-import { useActionState, useState } from "react";
+import { useActionState, useState, useTransition } from "react";
 import { updateRSVP } from "../data/actions";
 
 export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   const initialState = { message: "", errors: {} };
   const updateRSVPWithId = updateRSVP.bind(null, rsvp.id);
   const [state, dispatch] = useActionState(updateRSVPWithId, initialState);
+  const [isPending, startTransition] = useTransition();
 
   // Track wedding attendance for each guest to show/hide dinner selection
   const [weddingAttendance, setWeddingAttendance] = useState<{
@@ -32,6 +33,59 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     }));
   };
 
+  const [formError, setFormError] = useState<string | null>(null);
+  const [invalidFields, setInvalidFields] = useState<Set<string>>(new Set());
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+
+    // Check for missing required fields
+    const missingFields: string[] = [];
+    const newInvalidFields = new Set<string>();
+    
+    rsvp.guests.forEach((guest, index) => {
+      const welcomePartyField = form.querySelector(`input[name="welcome_party_${guest.id}"]:checked`) as HTMLInputElement;
+      const weddingField = form.querySelector(`input[name="wedding_${guest.id}"]:checked`) as HTMLInputElement;
+      
+      if (!welcomePartyField) {
+        missingFields.push(`Guest ${index + 1} - Welcome Party attendance`);
+        newInvalidFields.add(`welcome_party_${guest.id}`);
+      }
+      
+      if (!weddingField) {
+        missingFields.push(`Guest ${index + 1} - Wedding attendance`);
+        newInvalidFields.add(`wedding_${guest.id}`);
+      }
+      
+      // Check dinner selection only if attending wedding
+      if (weddingField?.value === 'yes') {
+        const dinnerField = form.querySelector(`input[name="dinner_${guest.id}"]:checked`) as HTMLInputElement;
+        if (!dinnerField) {
+          missingFields.push(`Guest ${index + 1} - Dinner selection`);
+          newInvalidFields.add(`dinner_${guest.id}`);
+        }
+      }
+    });
+
+    if (missingFields.length > 0) {
+      const errorMessage = `Please complete the following required fields:\n${missingFields.join('\n')}`;
+      setFormError(errorMessage);
+      setInvalidFields(newInvalidFields);
+      return;
+    }
+
+    setFormError(null);
+    setInvalidFields(new Set());
+    const formData = new FormData(form);
+    
+    startTransition(() => {
+      dispatch(formData);
+    });
+  };
+
+  const isFieldInvalid = (fieldName: string) => invalidFields.has(fieldName);
+
   return (
     <div className="py-12" style={{ backgroundColor: "rgb(248, 232, 224)" }}>
       {/* Centered Header */}
@@ -43,7 +97,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
       <div className="px-8 lg:px-16 py-8">
         <div className="max-w-2xl mx-auto">
-          <form action={dispatch} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8">
             {/* Guest Blocks */}
             <div className="space-y-6">
               {rsvp.guests.map((guest: WeddingGuest, index: number) => (
@@ -54,7 +108,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   <h3 className="text-xl font-['Alice',serif] mb-4 text-gray-800">
                     Guest {index + 1}
                   </h3>
-
+                  
                   <div className="space-y-6">
                     {/* Name Field */}
                     <div className="mb-6">
@@ -70,11 +124,14 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     </div>
 
                     {/* Welcome Party Attendance */}
-                    <div className="mb-6">
+                    <div className={`mb-6 ${isFieldInvalid(`welcome_party_${guest.id}`) ? 'border-l-4 border-red-500 pl-4 bg-red-50 rounded-r-lg' : ''}`}>
                       <label className="block text-base font-medium mb-3 font-['Almarai'] text-gray-700">
                         Will you attend the Welcome Party?{" "}
                         <span className="text-red-500">*</span>
                       </label>
+                      {isFieldInvalid(`welcome_party_${guest.id}`) && (
+                        <p className="text-red-600 text-sm mb-2 font-['Almarai']">Please select an option</p>
+                      )}
                       <div className="space-y-2">
                         <label className="flex items-center">
                           <input
@@ -84,7 +141,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                             defaultChecked={
                               guest.is_attending_welcome_party === true
                             }
-                            required
                             className="mr-2 text-pink-600"
                           />
                           <span className="text-base font-['Almarai'] text-gray-700">
@@ -99,7 +155,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                             defaultChecked={
                               guest.is_attending_welcome_party === false
                             }
-                            required
                             className="mr-2 text-pink-600"
                           />
                           <span className="text-base font-['Almarai'] text-gray-700">
@@ -110,11 +165,14 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     </div>
 
                     {/* Wedding Attendance */}
-                    <div className="mb-6">
+                    <div className={`mb-6 ${isFieldInvalid(`wedding_${guest.id}`) ? 'border-l-4 border-red-500 pl-4 bg-red-50 rounded-r-lg' : ''}`}>
                       <label className="block text-base font-medium mb-3 font-['Almarai'] text-gray-700">
                         Will you attend the Wedding?{" "}
                         <span className="text-red-500">*</span>
                       </label>
+                      {isFieldInvalid(`wedding_${guest.id}`) && (
+                        <p className="text-red-600 text-sm mb-2 font-['Almarai']">Please select an option</p>
+                      )}
                       <div className="space-y-2">
                         <label className="flex items-center">
                           <input
@@ -125,7 +183,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                             onChange={() =>
                               handleWeddingAttendanceChange(guest.id, true)
                             }
-                            required
                             className="mr-2 text-pink-600"
                           />
                           <span className="text-base font-['Almarai'] text-gray-700">
@@ -143,7 +200,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                             onChange={() =>
                               handleWeddingAttendanceChange(guest.id, false)
                             }
-                            required
                             className="mr-2 text-pink-600"
                           />
                           <span className="text-base font-['Almarai'] text-gray-700">
@@ -157,11 +213,14 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     {weddingAttendance[guest.id] && (
                       <div className="mt-6 pt-6 border-t border-gray-200 space-y-6">
                         {/* Dinner Selection */}
-                        <div>
+                        <div className={`${isFieldInvalid(`dinner_${guest.id}`) ? 'border-l-4 border-red-500 pl-4 bg-red-50 rounded-r-lg' : ''}`}>
                           <label className="block text-base font-medium mb-3 font-['Almarai'] text-gray-700">
                             Wedding Dinner Selection{" "}
                             <span className="text-red-500">*</span>
                           </label>
+                          {isFieldInvalid(`dinner_${guest.id}`) && (
+                            <p className="text-red-600 text-sm mb-2 font-['Almarai']">Please select a dinner option</p>
+                          )}
                           <div className="space-y-2">
                             <label className="flex items-center">
                               <input
@@ -169,7 +228,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                                 name={`dinner_${guest.id}`}
                                 value="beef"
                                 defaultChecked={guest.food_selection === "beef"}
-                                required
                                 className="mr-2 text-pink-600"
                               />
                               <span className="text-base font-['Almarai'] text-gray-700">
@@ -182,7 +240,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                                 name={`dinner_${guest.id}`}
                                 value="fish"
                                 defaultChecked={guest.food_selection === "fish"}
-                                required
                                 className="mr-2 text-pink-600"
                               />
                               <span className="text-base font-['Almarai'] text-gray-700">
@@ -197,7 +254,6 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                                 defaultChecked={
                                   guest.food_selection === "vegetarian"
                                 }
-                                required
                                 className="mr-2 text-pink-600"
                               />
                               <span className="text-base font-['Almarai'] text-gray-700">
@@ -232,7 +288,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
               <h3 className="text-xl font-['Alice',serif] mb-6 text-gray-800">
                 Optional Information
               </h3>
-
+              
               <div className="space-y-6">
                 {/* Where are you staying */}
                 <div>
@@ -285,6 +341,18 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   {state.message.includes("successfully") ? "✓ " : "✗ "}
                   {state.message}
                 </p>
+              )}
+
+              {/* Form Error Message */}
+              {formError && (
+                <div className="text-red-600 font-['Almarai'] font-medium bg-red-50 border border-red-200 rounded-lg p-4">
+                  <p className="font-semibold mb-2">Please complete the following required fields:</p>
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    {formError.split('\n').slice(1).map((field, index) => (
+                      <li key={index}>{field}</li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </div>
           </form>
