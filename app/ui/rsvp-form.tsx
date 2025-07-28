@@ -212,12 +212,12 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                           <label className="block text-base font-medium mb-3 font-['Almarai'] text-gray-700">
                             Dietary Restrictions
                           </label>
-                          <textarea
+                          <input
+                            type="text"
                             name={`dietary_restrictions_${guest.id}`}
                             defaultValue={guest.dietary_restrictions || ""}
                             placeholder="Please list any allergies or dietary restrictions..."
-                            rows={3}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 placeholder-gray-500 font-['Almarai'] text-base resize-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 placeholder-gray-500 font-['Almarai'] text-base focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                           />
                         </div>
                       </div>
