@@ -27,7 +27,7 @@ export async function searchWeddingGuests(searchTerm: string) {
                         'first_name', wg.first_name,
                         'last_name', wg.last_name,
                         'is_attending_wedding', wg.is_attending_wedding,
-                        'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner,
+                        'is_attending_welcome_party', wg.is_attending_welcome_party,
                         'food_selection', wg.food_selection,
                         'dietary_restrictions', wg.dietary_restrictions
                     ) ORDER BY wg.first_name
@@ -64,7 +64,7 @@ export async function getRsvpById(id: string) {
                         'first_name', wg.first_name,
                         'last_name', wg.last_name,
                         'is_attending_wedding', wg.is_attending_wedding,
-                        'is_attending_rehersal_dinner', wg.is_attending_rehersal_dinner,
+                        'is_attending_welcome_party', wg.is_attending_welcome_party,
                         'food_selection', wg.food_selection,
                         'dietary_restrictions', wg.dietary_restrictions
                     ) ORDER BY wg.first_name
@@ -94,7 +94,7 @@ export async function updateRsvp(rsvp: WeddingRsvp) {
                 UPDATE wedding_guests
                 SET
                     is_attending_wedding = ${guest.is_attending_wedding},
-                    is_attending_rehersal_dinner = ${guest.is_attending_rehersal_dinner},
+                    is_attending_welcome_party = ${guest.is_attending_welcome_party},
                     food_selection = ${guest.food_selection},
                     dietary_restrictions = ${guest.dietary_restrictions}
                 WHERE id = ${guest.id}

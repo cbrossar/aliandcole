@@ -34,7 +34,7 @@ async function createWeddingTables(client) {
             last_name TEXT NOT NULL,
             is_attending_welcome_party BOOLEAN,
             is_attending_wedding BOOLEAN,
-            is_attending_rehersal_dinner BOOLEAN,
+            is_attending_welcome_party BOOLEAN,
             food_selection TEXT CHECK (food_selection IN ('beef', 'fish', 'vegetarian', '')),
             dietary_restrictions TEXT,
             wedding_rsvp_fk UUID REFERENCES wedding_rsvps(id)
@@ -88,7 +88,7 @@ async function seedWeddingTables(client) {
                 rsvpResult = await client.sql`SELECT * FROM wedding_rsvps WHERE counter = ${guestData.counter}`;
             }
 
-            await client.sql`INSERT INTO wedding_guests (first_name, last_name, is_attending_wedding, is_attending_rehersal_dinner, wedding_rsvp_fk) VALUES (${guestData.first_name}, ${guestData.last_name}, false, false, ${rsvpResult.rows[0].id})`;
+            await client.sql`INSERT INTO wedding_guests (first_name, last_name, is_attending_wedding, is_attending_welcome_party, wedding_rsvp_fk) VALUES (${guestData.first_name}, ${guestData.last_name}, false, false, ${rsvpResult.rows[0].id})`;
             console.log(`Guest ${guest.first_name} ${guest.last_name} added to wedding_guests table with rsvp ${guestData.counter}`);
         }
     } catch (error) {

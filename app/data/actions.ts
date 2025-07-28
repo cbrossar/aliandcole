@@ -38,7 +38,7 @@ export async function updateRSVP(
                 UPDATE wedding_guests
                 SET
                     is_attending_wedding = ${weddingAttendance},
-                    is_attending_rehersal_dinner = ${welcomePartyAttendance},
+                    is_attending_welcome_party = ${welcomePartyAttendance},
                     food_selection = ${dinnerSelection},
                     dietary_restrictions = ${dietaryRestrictions}
                 WHERE id = ${guest.id}

@@ -9,7 +9,7 @@ interface Guest {
     first_name: string;
     last_name: string;
     is_attending_wedding: boolean | null;
-    is_attending_rehersal_dinner: boolean | null;
+    is_attending_welcome_party: boolean | null;
 }
 
 interface RsvpGroup {
