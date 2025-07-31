@@ -130,26 +130,17 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-['Alice',serif]">
-                    5.22.2026
+                    06.05.2026
                   </h2>
                 </div>
                 <div className="space-y-4">
                   <div>
                     <span className="text-white text-lg md:text-xl font-semibold">
-                      Cocktail hour
+                      Welcome Party
                     </span>
                     <span className="text-white text-lg md:text-xl">
                       {" "}
                       – 6:00pm
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-white text-lg md:text-xl font-semibold">
-                      Dinner
-                    </span>
-                    <span className="text-white text-lg md:text-xl">
-                      {" "}
-                      – 7:00pm
                     </span>
                   </div>
                 </div>
@@ -166,7 +157,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-['Alice',serif]">
-                    5.23.2026
+                    06.06.2026
                   </h2>
                 </div>
                 <div className="space-y-4">
