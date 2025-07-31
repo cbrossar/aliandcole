@@ -282,7 +282,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 text-center">
           <FadeInOnScroll direction="up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-['Alice',serif] leading-tight mb-4">
-              05.23.26
+              06.06.2026
             </h1>
             <p className="text-white text-base md:text-lg">
               be there or be square. xo!
