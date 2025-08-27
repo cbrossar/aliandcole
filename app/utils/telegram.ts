@@ -1,5 +1,5 @@
 export async function sendTelegramMessage(message: string) {
-  const telegramBotToken = "8350858927:AAHT6fEtZ-fjvtvN28KANyrUiqZbR8qk_dU";
+  const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
   const telegramChannelId = "-1002927399078";
 
   if (!telegramBotToken || !telegramChannelId) {
