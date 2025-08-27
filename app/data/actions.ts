@@ -68,9 +68,11 @@ export async function updateRSVP(
     // Revalidate the page to show updated data
     revalidatePath(`/rsvp/${id}`);
 
+    const updatedRsvp = await getRsvpById(id);
+
     // Send Telegram message with detailed RSVP information
     const rsvpMessage = `🎉 RSVP Updated!
-    ${currentRsvp.guests
+    ${updatedRsvp.guests
       .map(
         (guest: WeddingGuest) => `
 • ${guest.first_name} ${guest.last_name}
@@ -81,8 +83,8 @@ export async function updateRSVP(
       )
       .join("")}
 
-🏨 Accommodation: ${currentRsvp.stay || "Not specified"}
-🎵 Song Request: ${currentRsvp.song || "Not specified"}
+🏨 Accommodation: ${updatedRsvp.stay || "Not specified"}
+🎵 Song Request: ${updatedRsvp.song || "Not specified"}
       `;
 
     await sendTelegramMessage(rsvpMessage);
