@@ -2,6 +2,8 @@
 
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
+import { sendTelegramMessage } from "../utils/telegram";
+import { WeddingGuest } from "../../lib/definitions";
 
 export type State = {
   errors?: {
@@ -65,6 +67,25 @@ export async function updateRSVP(
 
     // Revalidate the page to show updated data
     revalidatePath(`/rsvp/${id}`);
+
+    // Send Telegram message with detailed RSVP information
+    const rsvpMessage = `🎉 RSVP Updated!
+    ${currentRsvp.guests
+      .map(
+        (guest: WeddingGuest) => `
+• ${guest.first_name} ${guest.last_name}
+  - Wedding: ${guest.is_attending_wedding ? "✅ Yes" : "❌ No"}
+  - Welcome Party: ${guest.is_attending_welcome_party ? "✅ Yes" : "❌ No"}
+  - Food: ${guest.food_selection || "Not specified"}
+  ${guest.dietary_restrictions ? `- Dietary Restrictions: ${guest.dietary_restrictions}` : ""}`,
+      )
+      .join("")}
+
+🏨 Accommodation: ${currentRsvp.stay || "Not specified"}
+🎵 Song Request: ${currentRsvp.song || "Not specified"}
+      `;
+
+    await sendTelegramMessage(rsvpMessage);
 
     return {
       errors: {},
