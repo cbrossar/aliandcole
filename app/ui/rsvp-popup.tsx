@@ -27,7 +27,6 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
 
   // Fetch all RSVPs on component mount
   useEffect(() => {
-    console.log("Fetching RSVPs");
     const fetchRsvps = async () => {
       try {
         const response = await fetch("/api/rsvps");
