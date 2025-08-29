@@ -28,7 +28,7 @@ export default async function RsvpPage({
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#4a4a4a] text-white pt-8">
+    <div className="min-h-screen w-full bg-[#4a4a4a] text-white">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row min-h-[80vh] pt-8">
         {/* Left side with decorative flowers */}
