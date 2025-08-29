@@ -47,8 +47,7 @@ export default function NavBar() {
             height={50}
             className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
           />
-          <span className="hidden sm:inline">Meet us at the palace</span>
-          <span className="sm:hidden">C & A</span>
+          <span>Meet us at the palace</span>
         </Link>
 
         {/* Desktop Navigation */}
