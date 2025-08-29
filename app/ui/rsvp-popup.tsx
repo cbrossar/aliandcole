@@ -1,22 +1,16 @@
 "use client";
 
-import { searchWeddingGuests } from "@/app/data/wedding";
-import { useState, useTransition } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 interface Guest {
   id: string;
   first_name: string;
   last_name: string;
-  is_attending_wedding: boolean | null;
-  is_attending_welcome_party: boolean | null;
 }
 
 interface RsvpGroup {
   rsvp_id: string;
-  counter: number;
-  stay: string | null;
-  song: string | null;
   guests: Guest[];
 }
 
@@ -26,24 +20,52 @@ interface RsvpPopupProps {
 
 export default function RsvpPopup({ onClose }: RsvpPopupProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<RsvpGroup[]>([]);
-  const [isPending, startTransition] = useTransition();
+  const [allRsvps, setAllRsvps] = useState<RsvpGroup[]>([]);
+  const [filteredRsvps, setFilteredRsvps] = useState<RsvpGroup[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [hasSearched, setHasSearched] = useState(false);
 
-  const handleSearch = () => {
-    if (!searchTerm.trim()) return;
-
-    startTransition(async () => {
+  // Fetch all RSVPs on component mount
+  useEffect(() => {
+    console.log("Fetching RSVPs");
+    const fetchRsvps = async () => {
       try {
-        const results = await searchWeddingGuests(searchTerm);
-        setSearchResults(results as RsvpGroup[]);
-        setHasSearched(true);
+        const response = await fetch("/api/rsvps");
+        if (!response.ok) {
+          throw new Error("Failed to fetch RSVPs");
+        }
+        const data = await response.json();
+        setAllRsvps(data);
       } catch (error) {
-        console.error("Error searching guests:", error);
-        setSearchResults([]);
-        setHasSearched(true);
+        console.error("Error fetching RSVPs:", error);
+      } finally {
+        setIsLoading(false);
       }
-    });
+    };
+
+    fetchRsvps();
+  }, []);
+
+  const handleSearch = () => {
+    if (!searchTerm.trim()) {
+      setFilteredRsvps([]);
+      setHasSearched(false);
+      return;
+    }
+
+    const filtered = allRsvps.filter((rsvp) =>
+      rsvp.guests.some(
+        (guest) =>
+          guest.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          guest.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          `${guest.first_name} ${guest.last_name}`
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()),
+      ),
+    );
+
+    setFilteredRsvps(filtered);
+    setHasSearched(true);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -73,33 +95,49 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
         </h2>
 
         <div className="space-y-4">
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyPress={handleKeyPress}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
-            disabled={isPending}
-          />
-          <button
-            onClick={handleSearch}
-            disabled={isPending || !searchTerm.trim()}
-            className="w-full border border-[rgb(51,51,51)] rounded-full px-6 py-2 hover:bg-[rgb(51,51,51)] hover:text-white transition-colors text-[rgb(51,51,51)] font-['Almarai',sans-serif] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isPending ? "Searching..." : "Find RSVP"}
-          </button>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyPress}
+              className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
+              disabled={isLoading}
+            />
+            <button
+              onClick={handleSearch}
+              disabled={isLoading || !searchTerm.trim()}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 text-gray-400 hover:text-[rgb(51,51,51)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              aria-label="Search"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Search Results */}
         {hasSearched && (
           <div className="mt-6 space-y-4">
-            {searchResults.length > 0 ? (
+            {filteredRsvps.length > 0 ? (
               <div>
                 <h3 className="font-semibold text-[rgb(51,51,51)] mb-3">
                   Found RSVPs:
                 </h3>
-                {searchResults.map((rsvp) => (
+                {filteredRsvps.map((rsvp: RsvpGroup) => (
                   <div
                     key={rsvp.rsvp_id}
                     className="p-3 border border-gray-200 rounded-lg mb-2"

@@ -111,3 +111,32 @@ export async function updateRsvp(rsvp: WeddingRsvp) {
     throw error;
   }
 }
+
+export async function getRsvps() {
+  // TODO only fetch guest names and ids
+  try {
+    const result = await sql`
+        SELECT 
+        wr.id as rsvp_id,
+        json_agg(
+            json_build_object(
+            'id', wg.id,
+            'first_name', wg.first_name,
+            'last_name', wg.last_name
+            ) ORDER BY wg.first_name
+        ) as guests
+        FROM wedding_rsvps wr
+        LEFT JOIN wedding_guests wg ON wg.wedding_rsvp_fk = wr.id
+        GROUP BY wr.id
+        ORDER BY (
+        SELECT MIN(wg2.last_name) 
+        FROM wedding_guests wg2 
+        WHERE wg2.wedding_rsvp_fk = wr.id
+        )
+    `;
+    return result.rows;
+  } catch (error) {
+    console.error("Error getting RSVPs:", error);
+    throw error;
+  }
+}
