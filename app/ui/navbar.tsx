@@ -38,22 +38,23 @@ export default function NavBar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className="flex items-center justify-between bg-[rgb(248,245,239)] text-black p-4 px-4 md:px-8 lg:px-[42px] lg:py-[22px] shadow-lg text-base md:text-lg">
-        <Link href="/" className={`${styles.title} flex items-center gap-3`}>
+      <div className="flex items-center justify-between bg-[rgb(248,245,239)] text-black p-4 px-4 md:px-6 lg:px-8 xl:px-[42px] lg:py-[22px] shadow-lg text-base md:text-lg">
+        <Link href="/" className={`${styles.title} flex items-center gap-2 md:gap-3`}>
           <Image
             src="/C-and-A.png"
             alt="C and A Logo"
             width={50}
             height={50}
-            className="w-8 h-8 md:w-10 md:h-10"
+            className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
           />
-          Meet us at the palace
+          <span className="hidden sm:inline">Meet us at the palace</span>
+          <span className="sm:hidden">C & A</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
-          <div className="flex items-center gap-24">
-            <div className="flex gap-24">
+        <div className="hidden lg:flex items-center gap-6">
+          <div className="flex items-center gap-16 xl:gap-24">
+            <div className="flex gap-16 xl:gap-24">
               <Link
                 href="/"
                 className={`${styles.navLink} ${isActive("/") ? styles.navLinkActive : ""}`}
@@ -88,6 +89,50 @@ export default function NavBar() {
             <button
               onClick={openRsvpPopup}
               className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition-colors"
+            >
+              RSVP
+            </button>
+          </div>
+        </div>
+
+        {/* Tablet Navigation */}
+        <div className="hidden md:flex lg:hidden items-center gap-4">
+          <div className="flex items-center gap-8">
+            <div className="flex gap-6">
+              <Link
+                href="/"
+                className={`${styles.navLink} ${isActive("/") ? styles.navLinkActive : ""} text-sm`}
+              >
+                Schedule
+              </Link>
+              <Link
+                href="/how-we-met"
+                className={`${styles.navLink} ${isActive("/how-we-met") ? styles.navLinkActive : ""} text-sm`}
+              >
+                How we met
+              </Link>
+              <Link
+                href="/travel"
+                className={`${styles.navLink} ${isActive("/travel") ? styles.navLinkActive : ""} text-sm`}
+              >
+                Travel
+              </Link>
+              <Link
+                href="/registry"
+                className={`${styles.navLink} ${isActive("/registry") ? styles.navLinkActive : ""} text-sm`}
+              >
+                Registry
+              </Link>
+              <Link
+                href="/faqs"
+                className={`${styles.navLink} ${isActive("/faqs") ? styles.navLinkActive : ""} text-sm`}
+              >
+                FAQs
+              </Link>
+            </div>
+            <button
+              onClick={openRsvpPopup}
+              className="border border-black rounded-full px-4 py-1.5 hover:bg-black hover:text-white transition-colors text-sm"
             >
               RSVP
             </button>
