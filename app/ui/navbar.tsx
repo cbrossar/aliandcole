@@ -111,7 +111,7 @@ export default function NavBar() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-[rgb(248,245,239)] z-40">
+        <div className="md:hidden fixed inset-0 top-[62px] bg-[rgb(248,245,239)] z-40">
           <div className="flex flex-col p-6 space-y-6">
             <Link
               href="/"

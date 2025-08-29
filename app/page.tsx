@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full min-h-screen px-6 md:px-8 lg:px-12 pt-8 md:pt-12 lg:pt-16">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-1 lg:gap-16 min-h-[80vh] pt-8 lg:pt-12">
+      <div className="w-full min-h-screen px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-1 lg:gap-16 min-h-[80vh]">
           {/* Text content - order-1 on mobile, order-1 on desktop */}
           <div className="flex flex-col justify-start space-y-0 lg:space-y-8 pt-4 pb-0 lg:pt-36 col-span-1 lg:col-span-2 order-1 lg:order-1">
             <FadeInOnScroll direction="left" delay={200}>
