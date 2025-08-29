@@ -28,13 +28,12 @@ export default async function RsvpPage({
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#4a4a4a] text-white">
+    <div className="min-h-screen w-full bg-[#4a4a4a] text-white pt-8">
       {/* Header Section */}
-      {/* Header Section */}
-      <div className="flex flex-col lg:flex-row min-h-[80vh]">
+      <div className="flex flex-col lg:flex-row min-h-[80vh] pt-8">
         {/* Left side with decorative flowers */}
         <div className="flex-1 flex items-center justify-center p-4 lg:p-8 order-2 lg:order-1">
-          <div className="relative w-full max-w-sm lg:max-w-md">
+          <div className="relative w-full max-w-xs lg:max-w-sm">
             <Image
               src="/images/rsvp/flowers.png"
               alt="Decorative flowers"
