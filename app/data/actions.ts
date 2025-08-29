@@ -94,7 +94,14 @@ export async function updateRSVP(
       message: "RSVP updated successfully!",
     };
   } catch (error) {
-    console.error("Error updating RSVP:", error);
+    // Extract FormData contents for Telegram message
+    const formDataEntries = Array.from(formData.entries())
+      .map(([key, value]) => `${key}: ${value}`)
+      .join("\n");
+    const errorMessage = `Error updating RSVP: ${error}\n\nForm Data:\n${formDataEntries}`;
+    console.error(errorMessage);
+    sendTelegramMessage(errorMessage);
+
     return {
       errors: {},
       message: "Failed to update RSVP. Please try again.",
