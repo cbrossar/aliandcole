@@ -93,7 +93,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   const isFieldInvalid = (fieldName: string) => invalidFields.has(fieldName);
 
   return (
-    <div className="py-12" style={{ backgroundColor: "rgb(248, 232, 224)" }}>
+    <div className="py-12">
       {/* Centered Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl lg:text-4xl font-['Alice',serif] text-gray-800">

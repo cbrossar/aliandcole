@@ -28,11 +28,11 @@ export default async function RsvpPage({
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#4a4a4a] text-white">
+    <div className="min-h-screen w-full">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row min-h-[80vh] pt-8">
+      <div className="flex flex-col lg:flex-row min-h-[80vh] pt-8 bg-[#4a4a4a] text-white relative">
         {/* Left side with decorative flowers */}
-        <div className="flex-1 flex items-center justify-center p-4 lg:p-8 order-2 lg:order-1">
+        <div className="flex-1 flex items-center justify-center p-4 lg:p-8 pb-16 lg:pb-20 order-2 lg:order-1">
           <div className="relative w-full max-w-xs lg:max-w-sm">
             <Image
               src="/images/rsvp/flowers.png"
@@ -57,25 +57,25 @@ export default async function RsvpPage({
             </p>
           </div>
         </div>
-      </div>
 
-      {/* Scroll arrow */}
-      <div className="flex justify-center pb-8">
-        <div className="animate-bounce">
-          <svg
-            className="w-6 h-6 text-white opacity-70"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+        {/* Scroll arrow positioned at bottom */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="animate-bounce">
+            <svg
+              className="w-6 h-6 text-white opacity-70"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 
