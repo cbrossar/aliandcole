@@ -19,7 +19,8 @@ interface RsvpPopupProps {
 }
 
 export default function RsvpPopup({ onClose }: RsvpPopupProps) {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [allRsvps, setAllRsvps] = useState<RsvpGroup[]>([]);
   const [filteredRsvps, setFilteredRsvps] = useState<RsvpGroup[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -46,21 +47,20 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
   }, []);
 
   const handleSearch = () => {
-    if (!searchTerm.trim()) {
+    if (!firstName.trim() && !lastName.trim()) {
       setFilteredRsvps([]);
       setHasSearched(false);
       return;
     }
 
     const filtered = allRsvps.filter((rsvp) =>
-      rsvp.guests.some(
-        (guest) =>
-          guest.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          guest.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          `${guest.first_name} ${guest.last_name}`
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase()),
-      ),
+      rsvp.guests.some((guest) => {
+        const firstNameMatch = firstName.trim() === "" || 
+          guest.first_name.toLowerCase() === firstName.toLowerCase().trim();
+        const lastNameMatch = lastName.trim() === "" || 
+          guest.last_name.toLowerCase() === lastName.toLowerCase().trim();
+        return firstNameMatch && lastNameMatch;
+      }),
     );
 
     setFilteredRsvps(filtered);
@@ -94,38 +94,33 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
         </h2>
 
         <div className="space-y-4">
-          <div className="relative">
+          <div className="grid grid-cols-2 gap-3">
             <input
               type="text"
-              placeholder="Enter your name"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="First name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               onKeyDown={handleKeyPress}
-              className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
               disabled={isLoading}
             />
-            <button
-              onClick={handleSearch}
-              disabled={isLoading || !searchTerm.trim()}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 text-gray-400 hover:text-[rgb(51,51,51)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-              aria-label="Search"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
+            <input
+              type="text"
+              placeholder="Last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              onKeyDown={handleKeyPress}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
+              disabled={isLoading}
+            />
           </div>
+          <button
+            onClick={handleSearch}
+            disabled={isLoading || (!firstName.trim() && !lastName.trim())}
+            className="w-full px-4 py-2 bg-[rgb(51,51,51)] text-white rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-['Almarai',sans-serif]"
+          >
+            Search
+          </button>
         </div>
 
         {/* Search Results */}
@@ -164,9 +159,9 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
               </div>
             ) : (
               <div className="text-center text-[rgb(51,51,51)]">
-                <p>No RSVP found for &quot;{searchTerm}&quot;</p>
+                <p>No RSVP found for &quot;{firstName.trim()} {lastName.trim()}&quot;</p>
                 <p className="text-sm mt-1">
-                  Try searching by first name or last name
+                  Please check your spelling and try again
                 </p>
               </div>
             )}

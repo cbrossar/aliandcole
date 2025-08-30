@@ -54,7 +54,7 @@ async function createWeddingTables(client) {
 async function seedWeddingTables(client) {
   try {
     // read wedding-guests.csv and parse it into an array of objects
-    const weddingGuests = fs.readFileSync("scripts/wedding-guests.csv", "utf8");
+    const weddingGuests = fs.readFileSync("scripts/wedding-guest-list-converted.csv", "utf8");
     const weddingGuestsArray = weddingGuests
       .split("\n")
       .slice(1)
@@ -95,10 +95,24 @@ async function seedWeddingTables(client) {
           await client.sql`SELECT * FROM wedding_rsvps WHERE counter = ${guestData.counter}`;
       }
 
-      await client.sql`INSERT INTO wedding_guests (first_name, last_name, wedding_rsvp_fk) VALUES (${guestData.first_name}, ${guestData.last_name}, ${rsvpResult.rows[0].id})`;
-      console.log(
-        `Guest ${guest.first_name} ${guest.last_name} added to wedding_guests table with rsvp ${guestData.counter}`,
-      );
+      // Check if guest already exists for this RSVP
+      const existingGuest = await client.sql`
+        SELECT * FROM wedding_guests 
+        WHERE first_name = ${guestData.first_name} 
+        AND last_name = ${guestData.last_name} 
+        AND wedding_rsvp_fk = ${rsvpResult.rows[0].id}
+      `;
+
+      if (existingGuest.rows.length === 0) {
+        await client.sql`INSERT INTO wedding_guests (first_name, last_name, wedding_rsvp_fk) VALUES (${guestData.first_name}, ${guestData.last_name}, ${rsvpResult.rows[0].id})`;
+        console.log(
+          `Guest ${guest.first_name} ${guest.last_name} added to wedding_guests table with rsvp ${guestData.counter}`,
+        );
+      } else {
+        console.log(
+          `Guest ${guest.first_name} ${guest.last_name} already exists for rsvp ${guestData.counter}, skipping...`,
+        );
+      }
     }
   } catch (error) {
     console.error("Error seeding wedding tables:", error);
