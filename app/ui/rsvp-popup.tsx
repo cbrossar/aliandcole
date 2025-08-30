@@ -3,6 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+// Utility function to normalize text by removing special characters
+const normalizeText = (text: string): string => {
+  return text
+    .toLowerCase()
+    .normalize("NFD") // Decompose characters with diacritics
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+    .replace(/[^a-z0-9\s]/g, "") // Remove all non-alphanumeric characters except spaces
+    .trim();
+};
+
 interface Guest {
   id: string;
   first_name: string;
@@ -53,12 +63,18 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
       return;
     }
 
+    const normalizedFirstName = normalizeText(firstName);
+    const normalizedLastName = normalizeText(lastName);
+
     const filtered = allRsvps.filter((rsvp) =>
       rsvp.guests.some((guest) => {
-        const firstNameMatch = firstName.trim() === "" || 
-          guest.first_name.toLowerCase() === firstName.toLowerCase().trim();
-        const lastNameMatch = lastName.trim() === "" || 
-          guest.last_name.toLowerCase() === lastName.toLowerCase().trim();
+        const guestNormalizedFirstName = normalizeText(guest.first_name);
+        const guestNormalizedLastName = normalizeText(guest.last_name);
+        
+        const firstNameMatch = normalizedFirstName === "" || 
+          guestNormalizedFirstName === normalizedFirstName;
+        const lastNameMatch = normalizedLastName === "" || 
+          guestNormalizedLastName === normalizedLastName;
         return firstNameMatch && lastNameMatch;
       }),
     );
