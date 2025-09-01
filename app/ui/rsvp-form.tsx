@@ -98,7 +98,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* Guest Sections */}
           {rsvp.guests.map((guest: WeddingGuest, index: number) => (
-            <div key={guest.id}>
+            <div key={guest.id} className="bg-white/60 rounded-lg p-8 shadow-sm">
               {/* Guest Name Header */}
               <div className="mb-8">
                 <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
@@ -117,7 +117,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     <select
                       name={`welcome_party_${guest.id}`}
                       defaultValue={guest.is_attending_welcome_party === true ? "yes" : guest.is_attending_welcome_party === false ? "no" : ""}
-                      className="bg-transparent border-none text-gray-800 font-['Almarai'] focus:outline-none cursor-pointer w-32 text-left"
+                      className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
                     >
                       <option value="">Select...</option>
                       <option value="yes">Yes!</option>
@@ -141,7 +141,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                       name={`wedding_${guest.id}`}
                       defaultValue={guest.is_attending_wedding === true ? "yes" : guest.is_attending_wedding === false ? "no" : ""}
                       onChange={(e) => handleWeddingAttendanceChange(guest.id, e.target.value === "yes")}
-                      className="bg-transparent border-none text-gray-800 font-['Almarai'] focus:outline-none cursor-pointer w-32 text-left"
+                      className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
                     >
                       <option value="">Select...</option>
                       <option value="yes">Yes!</option>
@@ -165,7 +165,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                       <select
                         name={`dinner_${guest.id}`}
                         defaultValue={guest.food_selection || ""}
-                        className="bg-transparent border-none text-gray-800 font-['Almarai'] focus:outline-none cursor-pointer w-32 text-left"
+                        className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
                       >
                         <option value="">Select...</option>
                         <option value="beef">Beef</option>
@@ -199,7 +199,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
           ))}
 
           {/* Optional Information Section */}
-          <div>
+          <div className="bg-white/60 rounded-lg p-8 shadow-sm">
             <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
               Optional Information
             </h2>
