@@ -10,3 +10,6 @@ format:
 
 seed:
 	npm run seed
+
+build:
+	npm run build
