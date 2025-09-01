@@ -186,7 +186,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="text-white text-lg md:text-xl font-semibold">
-                      Reception
+                      Dinner & Dancing
                     </span>
                     <span className="text-white text-lg md:text-xl">
                       {" "}
