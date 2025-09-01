@@ -88,35 +88,12 @@ export default function Home() {
             </FadeInOnScroll>
           </div>
 
-          {/* Schedule heading and Location info at same level */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-12 md:mb-16">
-            {/* Left - Schedule heading */}
-            <FadeInOnScroll direction="left">
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-['Alice',serif] text-center lg:text-left">
-                  Schedule
-                </h1>
-              </div>
-            </FadeInOnScroll>
-
-            {/* Right - Location info */}
-            <FadeInOnScroll direction="right" delay={200}>
-              <div className="space-y-2 text-center lg:text-left">
-                <p className="text-white text-lg md:text-xl">
-                  All wedding events will take place at 123 Demo St. Sonoma, CA
-                </p>
-                <p className="text-white text-lg md:text-xl">
-                  See{" "}
-                  <Link
-                    href="/location"
-                    className="underline"
-                    style={{ color: "rgb(221, 197, 118)" }}
-                  >
-                    here
-                  </Link>{" "}
-                  for more info.
-                </p>
-              </div>
+          {/* Schedule heading */}
+          <div className="mb-12 md:mb-16">
+            <FadeInOnScroll direction="up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-['Alice',serif] text-center">
+                Schedule
+              </h1>
             </FadeInOnScroll>
           </div>
 
@@ -125,13 +102,27 @@ export default function Home() {
 
           {/* Schedule details */}
           <div className="flex flex-col space-y-8">
-            {/* Friday 5.22.2026 */}
+            {/* Friday 06.05.2026 */}
             <FadeInOnScroll direction="up">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-['Alice',serif]">
                     06.05.2026
                   </h2>
+                  <p className="text-white text-base md:text-lg mt-2">
+                    Mandarin Oriental
+                  </p>
+                  <p className="text-white text-base md:text-lg mt-1">
+                    Cocktail Attire
+                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/z6n3xurCrdPsn3Hc9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[rgb(221,197,118)] underline text-sm md:text-base mt-1 block"
+                  >
+                    View on Google Maps
+                  </a>
                 </div>
                 <div className="space-y-4">
                   <div>
@@ -142,6 +133,11 @@ export default function Home() {
                       {" "}
                       – 6:00pm
                     </span>
+                    <div className="mt-1">
+                      <span className="text-white text-base md:text-lg">
+                        Olea Bosphorus & The Bar
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -152,32 +148,42 @@ export default function Home() {
               <div className="border-t border-white opacity-50"></div>
             </FadeInOnScroll>
 
-            {/* Saturday 5.23.2026 */}
+            {/* Saturday 06.06.2026 */}
             <FadeInOnScroll direction="up" delay={200}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-['Alice',serif]">
                     06.06.2026
                   </h2>
+                  <p className="text-white text-base md:text-lg mt-2">
+                    Çırağan Palace
+                  </p>
+                  <p className="text-white text-base md:text-lg mt-1">
+                    Black Tie
+                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/TTsXXKpGgNVSeSaAA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[rgb(221,197,118)] underline text-sm md:text-base mt-1 block"
+                  >
+                    View on Google Maps
+                  </a>
                 </div>
                 <div className="space-y-4">
-                  <div>
-                    <span className="text-white text-lg md:text-xl font-semibold">
-                      Welcome drinks
-                    </span>
-                    <span className="text-white text-lg md:text-xl">
-                      {" "}
-                      – 6:00pm
-                    </span>
-                  </div>
                   <div>
                     <span className="text-white text-lg md:text-xl font-semibold">
                       Ceremony
                     </span>
                     <span className="text-white text-lg md:text-xl">
                       {" "}
-                      – 7:00pm
+                      – 6:00pm
                     </span>
+                    <div className="mt-1">
+                      <span className="text-white text-base md:text-lg">
+                        East Garden
+                      </span>
+                    </div>
                   </div>
                   <div>
                     <span className="text-white text-lg md:text-xl font-semibold">
@@ -187,15 +193,25 @@ export default function Home() {
                       {" "}
                       – 8:00pm
                     </span>
+                    <div className="mt-1">
+                      <span className="text-white text-base md:text-lg">
+                        Bosphorous Pier Lounge
+                      </span>
+                    </div>
                   </div>
                   <div>
                     <span className="text-white text-lg md:text-xl font-semibold">
-                      Afterparty
+                      After Party
                     </span>
                     <span className="text-white text-lg md:text-xl">
                       {" "}
                       – 12:00am
                     </span>
+                    <div className="mt-1">
+                      <span className="text-white text-base md:text-lg">
+                        Enderun Ballroom
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
