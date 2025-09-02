@@ -54,7 +54,10 @@ async function createWeddingTables(client) {
 async function seedWeddingTables(client) {
   try {
     // read wedding-guests.csv and parse it into an array of objects
-    const weddingGuests = fs.readFileSync("scripts/wedding-guest-list-converted.csv", "utf8");
+    const weddingGuests = fs.readFileSync(
+      "scripts/wedding-guest-list-converted.csv",
+      "utf8",
+    );
     const weddingGuestsArray = weddingGuests
       .split("\n")
       .slice(1)

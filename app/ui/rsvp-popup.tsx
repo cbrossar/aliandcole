@@ -70,10 +70,12 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
       rsvp.guests.some((guest) => {
         const guestNormalizedFirstName = normalizeText(guest.first_name);
         const guestNormalizedLastName = normalizeText(guest.last_name);
-        
-        const firstNameMatch = normalizedFirstName === "" || 
+
+        const firstNameMatch =
+          normalizedFirstName === "" ||
           guestNormalizedFirstName === normalizedFirstName;
-        const lastNameMatch = normalizedLastName === "" || 
+        const lastNameMatch =
+          normalizedLastName === "" ||
           guestNormalizedLastName === normalizedLastName;
         return firstNameMatch && lastNameMatch;
       }),
@@ -175,7 +177,10 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
               </div>
             ) : (
               <div className="text-center text-[rgb(51,51,51)]">
-                <p>No RSVP found for &quot;{firstName.trim()} {lastName.trim()}&quot;</p>
+                <p>
+                  No RSVP found for &quot;{firstName.trim()} {lastName.trim()}
+                  &quot;
+                </p>
                 <p className="text-sm mt-1">
                   Please check your spelling and try again
                 </p>

@@ -93,12 +93,18 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   const isFieldInvalid = (fieldName: string) => invalidFields.has(fieldName);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "rgb(245, 241, 235)" }}>
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: "rgb(245, 241, 235)" }}
+    >
       <div className="max-w-2xl mx-auto px-6 py-12">
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* Guest Sections */}
-          {rsvp.guests.map((guest: WeddingGuest, index: number) => (
-            <div key={guest.id} className="bg-white/60 rounded-lg p-8 shadow-sm">
+          {rsvp.guests.map((guest: WeddingGuest) => (
+            <div
+              key={guest.id}
+              className="bg-white/60 rounded-lg p-8 shadow-sm"
+            >
               {/* Guest Name Header */}
               <div className="mb-8">
                 <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
@@ -109,14 +115,22 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
               <div className="space-y-4">
                 {/* Welcome Party Attendance */}
-                <div className={`${isFieldInvalid(`welcome_party_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}>
+                <div
+                  className={`${isFieldInvalid(`welcome_party_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                >
                   <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
                     <span className="text-gray-800 font-['Almarai']">
                       Will you attend the Welcome Party?
                     </span>
                     <select
                       name={`welcome_party_${guest.id}`}
-                      defaultValue={guest.is_attending_welcome_party === true ? "yes" : guest.is_attending_welcome_party === false ? "no" : ""}
+                      defaultValue={
+                        guest.is_attending_welcome_party === true
+                          ? "yes"
+                          : guest.is_attending_welcome_party === false
+                            ? "no"
+                            : ""
+                      }
                       className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
                     >
                       <option value="">Select...</option>
@@ -132,15 +146,28 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                 </div>
 
                 {/* Wedding Attendance */}
-                <div className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}>
+                <div
+                  className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                >
                   <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
                     <span className="text-gray-800 font-['Almarai']">
                       Will you attend the Wedding?
                     </span>
                     <select
                       name={`wedding_${guest.id}`}
-                      defaultValue={guest.is_attending_wedding === true ? "yes" : guest.is_attending_wedding === false ? "no" : ""}
-                      onChange={(e) => handleWeddingAttendanceChange(guest.id, e.target.value === "yes")}
+                      defaultValue={
+                        guest.is_attending_wedding === true
+                          ? "yes"
+                          : guest.is_attending_wedding === false
+                            ? "no"
+                            : ""
+                      }
+                      onChange={(e) =>
+                        handleWeddingAttendanceChange(
+                          guest.id,
+                          e.target.value === "yes",
+                        )
+                      }
                       className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
                     >
                       <option value="">Select...</option>
@@ -157,7 +184,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
                 {/* Wedding Dinner Selection - Only show if attending wedding */}
                 {weddingAttendance[guest.id] && (
-                  <div className={`${isFieldInvalid(`dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}>
+                  <div
+                    className={`${isFieldInvalid(`dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                  >
                     <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
                       <span className="text-gray-800 font-['Almarai']">
                         Please let us know which meal option you prefer
