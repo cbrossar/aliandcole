@@ -34,6 +34,7 @@ async function createWeddingTables(client) {
             last_name TEXT NOT NULL,
             is_attending_welcome_party BOOLEAN,
             is_attending_wedding BOOLEAN,
+            is_attending_after_party BOOLEAN,
             food_selection TEXT CHECK (food_selection IN ('beef', 'fish', 'vegetarian', '')),
             dietary_restrictions TEXT,
             wedding_rsvp_fk UUID REFERENCES wedding_rsvps(id)

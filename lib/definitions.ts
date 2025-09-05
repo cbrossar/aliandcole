@@ -4,6 +4,7 @@ export type WeddingGuest = {
   last_name: string;
   is_attending_wedding: boolean | null;
   is_attending_welcome_party: boolean | null;
+  is_attending_after_party: boolean | null;
   food_selection: string | null;
   dietary_restrictions: string | null;
 };

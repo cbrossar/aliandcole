@@ -34,6 +34,8 @@ export async function updateRSVP(
       const welcomePartyAttendance =
         formData.get(`welcome_party_${guest.id}`) === "yes";
       const weddingAttendance = formData.get(`wedding_${guest.id}`) === "yes";
+      const afterPartyAttendance =
+        formData.get(`after_party_${guest.id}`) === "yes";
       const dinnerSelection =
         (formData.get(`dinner_${guest.id}`) as string) || "";
       const dietaryRestrictions =
@@ -44,6 +46,7 @@ export async function updateRSVP(
                 SET
                     is_attending_wedding = ${weddingAttendance},
                     is_attending_welcome_party = ${welcomePartyAttendance},
+                    is_attending_after_party = ${afterPartyAttendance},
                     food_selection = ${dinnerSelection},
                     dietary_restrictions = ${dietaryRestrictions}
                 WHERE id = ${guest.id}
@@ -78,6 +81,7 @@ export async function updateRSVP(
 • ${guest.first_name} ${guest.last_name}
   - Wedding: ${guest.is_attending_wedding ? "✅ Yes" : "❌ No"}
   - Welcome Party: ${guest.is_attending_welcome_party ? "✅ Yes" : "❌ No"}
+  - After Party: ${guest.is_attending_after_party ? "✅ Yes" : "❌ No"}
   - Food: ${guest.food_selection || "Not specified"}
   ${guest.dietary_restrictions ? `- Dietary Restrictions: ${guest.dietary_restrictions}` : ""}`,
       )
