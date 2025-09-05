@@ -72,11 +72,9 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
         const guestNormalizedLastName = normalizeText(guest.last_name);
 
         const firstNameMatch =
-          normalizedFirstName === "" ||
           guestNormalizedFirstName === normalizedFirstName;
         const lastNameMatch =
-          normalizedLastName === "" ||
-          guestNormalizedLastName === normalizedLastName;
+          normalizedLastName === guestNormalizedLastName;
         return firstNameMatch && lastNameMatch;
       }),
     );
@@ -134,7 +132,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
           </div>
           <button
             onClick={handleSearch}
-            disabled={isLoading || (!firstName.trim() && !lastName.trim())}
+            disabled={isLoading || !firstName.trim() || !lastName.trim()}
             className="w-full px-4 py-2 bg-[rgb(51,51,51)] text-white rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-['Almarai',sans-serif]"
           >
             Search
