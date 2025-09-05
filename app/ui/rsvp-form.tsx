@@ -1,10 +1,83 @@
 "use client";
 
 import { WeddingRsvp, WeddingGuest } from "@/lib/definitions";
-import { useActionState, useState, useTransition } from "react";
+import { useActionState, useState, useTransition, useEffect } from "react";
 import { updateRSVP } from "../data/actions";
 
 export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
+  // Add CSS animation for fish swimming
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes swimRight {
+        0% {
+          transform: translateX(0) rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(100px) rotate(10deg);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateX(200px) rotate(0deg);
+          opacity: 0;
+        }
+      }
+      @keyframes walkRight {
+        0% {
+          transform: translateX(0) rotate(0deg) scale(1);
+          opacity: 1;
+        }
+        25% {
+          transform: translateX(50px) rotate(-10deg) scale(1.1);
+          opacity: 0.9;
+        }
+        50% {
+          transform: translateX(100px) rotate(10deg) scale(1);
+          opacity: 0.8;
+        }
+        75% {
+          transform: translateX(150px) rotate(-5deg) scale(0.9);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateX(200px) rotate(0deg) scale(0.8);
+          opacity: 0;
+        }
+      }
+      @keyframes hopRight {
+        0% {
+          transform: translateX(0) translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        20% {
+          transform: translateX(40px) translateY(-10px) rotate(15deg);
+          opacity: 0.9;
+        }
+        40% {
+          transform: translateX(80px) translateY(0) rotate(-10deg);
+          opacity: 0.8;
+        }
+        60% {
+          transform: translateX(120px) translateY(-8px) rotate(10deg);
+          opacity: 0.7;
+        }
+        80% {
+          transform: translateX(160px) translateY(0) rotate(-5deg);
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateX(200px) translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
   const initialState = { message: "", errors: {} };
   const updateRSVPWithId = updateRSVP.bind(null, rsvp.id);
   const [state, dispatch] = useActionState(updateRSVPWithId, initialState);
@@ -23,6 +96,11 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     ),
   );
 
+  // Track meal selection animations
+  const [mealAnimations, setMealAnimations] = useState<{
+    [key: string]: string | null;
+  }>({});
+
   const handleWeddingAttendanceChange = (
     guestId: string,
     isAttending: boolean,
@@ -31,6 +109,25 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
       ...prev,
       [guestId]: isAttending,
     }));
+  };
+
+  const handleMealSelectionChange = (
+    guestId: string,
+    mealType: string,
+  ) => {
+    if (mealType === "fish" || mealType === "vegetarian") {
+      setMealAnimations((prev) => ({
+        ...prev,
+        [guestId]: mealType,
+      }));
+      // Reset animation after 3 seconds
+      setTimeout(() => {
+        setMealAnimations((prev) => ({
+          ...prev,
+          [guestId]: null,
+        }));
+      }, 3000);
+    }
   };
 
   const [formError, setFormError] = useState<string | null>(null);
@@ -298,20 +395,50 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     <div
                       className={`${isFieldInvalid(`dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
                     >
-                      <div className="flex justify-between items-center py-3 border-b border-gray-300">
+                      <div className="flex justify-between items-center py-3 border-b border-gray-300 relative">
                         <span className="!text-black font-['Almarai']">
                           Meal selection
                         </span>
-                        <select
-                          name={`dinner_${guest.id}`}
-                          defaultValue={guest.food_selection || ""}
-                          className="bg-gray-200 border border-gray-300 text-black font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
-                        >
-                          <option value="">Select...</option>
-                          <option value="beef">Beef</option>
-                          <option value="fish">Fish</option>
-                          <option value="vegetarian">Vegetarian</option>
-                        </select>
+                        <div className="relative">
+                          <select
+                            name={`dinner_${guest.id}`}
+                            defaultValue={guest.food_selection || ""}
+                            onChange={(e) => handleMealSelectionChange(guest.id, e.target.value)}
+                            className="bg-[#9fadb1]/50 border border-gray-300 text-black font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
+                          >
+                            <option value="">Select...</option>
+                            <option value="beef">Beef</option>
+                            <option value="fish">Fish</option>
+                            <option value="vegetarian">Vegetarian</option>
+                          </select>
+                          {/* Fish animation */}
+                          {mealAnimations[guest.id] === 'fish' && (
+                            <div className="absolute -top-8 -right-8">
+                              <div 
+                                className="text-2xl"
+                                style={{
+                                  animation: 'swimRight 3s ease-in-out forwards',
+                                }}
+                              >
+                                🐟
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Carrot animation */}
+                          {mealAnimations[guest.id] === 'vegetarian' && (
+                            <div className="absolute -top-8 -right-8">
+                              <div 
+                                className="text-2xl"
+                                style={{
+                                  animation: 'hopRight 3s ease-in-out forwards',
+                                }}
+                              >
+                                🥕
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
                       {isFieldInvalid(`dinner_${guest.id}`) && (
                         <p className="text-red-600 text-sm mt-1 font-['Almarai']">

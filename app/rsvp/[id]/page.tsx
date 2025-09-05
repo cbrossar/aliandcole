@@ -30,7 +30,7 @@ export default async function RsvpPage({
   return (
     <div className="min-h-screen w-full">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row min-h-[80vh] pt-8 bg-[#4a4a4a] text-white relative">
+      <div className="flex flex-col lg:flex-row min-h-[80vh] pt-8 bg-[#9fadb1] text-white relative">
         {/* Left side with decorative flowers */}
         <div className="flex-1 flex items-center justify-center p-4 lg:p-8 pb-16 lg:pb-20 order-2 lg:order-1">
           <div className="relative w-full max-w-xs lg:max-w-sm">
@@ -47,13 +47,17 @@ export default async function RsvpPage({
         {/* Right side with content */}
         <div className="flex-1 flex flex-col justify-center px-8 lg:px-16 order-1 lg:order-2">
           <div className="max-w-lg">
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-['Alice',serif] mb-6 lg:mb-8">
+            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-['Alice',serif] mb-6 lg:mb-8 text-white">
               RSVP
             </h1>
 
-            <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-8 lg:mb-12">
+            <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-8 lg:mb-12 text-white">
               Whether you&apos;re coming for the whole weekend, or just the big
-              day, we&apos;re excited to have you there.
+              day, we&apos;re excited to have you there. 
+            </p>
+
+            <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-8 lg:mb-12 text-white">
+              Kindly respond by the first of March.
             </p>
           </div>
         </div>
