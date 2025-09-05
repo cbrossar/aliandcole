@@ -46,18 +46,18 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
     rsvp.guests.forEach((guest, index) => {
       const welcomePartyField = form.querySelector(
-        `select[name="welcome_party_${guest.id}"]`,
-      ) as HTMLSelectElement;
+        `input[name="welcome_party_${guest.id}"]:checked`,
+      ) as HTMLInputElement;
       const weddingField = form.querySelector(
-        `select[name="wedding_${guest.id}"]`,
-      ) as HTMLSelectElement;
+        `input[name="wedding_${guest.id}"]:checked`,
+      ) as HTMLInputElement;
 
-      if (!welcomePartyField || welcomePartyField.value === "") {
+      if (!welcomePartyField) {
         missingFields.push(`Guest ${index + 1} - Welcome Party attendance`);
         newInvalidFields.add(`welcome_party_${guest.id}`);
       }
 
-      if (!weddingField || weddingField.value === "") {
+      if (!weddingField) {
         missingFields.push(`Guest ${index + 1} - Wedding attendance`);
         newInvalidFields.add(`wedding_${guest.id}`);
       }
@@ -99,44 +99,53 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     >
       <div className="max-w-2xl mx-auto px-6 py-12">
         <form onSubmit={handleSubmit} className="space-y-12">
-          {/* Guest Sections */}
-          {rsvp.guests.map((guest: WeddingGuest) => (
-            <div
-              key={guest.id}
-              className="bg-white/60 rounded-lg p-8 shadow-sm"
-            >
-              {/* Guest Name Header */}
-              <div className="mb-8">
-                <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
-                  {guest.first_name} {guest.last_name}
-                </h2>
-                <div className="border-t border-gray-300 opacity-50"></div>
-              </div>
+          {/* Welcome Party Section */}
+          <div className="bg-white/60 rounded-lg p-8 shadow-sm">
+            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
+              Welcome Party
+            </h2>
+            <div className="border-t-2 border-gray-400 mb-6"></div>
 
-              <div className="space-y-4">
-                {/* Welcome Party Attendance */}
+            <div className="space-y-6">
+              {rsvp.guests.map((guest: WeddingGuest, index) => (
                 <div
-                  className={`${isFieldInvalid(`welcome_party_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                  key={`welcome_${guest.id}`}
+                  className={`${isFieldInvalid(`welcome_party_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""} ${index < rsvp.guests.length - 1 ? "border-b-2 border-gray-400 pb-6" : ""}`}
                 >
-                  <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
-                    <span className="text-gray-800 font-['Almarai']">
-                      Will you attend the Welcome Party?
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-black font-['Almarai']">
+                      {guest.first_name} {guest.last_name}
                     </span>
-                    <select
-                      name={`welcome_party_${guest.id}`}
-                      defaultValue={
-                        guest.is_attending_welcome_party === true
-                          ? "yes"
-                          : guest.is_attending_welcome_party === false
-                            ? "no"
-                            : ""
-                      }
-                      className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
-                    >
-                      <option value="">Select...</option>
-                      <option value="yes">Yes!</option>
-                      <option value="no">No</option>
-                    </select>
+                    <div className="flex space-x-6">
+                      <label className="flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name={`welcome_party_${guest.id}`}
+                          value="yes"
+                          defaultChecked={
+                            guest.is_attending_welcome_party === true
+                          }
+                          className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                        />
+                        <span className="text-black font-['Almarai']">
+                          Will Attend
+                        </span>
+                      </label>
+                      <label className="flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name={`welcome_party_${guest.id}`}
+                          value="no"
+                          defaultChecked={
+                            guest.is_attending_welcome_party === false
+                          }
+                          className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                        />
+                        <span className="text-black font-['Almarai']">
+                          Will Not Attend
+                        </span>
+                      </label>
+                    </div>
                   </div>
                   {isFieldInvalid(`welcome_party_${guest.id}`) && (
                     <p className="text-red-600 text-sm mt-1 font-['Almarai']">
@@ -144,100 +153,138 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     </p>
                   )}
                 </div>
+              ))}
+            </div>
+          </div>
 
-                {/* Wedding Attendance */}
+          {/* Wedding Section */}
+          <div className="bg-white/60 rounded-lg p-8 shadow-sm">
+            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
+              Wedding
+            </h2>
+            <div className="border-t-2 border-gray-400 mb-6"></div>
+
+            <div className="space-y-6">
+              {rsvp.guests.map((guest: WeddingGuest, index) => (
                 <div
-                  className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                  key={`wedding_${guest.id}`}
+                  className={`space-y-4 ${index < rsvp.guests.length - 1 ? "border-b-2 border-gray-400 pb-6" : ""}`}
                 >
-                  <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
-                    <span className="text-gray-800 font-['Almarai']">
-                      Will you attend the Wedding?
-                    </span>
-                    <select
-                      name={`wedding_${guest.id}`}
-                      defaultValue={
-                        guest.is_attending_wedding === true
-                          ? "yes"
-                          : guest.is_attending_wedding === false
-                            ? "no"
-                            : ""
-                      }
-                      onChange={(e) =>
-                        handleWeddingAttendanceChange(
-                          guest.id,
-                          e.target.value === "yes",
-                        )
-                      }
-                      className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
-                    >
-                      <option value="">Select...</option>
-                      <option value="yes">Yes!</option>
-                      <option value="no">No</option>
-                    </select>
-                  </div>
-                  {isFieldInvalid(`wedding_${guest.id}`) && (
-                    <p className="text-red-600 text-sm mt-1 font-['Almarai']">
-                      Please select an option
-                    </p>
-                  )}
-                </div>
-
-                {/* Wedding Dinner Selection - Only show if attending wedding */}
-                {weddingAttendance[guest.id] && (
+                  {/* Wedding Attendance */}
                   <div
-                    className={`${isFieldInvalid(`dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                    className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
                   >
                     <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
-                      <span className="text-gray-800 font-['Almarai']">
-                        Please let us know which meal option you prefer
+                      <span className="text-black font-['Almarai']">
+                        {guest.first_name} {guest.last_name}
                       </span>
-                      <select
-                        name={`dinner_${guest.id}`}
-                        defaultValue={guest.food_selection || ""}
-                        className="bg-gray-200 border border-gray-300 text-gray-800 font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
-                      >
-                        <option value="">Select...</option>
-                        <option value="beef">Beef</option>
-                        <option value="fish">Fish</option>
-                        <option value="vegetarian">Vegetarian</option>
-                      </select>
+                      <div className="flex space-x-6">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name={`wedding_${guest.id}`}
+                            value="yes"
+                            defaultChecked={guest.is_attending_wedding === true}
+                            onChange={(e) =>
+                              handleWeddingAttendanceChange(
+                                guest.id,
+                                e.target.value === "yes",
+                              )
+                            }
+                            className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                          />
+                          <span className="text-black font-['Almarai']">
+                            Will Attend
+                          </span>
+                        </label>
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name={`wedding_${guest.id}`}
+                            value="no"
+                            defaultChecked={
+                              guest.is_attending_wedding === false
+                            }
+                            onChange={(e) =>
+                              handleWeddingAttendanceChange(
+                                guest.id,
+                                e.target.value === "yes",
+                              )
+                            }
+                            className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                          />
+                          <span className="text-black font-['Almarai']">
+                            Will Not Attend
+                          </span>
+                        </label>
+                      </div>
                     </div>
-                    {isFieldInvalid(`dinner_${guest.id}`) && (
+                    {isFieldInvalid(`wedding_${guest.id}`) && (
                       <p className="text-red-600 text-sm mt-1 font-['Almarai']">
-                        Please select a meal option
+                        Please select an option
                       </p>
                     )}
                   </div>
-                )}
 
-                {/* Dietary Restrictions */}
-                <div className="py-3 border-b border-gray-300 opacity-50">
-                  <span className="text-gray-800 font-['Almarai']">
-                    Do you have any dietary restrictions or allergies?
-                  </span>
-                  <input
-                    type="text"
-                    name={`dietary_restrictions_${guest.id}`}
-                    defaultValue={guest.dietary_restrictions || ""}
-                    placeholder="Enter any restrictions..."
-                    className="w-full mt-2 bg-transparent border-none text-gray-800 font-['Almarai'] focus:outline-none placeholder-gray-500"
-                  />
+                  {/* Wedding Dinner Selection - Only show if attending wedding */}
+                  {weddingAttendance[guest.id] && (
+                    <div
+                      className={`${isFieldInvalid(`dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
+                    >
+                      <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
+                        <span className="!text-black font-['Almarai']">
+                          Meal selection for {guest.first_name}
+                        </span>
+                        <select
+                          name={`dinner_${guest.id}`}
+                          defaultValue={guest.food_selection || ""}
+                          className="bg-gray-200 border border-gray-300 text-black font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
+                        >
+                          <option value="">Select...</option>
+                          <option value="beef">Beef</option>
+                          <option value="fish">Fish</option>
+                          <option value="vegetarian">Vegetarian</option>
+                        </select>
+                      </div>
+                      {isFieldInvalid(`dinner_${guest.id}`) && (
+                        <p className="text-red-600 text-sm mt-1 font-['Almarai']">
+                          Please select a meal option
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Dietary Restrictions - Only show if attending wedding */}
+                  {weddingAttendance[guest.id] && (
+                    <div className="py-3 border-b border-gray-300 opacity-50">
+                      <span className="!text-black font-['Almarai']">
+                        Dietary restrictions for {guest.first_name}
+                      </span>
+                      <input
+                        type="text"
+                        name={`dietary_restrictions_${guest.id}`}
+                        defaultValue={guest.dietary_restrictions || ""}
+                        placeholder="Enter any restrictions..."
+                        className="w-full mt-2 bg-transparent border-none text-black font-['Almarai'] focus:outline-none placeholder-gray-700"
+                      />
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
 
           {/* Optional Information Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
             <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
               Optional Information
             </h2>
-            <div className="border-t border-gray-300 opacity-50 mb-6"></div>
+            <div className="border-t-2 border-gray-400 mb-6"></div>
 
             <div className="space-y-4">
               {/* Where are you staying */}
               <div className="py-3 border-b border-gray-300 opacity-50">
-                <span className="text-gray-800 font-['Almarai']">
+                <span className="!text-black font-['Almarai']">
                   Where are you staying? (Optional)
                 </span>
                 <input
@@ -245,13 +292,13 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   name="stay"
                   defaultValue={rsvp.stay || ""}
                   placeholder="Hotel name, Airbnb, etc."
-                  className="w-full mt-2 bg-transparent border-none text-gray-800 font-['Almarai'] focus:outline-none placeholder-gray-500"
+                  className="w-full mt-2 bg-transparent border-none text-black font-['Almarai'] focus:outline-none placeholder-gray-700"
                 />
               </div>
 
               {/* Song request */}
               <div className="py-3 border-b border-gray-300 opacity-50">
-                <span className="text-gray-800 font-['Almarai']">
+                <span className="!text-black font-['Almarai']">
                   Song request for the wedding (Optional)
                 </span>
                 <input
@@ -259,7 +306,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   name="song"
                   defaultValue={rsvp.song || ""}
                   placeholder="Artist - Song Title"
-                  className="w-full mt-2 bg-transparent border-none text-gray-800 font-['Almarai'] focus:outline-none placeholder-gray-500"
+                  className="w-full mt-2 bg-transparent border-none text-black font-['Almarai'] focus:outline-none placeholder-gray-700"
                 />
               </div>
             </div>
