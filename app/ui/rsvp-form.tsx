@@ -109,9 +109,43 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* Welcome Party Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
+            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
               Welcome Party
             </h2>
+            
+            <div className="text-center mb-6 space-y-4">
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai'] text-lg">
+                  Friday, June 5, 2026 - 6pm
+                </p>
+                <p className="text-black font-['Almarai'] italic">
+                  Hosted by Rich and Laura Brossart
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai']">
+                  <a 
+                    href="https://maps.app.goo.gl/KBBq7pcw8jjvW19k6" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#8E9B8E] hover:text-[#7A8A7A] underline"
+                  >
+                    Olea Bosphorus & The Bar
+                  </a>
+                </p>
+                <p className="text-black font-['Almarai']">
+                  Mandarin Oriental
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai']">
+                Please join us for an evening of cocktails and hors d’oeuvres along the Bosphorus as we begin our wedding celebrations.
+                </p>
+                <p className="text-black font-['Almarai']">
+                <span className="italic">Bosphorus Chic</span> — cocktail dresses (color encouraged), summer jackets, no tie required.
+                </p>
+              </div>
+            </div>
             <div className="border-t-2 border-gray-400 mb-6"></div>
 
             <div className="space-y-6">
@@ -167,9 +201,34 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* Wedding Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
-              Wedding
+            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+              Wedding Ceremony & Reception
             </h2>
+            
+            <div className="text-center mb-6 space-y-4">
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai'] text-lg">
+                  Saturday, June 6, 2026 - 6pm
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai']">
+                  <a
+                    href="https://maps.app.goo.gl/EQPrtGE75U5hKj3Z9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-[#8E9B8E] hover:text-[#6b7a6b] transition-colors"
+                  >
+                    Çırağan Palace, East Garden &amp; Bosphorus Pier Lounge
+                  </a>
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai']">
+                <span className="italic">Black tie</span> - celebrations are planned to be outdoors, please plan your attire and packing with this in mind.
+                </p>
+              </div>
+            </div>
             <div className="border-t-2 border-gray-400 mb-6"></div>
 
             <div className="space-y-6">
@@ -284,9 +343,34 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* After Party Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
+            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
               After Party
             </h2>
+            
+            <div className="text-center mb-6 space-y-4">
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai'] text-lg">
+                  Sunday, June 7, 2026 - 12am
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai']">
+                    <a
+                      href="https://maps.app.goo.gl/89HvXQVtudM78bNw6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-[#8E9B8E] hover:text-[#6b7a6b] transition-colors"
+                    >
+                      Çırağan Palace, Enderun Ballroom
+                    </a>
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-black font-['Almarai']">
+                  After the party is the after-party. This can be a game time decision, we just want to know who can hang.
+                </p>
+              </div>
+            </div>
             <div className="border-t-2 border-gray-400 mb-6"></div>
 
             <div className="space-y-6">
@@ -342,7 +426,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* Optional Information Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2">
+            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
               Optional Information
             </h2>
             <div className="border-t-2 border-gray-400 mb-6"></div>
@@ -365,7 +449,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
               {/* Song request */}
               <div className="py-3 border-b border-gray-300">
                 <span className="!text-black font-['Almarai']">
-                  Song request for the wedding
+                  Song request for the after party...
                 </span>
                 <input
                   type="text"
