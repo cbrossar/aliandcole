@@ -174,7 +174,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   <div
                     className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
                   >
-                    <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
+                    <div className={`flex justify-between items-center py-3 ${weddingAttendance[guest.id] ? 'border-b border-gray-300' : ''}`}>
                       <span className="text-black font-['Almarai']">
                         {guest.first_name} {guest.last_name}
                       </span>
@@ -231,9 +231,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     <div
                       className={`${isFieldInvalid(`dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
                     >
-                      <div className="flex justify-between items-center py-3 border-b border-gray-300 opacity-50">
+                      <div className="flex justify-between items-center py-3 border-b border-gray-300">
                         <span className="!text-black font-['Almarai']">
-                          Meal selection for {guest.first_name}
+                          Meal selection
                         </span>
                         <select
                           name={`dinner_${guest.id}`}
@@ -256,9 +256,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
                   {/* Dietary Restrictions - Only show if attending wedding */}
                   {weddingAttendance[guest.id] && (
-                    <div className="py-3 border-b border-gray-300 opacity-50">
+                    <div className="py-3">
                       <span className="!text-black font-['Almarai']">
-                        Dietary restrictions for {guest.first_name}
+                        Dietary restrictions?
                       </span>
                       <input
                         type="text"
@@ -283,7 +283,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
             <div className="space-y-4">
               {/* Where are you staying */}
-              <div className="py-3 border-b border-gray-300 opacity-50">
+              <div className="py-3 border-b border-gray-300">
                 <span className="!text-black font-['Almarai']">
                   Where are you staying? (Optional)
                 </span>
@@ -297,7 +297,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
               </div>
 
               {/* Song request */}
-              <div className="py-3 border-b border-gray-300 opacity-50">
+              <div className="py-3 border-b border-gray-300">
                 <span className="!text-black font-['Almarai']">
                   Song request for the wedding (Optional)
                 </span>
