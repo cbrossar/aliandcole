@@ -44,7 +44,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     const missingFields: string[] = [];
     const newInvalidFields = new Set<string>();
 
-    rsvp.guests.forEach((guest, index) => {
+    rsvp.guests.forEach((guest) => {
       const welcomePartyField = form.querySelector(
         `input[name="welcome_party_${guest.id}"]:checked`,
       ) as HTMLInputElement;
