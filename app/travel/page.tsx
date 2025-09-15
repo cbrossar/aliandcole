@@ -15,14 +15,8 @@ export default function Travel() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-semibold mb-8 font-['Alice',serif] text-center text-gray-800">Where to Stay</h2>
           <div className="mb-16">
-            <p className="text-center max-w-3xl mb-6 font-['Alice',serif] mx-auto text-gray-700 text-lg leading-relaxed">
-              For those coming from out of town, we recommend staying on the west side of Los Angeles in either Santa Monica or Venice Beach. This area will be close to both the welcome party on Friday and the shuttle pick up / drop off for the wedding on Saturday.
-            </p>
-            <p className="text-center max-w-3xl mb-6 font-['Alice',serif] mx-auto text-gray-700 text-lg leading-relaxed">
-              LA traffic can be iconically bad, so being close to the shuttle pick up location at the Sandbourne in Santa Monica on Saturday will help ensure that you&apos;re on time for the ceremony.
-            </p>
             <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-lg leading-relaxed">
-              If you need some recommendations for bars or restaurants in the area - check out our rec list below!
+              We've rounded up a few hotel options in Istanbul to make your stay easy and enjoyable. All of these are on or near the Bosphorus and close to our wedding events, so you'll be right in the heart of the celebration.
             </p>
           </div>
           
