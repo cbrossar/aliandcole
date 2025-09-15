@@ -135,11 +135,18 @@ export default function Travel() {
           {/* Car Icon */}
           <div className="flex justify-center mb-8 sm:mb-12 md:mb-16">
             <svg xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" style={{color: "rgb(96, 91, 72)"}}>
+              {/* Car body */}
               <path d="M3 17h18v-3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3z"/>
-              <path d="M5 17H3v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3h-2"/>
+              {/* Windshield */}
+              <path d="M7 15V9h10v6"/>
+              {/* Wheels */}
               <circle cx="7" cy="17" r="2"/>
               <circle cx="17" cy="17" r="2"/>
-              <path d="M7 15V9h10v6"/>
+              {/* Taxi roof sign */}
+              <rect x="10" y="6" width="4" height="2" rx="0.5"/>
+              {/* Taxi sign text lines */}
+              <line x1="10.5" y1="6.5" x2="13.5" y2="6.5"/>
+              <line x1="10.5" y1="7.5" x2="13.5" y2="7.5"/>
             </svg>
           </div>
           
