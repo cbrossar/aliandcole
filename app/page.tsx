@@ -37,7 +37,7 @@ export default function Home() {
             <FadeInOnScroll direction="right" delay={400}>
               <div className="relative w-full max-w-sm lg:max-w-4xl xl:max-w-5xl">
                 <Image
-                  src="/images/home/look-back.jpg"
+                  src="/images/home/look-back-edits.JPG"
                   alt="Ali and Cole"
                   width={1000}
                   height={1500}
