@@ -16,7 +16,7 @@ export default function Travel() {
           <h2 className="text-4xl font-semibold mb-8 font-['Alice',serif] text-center text-gray-800">Where to Stay</h2>
           <div className="mb-16">
             <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-lg leading-relaxed">
-              We've rounded up a few hotel options in Istanbul to make your stay easy and enjoyable. All of these are on or near the Bosphorus and close to our wedding events, so you'll be right in the heart of the celebration.
+              We&apos;ve rounded up a few hotel options in Istanbul to make your stay easy and enjoyable. All of these are on or near the Bosphorus and close to our wedding events, so you&apos;ll be right in the heart of the celebration.
             </p>
           </div>
           
