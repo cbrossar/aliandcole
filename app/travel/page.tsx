@@ -19,7 +19,7 @@ export default function Travel() {
               For those coming from out of town, we recommend staying on the west side of Los Angeles in either Santa Monica or Venice Beach. This area will be close to both the welcome party on Friday and the shuttle pick up / drop off for the wedding on Saturday.
             </p>
             <p className="text-center max-w-3xl mb-6 font-['Alice',serif] mx-auto text-gray-700 text-lg leading-relaxed">
-              LA traffic can be iconically bad, so being close to the shuttle pick up location at the Sandbourne in Santa Monica on Saturday will help ensure that you're on time for the ceremony.
+              LA traffic can be iconically bad, so being close to the shuttle pick up location at the Sandbourne in Santa Monica on Saturday will help ensure that you&apos;re on time for the ceremony.
             </p>
             <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-lg leading-relaxed">
               If you need some recommendations for bars or restaurants in the area - check out our rec list below!
@@ -39,7 +39,7 @@ export default function Travel() {
               </div>
               <h3 className="text-2xl font-serif mb-4 text-gray-800">Çırağan Palace Kempinski</h3>
               <p className="text-sm text-left mb-6 text-gray-600 leading-relaxed">
-               If you want the full experience, stay where we're getting married! The Çırağan Palace is a former Ottoman palace right on the Bosphorus, with stunning views, gardens, and plenty of history. We'll have a special room block here soon!
+               If you want the full experience, stay where we&apos;re getting married! The Çırağan Palace is a former Ottoman palace right on the Bosphorus, with stunning views, gardens, and plenty of history. We&apos;ll have a special room block here soon!
               </p>
               <button className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700">
                 View
@@ -57,7 +57,7 @@ export default function Travel() {
               </div>
               <h3 className="text-2xl font-serif mb-4 text-gray-800">Stay Boutique Hotel</h3>
               <p className="text-sm text-left mb-6 text-gray-600 leading-relaxed">
-              A smaller, stylish spot with a modern vibe. Stay Boutique is cozy but chic, with thoughtful details and a great location for exploring the city. Perfect if you're looking for something more laid-back but still polished.
+              A smaller, stylish spot with a modern vibe. Stay Boutique is cozy but chic, with thoughtful details and a great location for exploring the city. Perfect if you&apos;re looking for something more laid-back but still polished.
               Check out Stay Boutique.
               </p>
               <button className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700">
@@ -76,7 +76,7 @@ export default function Travel() {
               </div>
               <h3 className="text-2xl font-serif mb-4 text-gray-800">Swissôtel The Bosphorus</h3>
               <p className="text-sm text-left mb-6 text-gray-600 leading-relaxed">
-              A classic favorite in Istanbul — Swissôtel has beautiful Bosphorus views, a huge spa, and lots of restaurants. It's a great mix of luxury and convenience, and a wonderful home base for the weekend.
+              A classic favorite in Istanbul — Swissôtel has beautiful Bosphorus views, a huge spa, and lots of restaurants. It&apos;s a great mix of luxury and convenience, and a wonderful home base for the weekend.
               View Swissôtel.
               </p>
               <button className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700">
