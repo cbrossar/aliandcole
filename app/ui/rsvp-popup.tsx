@@ -71,10 +71,8 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
         const guestNormalizedFirstName = normalizeText(guest.first_name);
         const guestNormalizedLastName = normalizeText(guest.last_name);
 
-        const firstNameMatch =
-          guestNormalizedFirstName === normalizedFirstName;
-        const lastNameMatch =
-          normalizedLastName === guestNormalizedLastName;
+        const firstNameMatch = guestNormalizedFirstName === normalizedFirstName;
+        const lastNameMatch = normalizedLastName === guestNormalizedLastName;
         return firstNameMatch && lastNameMatch;
       }),
     );

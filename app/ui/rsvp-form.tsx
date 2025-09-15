@@ -7,7 +7,7 @@ import { updateRSVP } from "../data/actions";
 export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   // Add CSS animation for fish swimming
   useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       @keyframes swimRight {
         0% {
@@ -73,7 +73,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
       }
     `;
     document.head.appendChild(style);
-    
+
     return () => {
       document.head.removeChild(style);
     };
@@ -111,10 +111,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     }));
   };
 
-  const handleMealSelectionChange = (
-    guestId: string,
-    mealType: string,
-  ) => {
+  const handleMealSelectionChange = (guestId: string, mealType: string) => {
     if (mealType === "fish" || mealType === "vegetarian") {
       setMealAnimations((prev) => ({
         ...prev,
@@ -153,17 +150,23 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
       ) as HTMLInputElement;
 
       if (!welcomePartyField) {
-        missingFields.push(`${guest.first_name} ${guest.last_name} - Welcome Party attendance`);
+        missingFields.push(
+          `${guest.first_name} ${guest.last_name} - Welcome Party attendance`,
+        );
         newInvalidFields.add(`welcome_party_${guest.id}`);
       }
 
       if (!weddingField) {
-        missingFields.push(`${guest.first_name} ${guest.last_name} - Wedding attendance`);
+        missingFields.push(
+          `${guest.first_name} ${guest.last_name} - Wedding attendance`,
+        );
         newInvalidFields.add(`wedding_${guest.id}`);
       }
 
       if (!afterPartyField) {
-        missingFields.push(`${guest.first_name} ${guest.last_name} - After Party attendance`);
+        missingFields.push(
+          `${guest.first_name} ${guest.last_name} - After Party attendance`,
+        );
         newInvalidFields.add(`after_party_${guest.id}`);
       }
 
@@ -173,7 +176,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
           `select[name="dinner_${guest.id}"]`,
         ) as HTMLSelectElement;
         if (!dinnerField || dinnerField.value === "") {
-          missingFields.push(`${guest.first_name} ${guest.last_name} - Dinner selection`);
+          missingFields.push(
+            `${guest.first_name} ${guest.last_name} - Dinner selection`,
+          );
           newInvalidFields.add(`dinner_${guest.id}`);
         }
       }
@@ -209,7 +214,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
             <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
               Welcome Party
             </h2>
-            
+
             <div className="text-center mb-6 space-y-4">
               <div className="space-y-1">
                 <p className="text-black font-['Almarai'] text-lg">
@@ -221,25 +226,25 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
               </div>
               <div className="space-y-1">
                 <p className="text-black font-['Almarai']">
-                  <a 
-                    href="https://maps.app.goo.gl/KBBq7pcw8jjvW19k6" 
-                    target="_blank" 
+                  <a
+                    href="https://maps.app.goo.gl/KBBq7pcw8jjvW19k6"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#8E9B8E] hover:text-[#7A8A7A] underline"
                   >
                     Olea Bosphorus & The Bar
                   </a>
                 </p>
-                <p className="text-black font-['Almarai']">
-                  Mandarin Oriental
-                </p>
+                <p className="text-black font-['Almarai']">Mandarin Oriental</p>
               </div>
               <div className="space-y-1">
                 <p className="text-black font-['Almarai']">
-                Please join us for an evening of cocktails and hors d’oeuvres along the Bosphorus as we begin our wedding celebrations.
+                  Please join us for an evening of cocktails and hors d’oeuvres
+                  along the Bosphorus as we begin our wedding celebrations.
                 </p>
                 <p className="text-black font-['Almarai']">
-                <span className="italic">Bosphorus Chic</span> — cocktail dresses (color encouraged), summer jackets, no tie required.
+                  <span className="italic">Bosphorus Chic</span> — cocktail
+                  dresses (color encouraged), summer jackets, no tie required.
                 </p>
               </div>
             </div>
@@ -301,7 +306,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
             <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
               Wedding Ceremony & Reception
             </h2>
-            
+
             <div className="text-center mb-6 space-y-4">
               <div className="space-y-1">
                 <p className="text-black font-['Almarai'] text-lg">
@@ -322,7 +327,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
               </div>
               <div className="space-y-1">
                 <p className="text-black font-['Almarai']">
-                <span className="italic">Black tie</span> - celebrations are planned to be outdoors, please plan your attire and packing with this in mind.
+                  <span className="italic">Black tie</span> - celebrations are
+                  planned to be outdoors, please plan your attire and packing
+                  with this in mind.
                 </p>
               </div>
             </div>
@@ -338,7 +345,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   <div
                     className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
                   >
-                    <div className={`flex justify-between items-center py-3 ${weddingAttendance[guest.id] ? 'border-b border-gray-300' : ''}`}>
+                    <div
+                      className={`flex justify-between items-center py-3 ${weddingAttendance[guest.id] ? "border-b border-gray-300" : ""}`}
+                    >
                       <span className="text-black font-['Almarai']">
                         {guest.first_name} {guest.last_name}
                       </span>
@@ -403,7 +412,12 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                           <select
                             name={`dinner_${guest.id}`}
                             defaultValue={guest.food_selection || ""}
-                            onChange={(e) => handleMealSelectionChange(guest.id, e.target.value)}
+                            onChange={(e) =>
+                              handleMealSelectionChange(
+                                guest.id,
+                                e.target.value,
+                              )
+                            }
                             className="bg-[#9fadb1]/50 border border-gray-300 text-black font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
                           >
                             <option value="">Select...</option>
@@ -412,26 +426,27 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                             <option value="vegetarian">Vegetarian</option>
                           </select>
                           {/* Fish animation */}
-                          {mealAnimations[guest.id] === 'fish' && (
+                          {mealAnimations[guest.id] === "fish" && (
                             <div className="absolute -top-8 -right-8">
-                              <div 
+                              <div
                                 className="text-2xl"
                                 style={{
-                                  animation: 'swimRight 3s ease-in-out forwards',
+                                  animation:
+                                    "swimRight 3s ease-in-out forwards",
                                 }}
                               >
                                 🐟
                               </div>
                             </div>
                           )}
-                          
+
                           {/* Carrot animation */}
-                          {mealAnimations[guest.id] === 'vegetarian' && (
+                          {mealAnimations[guest.id] === "vegetarian" && (
                             <div className="absolute -top-8 -right-8">
-                              <div 
+                              <div
                                 className="text-2xl"
                                 style={{
-                                  animation: 'hopRight 3s ease-in-out forwards',
+                                  animation: "hopRight 3s ease-in-out forwards",
                                 }}
                               >
                                 🥕
@@ -473,7 +488,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
             <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
               After Party
             </h2>
-            
+
             <div className="text-center mb-6 space-y-4">
               <div className="space-y-1">
                 <p className="text-black font-['Almarai'] text-lg">
@@ -482,19 +497,20 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
               </div>
               <div className="space-y-1">
                 <p className="text-black font-['Almarai']">
-                    <a
-                      href="https://maps.app.goo.gl/89HvXQVtudM78bNw6"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline text-[#8E9B8E] hover:text-[#6b7a6b] transition-colors"
-                    >
-                      Çırağan Palace, Enderun Ballroom
-                    </a>
+                  <a
+                    href="https://maps.app.goo.gl/89HvXQVtudM78bNw6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-[#8E9B8E] hover:text-[#6b7a6b] transition-colors"
+                  >
+                    Çırağan Palace, Enderun Ballroom
+                  </a>
                 </p>
               </div>
               <div className="space-y-1">
                 <p className="text-black font-['Almarai']">
-                  After the party is the after-party. This can be a game time decision, we just want to know who can hang.
+                  After the party is the after-party. This can be a game time
+                  decision, we just want to know who can hang.
                 </p>
               </div>
             </div>

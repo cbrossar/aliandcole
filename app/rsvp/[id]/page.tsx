@@ -53,7 +53,7 @@ export default async function RsvpPage({
 
             <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-8 lg:mb-12 text-white">
               Whether you&apos;re coming for the whole weekend, or just the big
-              day, we&apos;re excited to have you there. 
+              day, we&apos;re excited to have you there.
             </p>
 
             <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-8 lg:mb-12 text-white">
