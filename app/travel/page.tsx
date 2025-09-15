@@ -3,7 +3,7 @@ export default function Travel() {
     <div className="w-full min-h-screen flex">
       {/* Left Tulip Background */}
       <div 
-        className="w-80 min-h-screen bg-repeat-y bg-top"
+        className="w-40 min-h-screen bg-repeat-y bg-top"
         style={{
           backgroundImage: "url('/images/travel/light-tulip-background.png')",
           backgroundSize: "800px auto"
@@ -35,9 +35,14 @@ export default function Travel() {
               <p className="text-sm text-left mb-6 text-gray-600 leading-relaxed">
                If you want the full experience, stay where we&apos;re getting married! The Çırağan Palace is a former Ottoman palace right on the Bosphorus, with stunning views, gardens, and plenty of history. We&apos;ll have a special room block here soon!
               </p>
-              <button className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700">
+              <a
+                href="https://www.kempinski.com/en/ciragan-palace/overview"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block"
+              >
                 View
-              </button>
+              </a>
             </div>
 
             {/* The Stay */}
@@ -49,14 +54,18 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-serif mb-4 text-gray-800">Stay Boutique Hotel</h3>
+              <h3 className="text-2xl font-serif mb-4 text-gray-800">The Stay</h3>
               <p className="text-sm text-left mb-6 text-gray-600 leading-relaxed">
-              A smaller, stylish spot with a modern vibe. Stay Boutique is cozy but chic, with thoughtful details and a great location for exploring the city. Perfect if you&apos;re looking for something more laid-back but still polished.
-              Check out Stay Boutique.
+              A smaller, stylish spot with a modern vibe. The Stay is cozy but chic, with thoughtful details and a great location for exploring the city. Perfect if you&apos;re looking for something more laid-back but still polished.
               </p>
-              <button className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700">
+              <a
+                href="https://www.thestay.com.tr/the-stay-bosphorus-hotel.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block"
+              >
                 View
-              </button>
+              </a>
             </div>
 
             {/* The Swiss Hotel */}
@@ -70,12 +79,16 @@ export default function Travel() {
               </div>
               <h3 className="text-2xl font-serif mb-4 text-gray-800">Swissôtel The Bosphorus</h3>
               <p className="text-sm text-left mb-6 text-gray-600 leading-relaxed">
-              A classic favorite in Istanbul — Swissôtel has beautiful Bosphorus views, a huge spa, and lots of restaurants. It&apos;s a great mix of luxury and convenience, and a wonderful home base for the weekend.
-              View Swissôtel.
+              A classic favorite in Istanbul — Swissôtel has ßbeautiful Bosphorus views, a huge spa, and lots of restaurants. It&apos;s a great mix of luxury and convenience, and a wonderful home base for the weekend.
               </p>
-              <button className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700">
+              <a
+                href="https://www.swissotel.com/hotels/istanbul/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block"
+              >
                 View
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -83,7 +96,7 @@ export default function Travel() {
       
       {/* Right Tulip Background */}
       <div 
-        className="w-80 min-h-screen bg-repeat-y bg-top"
+        className="w-40 min-h-screen bg-repeat-y bg-top"
         style={{
           backgroundImage: "url('/images/travel/light-tulip-background.png')",
           backgroundSize: "800px auto"
