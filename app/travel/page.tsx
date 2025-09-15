@@ -235,13 +235,16 @@ export default function Travel() {
 
           {/* Transportation Information */}
           <div className="mb-8 sm:mb-12 md:mb-16">
-            <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
+            <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0 mb-4">
               Taxis and ride apps like Uber are both available from Istanbul
               Airport. If you take a taxi, be sure to ask the driver to turn on
               the meter, otherwise they may try to give you a flat tourist price
               that&apos;s much higher. A metered taxi from IST to the Bosphorus
               hotels should typically cost around 800–1,200 TL ($25–40 USD),
               depending on traffic. The ride usually takes 45–60 minutes.
+            </p>
+            <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
+              If you would like to set up an airport transfer to the Çırağan Palace in advance, please reach out to our contact Gizem at gizem.celikoglu@kempinski.com
             </p>
           </div>
         </div>
