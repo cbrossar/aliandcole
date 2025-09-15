@@ -3,10 +3,10 @@ export default function Travel() {
     <div className="w-full min-h-screen flex">
       {/* Left Tulip Background */}
       <div 
-        className="w-80 h-screen bg-cover bg-center bg-no-repeat"
+        className="w-80 min-h-screen bg-repeat-y bg-top"
         style={{
           backgroundImage: "url('/images/travel/light-tulip-background.png')",
-          backgroundSize: "cover"
+          backgroundSize: "800px auto"
         }}
       />
       
@@ -89,10 +89,10 @@ export default function Travel() {
       
       {/* Right Tulip Background */}
       <div 
-        className="w-80 h-screen bg-cover bg-center bg-no-repeat"
+        className="w-80 min-h-screen bg-repeat-y bg-top"
         style={{
           backgroundImage: "url('/images/travel/light-tulip-background.png')",
-          backgroundSize: "cover"
+          backgroundSize: "800px auto"
         }}
       />
     </div>
