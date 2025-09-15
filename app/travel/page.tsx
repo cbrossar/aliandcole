@@ -107,6 +107,52 @@ export default function Travel() {
             </div>
           </div>
         </div>
+        
+        {/* How to Get There Section */}
+        <div className="mt-16 sm:mt-20 md:mt-24">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-8 font-['Alice',serif] text-center text-gray-800">How to Get There</h2>
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
+              Istanbul is well-connected to major cities around the world. Here&apos;s everything you need to know about getting to our wedding destination.
+            </p>
+          </div>
+          
+          {/* Flight Icon */}
+          <div className="flex justify-center mb-8 sm:mb-12 md:mb-16">
+            <svg xmlns="http://www.w3.org/2000/svg" role="img" className="zui-svg-icon" width="64px" height="64px" viewBox="0 0 26 32" color="currentColor" fill="transparent" style={{width: "64px", height: "64px", color: "rgb(96, 91, 72)", marginBottom: "24px"}} aria-labelledby="Airplane Outline15">
+              <title id="Airplane Outline15">Airplane Outline</title>
+              <path d="m13.03 25.609-5.4968 2.9182v-1.9917l2.8485-2.9689v-7.0538l-9.9295 3.8672v-1.9227l9.981-7.2204v-7.4903s0.0019-0.84173 0.4864-1.5667c0.361-0.54007 0.9897-1.0153 2.085-1.0296 0.0085-3.3e-4 0.017-3e-4 0.0254-2.5e-4 0.0085-5e-5 0.017-8e-5 0.0254-8e-5 1.0954 0.01459 1.7241 0.48986 2.0851 1.0299 0.4845 0.72498 0.4864 1.5667 0.4864 1.5667v7.4903l9.981 7.2204v1.9227l-9.9295-3.8672v7.0538l2.8485 2.9689v1.9917l-5.4969-2.9182z" clipRule="evenodd" fillRule="evenodd" stroke="currentColor" strokeLinejoin="round" strokeWidth=".52147"></path>
+            </svg>
+          </div>
+          
+          {/* Airport Information */}
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
+              Istanbul has two main airports: Istanbul Airport (IST) on the European side and Sabiha Gökçen (SAW) on the Asian side. We recommend flying into Istanbul Airport (IST). It&apos;s the city&apos;s main international hub, with the widest selection of direct flights and the most convenient access to central Istanbul and our wedding events. For the best experience, we also suggest flying with Turkish Airlines, which offers many nonstop routes to IST and is consistently ranked among the world&apos;s top airlines.
+            </p>
+          </div>
+          
+          {/* Car Icon */}
+          <div className="flex justify-center mb-8 sm:mb-12 md:mb-16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" style={{color: "rgb(96, 91, 72)"}}>
+              <path d="M3 17h18v-3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3z"/>
+              <path d="M5 17H3v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3h-2"/>
+              <circle cx="7" cy="17" r="2"/>
+              <circle cx="17" cy="17" r="2"/>
+              <path d="M7 15V9h10v6"/>
+            </svg>
+          </div>
+          
+          {/* Transportation Information */}
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
+              Taxis and ride apps like Uber are both available from Istanbul Airport. If you take a taxi, be sure to ask the driver to turn on the meter, otherwise they may try to give you a flat tourist price that&apos;s much higher. A metered taxi from IST to the Bosphorus hotels should typically cost around 800–1,200 TL ($25–40 USD), depending on traffic. The ride usually takes 45–60 minutes.
+            </p>
+          </div>
+          
+          
+          
+        </div>
       </div>
     </div>
   );
