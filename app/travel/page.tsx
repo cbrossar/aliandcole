@@ -209,7 +209,7 @@ export default function Travel() {
               strokeWidth="0.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              style={{ color: "rgb(96, 91, 72)" }}
+              style={{ color: "rgb(96, 91, 72)", marginBottom: "24px" }}
             >
               {/* Car body */}
               <path d="M3 17h18v-3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3z" />
