@@ -19,6 +19,10 @@ export default function FAQs() {
       answer: "U.S. citizens do not need a visa for short tourist stays (up to 90 days within a 180-day period). Just bring your valid passport (with at least 6 months left before expiration)."
     },
     {
+      question: "Why are we calling it Türkiye instead of Turkey?",
+      answer: "In 2021, the Turkish government formally requested that the country be referred to internationally by its name in Turkish: Türkiye (pronounced Tur-kee-yeah). The United Nations and many organizations now use this spelling. You’ll still see “Turkey” in some places, but “Türkiye” is the preferred and more respectful usage."
+    },
+    {
       question: "Can I bring a guest?",
       answer: "We are so excited to celebrate this day with our nearest and dearest, and are hoping to keep the guest list limited to those on the invitation. Thank you for understanding!"
     },
