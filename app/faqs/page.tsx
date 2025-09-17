@@ -80,7 +80,18 @@ export default function FAQs() {
     },
     {
       question: "Additional Questions?",
-      answer: "Please feel free to reach out to Ali or Cole here if you have questions that are not listed in the FAQ's."
+      answer: (
+        <>
+          Please feel free to reach out to Ali or Cole{' '}
+          <a 
+            href="mailto:alexandra.ozmeral@gmail.com,cole.brossart@gmail.com" 
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            here
+          </a>{' '}
+          if you have questions that are not listed in the FAQ's.
+        </>
+      )
     }
   ];
 
@@ -105,7 +116,7 @@ export default function FAQs() {
                 </div>
               </button>
               {openItems.includes(index) && (
-                <div className="px-6 pb-4 bg-gray-50">
+                <div className="px-6 pb-4 bg-white">
                   <div className="text-gray-700">
                     {faq.answer}
                   </div>
