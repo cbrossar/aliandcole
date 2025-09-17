@@ -31,7 +31,7 @@ export default function Travel() {
         style={{ backgroundColor: "rgb(248, 245, 239)" }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-8 font-['Alice',serif] text-center text-gray-800">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-8 font-['Alice',serif] text-center" style={{ color: "#9fadb1" }}>
             Where to Stay
           </h2>
           <div className="mb-8 sm:mb-12 md:mb-16">
@@ -133,7 +133,7 @@ export default function Travel() {
 
         {/* How to Get There Section */}
         <div className="mt-16 sm:mt-20 md:mt-24">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-8 font-['Alice',serif] text-center text-gray-800">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-8 font-['Alice',serif] text-center" style={{ color: "#9fadb1" }}>
             How to Get There
           </h2>
           <div className="mb-8 sm:mb-12 md:mb-16">
