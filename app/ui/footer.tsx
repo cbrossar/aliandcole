@@ -15,11 +15,11 @@ export default function Footer() {
       />
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 text-center relative z-10">
         <FadeInOnScroll direction="up">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight" style={{ fontFamily: 'Palace Script MT, cursive' }}>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight" style={{ fontFamily: 'Bickham Script Pro, cursive', color: '#6a6557' }}>
             Ali and Cole Brossart
           </h1>
-          <p className="text-white text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Palace Script MT, cursive' }}>
-            06.06.26
+          <p className="text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Bickham Script Pro, cursive', color: '#6a6557' }}>
+            June 6, 2026
           </p>
           <div className="flex justify-center">
             <Image
