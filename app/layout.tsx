@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import NavBar from "./ui/navbar";
+import Footer from "./ui/footer";
 
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
         <main className="min-h-screen flex flex-col items-center pt-16 md:pt-20 lg:pt-22]">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
