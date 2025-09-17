@@ -89,7 +89,7 @@ export default function FAQs() {
           >
             here
           </a>{' '}
-          if you have questions that are not listed in the FAQ's.
+          if you have questions that are not listed in the FAQ&apos;s.
         </>
       )
     }
