@@ -15,41 +15,64 @@ export default function FAQs() {
 
   const faqData = [
     {
-      question: "What is the wedding date?",
-      answer: "June 6th, 2026"
-    },
-    {
-      question: "What is the dress code?",
-      answer: (
-        <div className="space-y-2">
-          <p><strong>WELCOME PARTY</strong> - white party attire</p>
-          <p><strong>men:</strong> white collared shirts, white/tan pants</p>
-          <p><strong>women:</strong> mid to long white dresses, sets</p>
-          <p><strong>WEDDING DAY</strong> - riviera chic, formal attire</p>
-          <p><strong>men:</strong> formal suit, tie optional</p>
-          <p><strong>women:</strong> long formal dresses and gowns, color and texture encouraged!</p>
-        </div>
-      )
-    },
-    {
-      question: "What are the travel requirements from the US to Croatia?",
-      answer: "As per US Department of State website, \"U.S. passport holders do not need a visa if they are traveling to Croatia for tourism or business for less than 90 days within a 180-day period\". EU regulations require that U.S. passport holders have no less than three months' validity when they depart Croatia. U.S. passport holders with less than three months may be denied entry. The U.S. Embassy strongly suggests that you have at least six months of validity to avoid problems when you travel."
+      question: "Do I need a visa to visit Türkiye?",
+      answer: "U.S. citizens do not need a visa for short tourist stays (up to 90 days within a 180-day period). Just bring your valid passport (with at least 6 months left before expiration)."
     },
     {
       question: "Can I bring a guest?",
       answer: "We are so excited to celebrate this day with our nearest and dearest, and are hoping to keep the guest list limited to those on the invitation. Thank you for understanding!"
     },
     {
-      question: "Can we bring our children?",
+      question: "Are children invited?",
       answer: "We look forward to celebrating with you and we love your little ones! But our ceremony and reception will be adult only events so please plan ahead."
     },
     {
-      question: "What is the weather like in Dubrovnik in June?",
-      answer: "Mid June is beautiful in Dubrovnik with warm and sunny days with mild evenings! The average high temperature is around 27°C (80°F), and the average low temperature is around 18°C (64°F)."
+      question: "What should I wear to the wedding?",
+      answer: "The dress code is Black Tie — long dresses and tuxedos."
+    },
+    {
+      question: "What's the weather like in June?",
+      answer: "June is one of the best months to visit Istanbul, warm, sunny, and perfect for exploring. Daytime highs are usually in the mid-70s to low-80s °F (24–28°C) with plenty of sunshine. Evenings can be cooler by the Bosphorus, dipping into the mid-60s °F (18–20°C), so we recommend bringing a light sweater, wrap, or jacket for nighttime events."
+    },
+    {
+      question: "Any packing tips?",
+      answer: "Comfortable shoes for walking (Istanbul has cobblestone streets and hills), a crossbody bag for safety, and layers for evenings by the Bosphorus."
+    },
+    {
+      question: "What currency is used in Türkiye?",
+      answer: "The Turkish Lira (TL)."
+    },
+    {
+      question: "Can I use credit cards in Istanbul?",
+      answer: "Credit cards are accepted almost everywhere. For small purchases, tips, or street vendors, it's a good idea to carry a little Turkish Lira. Some tourist shops will accept USD, but TL is always best."
+    },
+    {
+      question: "Do I need an adaptor?",
+      answer: "Yes, Türkiye uses Type C/F plugs (two round pins, 220V). Bring a travel adapter if your devices have U.S. plugs."
+    },
+    {
+      question: "How does shopping at the Grand Bazaar work?",
+      answer: "The Grand Bazaar is one of the largest and oldest covered markets in the world and haggling is part of the fun! Don't be shy about negotiating, vendors expect it. A good rule of thumb is to start at about half the asking price and settle somewhere in between. Cash (Turkish Lira) is usually preferred, though some shops accept credit cards."
+    },
+    {
+      question: "What should I know before visiting Hagia Sophia?",
+      answer: "Hagia Sophia is both a historic landmark and an active mosque, so modest dress is required (shoulders and knees covered). Women should bring a scarf to cover their hair, and everyone will need to remove their shoes before entering. It can get very crowded, so visiting early in the morning or later in the afternoon is best."
+    },
+    {
+      question: "Do I need a reservation for restaurants in Istanbul?",
+      answer: "Reservations are generally recommended, especially at popular spots. A gratuity of around 10% is appreciated."
+    },
+    {
+      question: "Is public transportation easy to use?",
+      answer: "Yes! Istanbul's subway and tram system is clean, affordable, and easy to navigate."
+    },
+    {
+      question: "What's the best way to take a taxi?",
+      answer: "We recommend using the Uber app to call a yellow taxi instead of hailing one from the street. If you do hail a cab, be sure to ask the driver to turn on the meter (\"takside taksimetre lütfen\")."
     },
     {
       question: "Additional Questions?",
-      answer: "Please feel free to reach out to Iva or Cole if you have questions that are not listed in the FAQ's."
+      answer: "Please feel free to reach out to Ali or Cole here if you have questions that are not listed in the FAQ's."
     }
   ];
 
