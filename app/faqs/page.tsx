@@ -82,7 +82,7 @@ export default function FAQs() {
       question: "Additional Questions?",
       answer: (
         <>
-          Please feel free to reach out to Ali or Cole{' '}
+          Please feel free to reach out to Ali and Cole{' '}
           <a 
             href="mailto:alexandra.ozmeral@gmail.com,cole.brossart@gmail.com" 
             className="text-blue-600 hover:text-blue-800 underline"
