@@ -39,6 +39,10 @@ export default function FAQs() {
       answer: "Comfortable shoes for walking (Istanbul has cobblestone streets and hills), a crossbody bag for safety, and layers for evenings by the Bosphorus."
     },
     {
+      question: "What language is spoken in Türkiye?",
+      answer: "The official language is Turkish. In Istanbul, many people in hotels, restaurants, and tourist areas speak some English, but it’s helpful (and appreciated!) to learn a few basic Turkish phrases."
+    },
+    {
       question: "What currency is used in Türkiye?",
       answer: "The Turkish Lira (TL)."
     },
