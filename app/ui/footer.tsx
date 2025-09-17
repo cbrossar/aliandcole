@@ -9,7 +9,7 @@ const pinyonScript = Pinyon_Script({ subsets: ['latin'], weight: '400' })
 
 export default function Footer() {
   return (
-    <div className="w-full py-1 md:py-1.5 lg:py-2 relative border-t-8 border-blue-500">
+    <div className="w-full py-1 md:py-1.5 lg:py-2 relative border-t-8" style={{ borderTopColor: '#adb9bd' }}>
       <Image
         src="/images/light-tulip-background.png"
         alt="Light tulip background"
