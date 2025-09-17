@@ -44,7 +44,7 @@ export default function NavBar() {
           className={`${styles.title} flex items-center gap-2 md:gap-3`}
         >
           <Image
-            src="/C-and-A.png"
+            src="/images/C-and-A.png"
             alt="C and A Logo"
             width={50}
             height={50}

@@ -27,7 +27,7 @@ export default function Footer() {
           </p>
           <div className="flex justify-center">
             <Image
-              src="/C-and-A.png"
+              src="/images/C-and-A.png"
               alt="C and A Logo"
               width={60}
               height={60}
