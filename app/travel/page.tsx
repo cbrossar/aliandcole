@@ -9,11 +9,20 @@ export default function Travel() {
       <FadeInOnScroll direction="up" duration={1000}>
         <div className="w-full h-screen md:h-screen px-4 md:px-8">
           <div className="relative w-full h-full">
+            {/* Mobile Image */}
+            <Image
+              src="/images/travel/cole-and-ali-crop-2.jpeg"
+              alt="Travel - Cole and Ali"
+              fill
+              className="object-cover rounded-lg md:hidden"
+              priority
+            />
+            {/* Desktop Image */}
             <Image
               src="/images/travel/cole-and-ali-crop.jpeg"
               alt="Travel - Cole and Ali"
               fill
-              className="object-cover rounded-lg"
+              className="object-cover rounded-lg hidden md:block"
               priority
             />
             <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 right-4 md:right-auto">
