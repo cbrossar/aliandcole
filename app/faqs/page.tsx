@@ -113,7 +113,7 @@ export default function FAQs() {
     <div className="w-full flex flex-col items-center mb-16">
       <h1
         className="text-4xl font-['Alice',serif] font-bold mb-8 mt-12"
-        style={{ color: "#9fadb1" }}
+        style={{ color: "#659eb2" }}
       >
         FAQs
       </h1>
