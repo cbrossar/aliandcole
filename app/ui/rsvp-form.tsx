@@ -170,6 +170,19 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
         newInvalidFields.add(`after_party_${guest.id}`);
       }
 
+      // Check Thursday dinner attendance if invited
+      if (guest.is_invited_to_thursday_dinner) {
+        const thursdayDinnerField = form.querySelector(
+          `input[name="thursday_dinner_${guest.id}"]:checked`,
+        ) as HTMLInputElement;
+        if (!thursdayDinnerField) {
+          missingFields.push(
+            `${guest.first_name} ${guest.last_name} - Thursday Dinner attendance`,
+          );
+          newInvalidFields.add(`thursday_dinner_${guest.id}`);
+        }
+      }
+
       // Check dinner selection only if attending wedding
       if (weddingField?.value === "yes") {
         const dinnerField = form.querySelector(
@@ -209,6 +222,96 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     >
       <div className="max-w-2xl mx-auto px-6 py-12">
         <form onSubmit={handleSubmit} className="space-y-12">
+          {/* Family Dinner Section - Only show if any guest is invited */}
+          {rsvp.guests.some(guest => guest.is_invited_to_thursday_dinner) && (
+            <div className="bg-white/60 rounded-lg p-8 shadow-sm">
+              <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+                Dinner Party
+              </h2>
+
+              <div className="text-center mb-6 space-y-4">
+                <div className="space-y-1">
+                  <p className="text-black font-['Almarai'] text-lg">
+                    Thursday, June 4, 2026 - 5pm
+                  </p>
+                  <p className="text-black font-['Almarai'] italic">
+                    Hosted by Cole and Ali
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-black font-['Almarai']">
+                    <a
+                      href="https://maps.app.goo.gl/gJx62AnpMTYKsrut9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#8E9B8E] hover:text-[#7A8A7A] underline"
+                    >
+                      Feriye Restaurant
+                    </a>
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-black font-['Almarai']">
+                  Kindly join us for a family dinner to begin the celebrations.
+                  </p>
+                </div>
+              </div>
+              <div className="border-t-2 border-gray-400 mb-6"></div>
+
+              <div className="space-y-6">
+                {rsvp.guests
+                  .filter(guest => guest.is_invited_to_thursday_dinner)
+                  .map((guest: WeddingGuest, index, filteredGuests) => (
+                    <div
+                      key={`thursday_dinner_${guest.id}`}
+                      className={`${isFieldInvalid(`thursday_dinner_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""} ${index < filteredGuests.length - 1 ? "border-b-2 border-gray-400 pb-6" : ""}`}
+                    >
+                      <div className="flex justify-between items-center py-3">
+                        <span className="text-black font-['Almarai']">
+                          {guest.first_name} {guest.last_name}
+                        </span>
+                        <div className="flex space-x-6">
+                          <label className="flex items-center cursor-pointer">
+                            <input
+                              type="radio"
+                              name={`thursday_dinner_${guest.id}`}
+                              value="yes"
+                              defaultChecked={
+                                guest.is_attending_thursday_dinner === true
+                              }
+                              className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                            />
+                            <span className="text-black font-['Almarai']">
+                              Will Attend
+                            </span>
+                          </label>
+                          <label className="flex items-center cursor-pointer">
+                            <input
+                              type="radio"
+                              name={`thursday_dinner_${guest.id}`}
+                              value="no"
+                              defaultChecked={
+                                guest.is_attending_thursday_dinner === false
+                              }
+                              className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                            />
+                            <span className="text-black font-['Almarai']">
+                              Will Not Attend
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      {isFieldInvalid(`thursday_dinner_${guest.id}`) && (
+                        <p className="text-red-600 text-sm mt-1 font-['Almarai']">
+                          Please select an option
+                        </p>
+                      )}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+
           {/* Welcome Party Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
             <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">

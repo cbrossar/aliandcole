@@ -7,6 +7,8 @@ export type WeddingGuest = {
   is_attending_after_party: boolean | null;
   food_selection: string | null;
   dietary_restrictions: string | null;
+  is_invited_to_thursday_dinner: boolean | null;
+  is_attending_thursday_dinner: boolean | null;
 };
 
 export type WeddingRsvp = {

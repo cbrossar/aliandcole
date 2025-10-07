@@ -65,7 +65,9 @@ export async function getRsvpById(id: string) {
                         'is_attending_welcome_party', wg.is_attending_welcome_party,
                         'is_attending_after_party', wg.is_attending_after_party,
                         'food_selection', wg.food_selection,
-                        'dietary_restrictions', wg.dietary_restrictions
+                        'dietary_restrictions', wg.dietary_restrictions,
+                        'is_invited_to_thursday_dinner', wg.is_invited_to_thursday_dinner,
+                        'is_attending_thursday_dinner', wg.is_attending_thursday_dinner
                     ) ORDER BY wg.first_name
                 ) as guests
             FROM wedding_rsvps wr
