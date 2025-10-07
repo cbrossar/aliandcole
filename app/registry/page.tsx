@@ -39,7 +39,7 @@ export default function Registry() {
           href="https://www.zola.com/wedding/coleandali2026/registry"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-[#8E9B8E] text-white px-8 py-3 rounded-lg font-['Alice',serif] text-lg hover:bg-[#7a8a7a] transition-colors duration-200"
+          className="inline-block bg-[#659eb2] text-white px-8 py-3 rounded-lg font-['Alice',serif] text-lg hover:bg-[#7a8a7a] transition-colors duration-200"
         >
           View Our Registry
         </a>

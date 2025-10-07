@@ -163,7 +163,7 @@ export default function Home() {
                 <div>
                   <button
                     onClick={openRsvpPopup}
-                    className="rsvp-button inline-block px-12 py-5 text-lg md:text-xl font-bold rounded-full font-['Almarai']"
+                    className="rsvp-button inline-block px-12 py-5 text-lg md:text-xl font-bold rounded-full font-['Almarai'] text-white"
                   >
                     RSVP
                   </button>
