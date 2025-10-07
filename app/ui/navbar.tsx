@@ -90,7 +90,7 @@ export default function NavBar() {
             </div>
             <button
               onClick={openRsvpPopup}
-              className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition-colors"
+              className="border border-[#659eb2] rounded-full px-6 py-2 hover:bg-[#659eb2] hover:text-white transition-colors font-['Almarai']"
             >
               RSVP
             </button>
@@ -134,7 +134,7 @@ export default function NavBar() {
             </div>
             <button
               onClick={openRsvpPopup}
-              className="border border-black rounded-full px-4 py-1.5 hover:bg-black hover:text-white transition-colors text-sm"
+              className="border border-[#659eb2] rounded-full px-4 py-1.5 hover:bg-[#659eb2] hover:text-white transition-colors text-sm font-['Almarai']"
             >
               RSVP
             </button>
@@ -197,7 +197,7 @@ export default function NavBar() {
             </Link>
             <button
               onClick={openRsvpPopup}
-              className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition-colors text-center w-fit"
+              className="border border-[#659eb2] rounded-full px-6 py-2 hover:bg-[#659eb2] hover:text-white transition-colors text-center w-fit font-['Almarai']"
             >
               RSVP
             </button>

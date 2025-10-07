@@ -236,7 +236,7 @@ export default function Home() {
 
       {/* RSVP section with green background */}
       <div
-        className="w-full py-24 md:py-32 lg:py-40"
+        className="w-full py-15"
         style={{ backgroundColor: "#8eb0bd" }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
@@ -269,7 +269,7 @@ export default function Home() {
                 <div>
                   <button
                     onClick={openRsvpPopup}
-                    className="rsvp-button inline-block px-12 py-5 text-lg md:text-xl font-bold rounded-full"
+                    className="rsvp-button inline-block px-12 py-5 text-lg md:text-xl font-bold rounded-full font-['Almarai']"
                   >
                     RSVP
                   </button>

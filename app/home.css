@@ -1,11 +1,10 @@
 .rsvp-button {
   background-color: transparent;
-  border: 2px solid rgb(221, 197, 118);
-  color: rgb(221, 197, 118);
+  border: 2px solid #659eb2;
   transition: all 0.3s ease-in-out;
 }
 
 .rsvp-button:hover {
-  background-color: rgb(221, 197, 118);
+  background-color: #659eb2;
   color: black;
 }
