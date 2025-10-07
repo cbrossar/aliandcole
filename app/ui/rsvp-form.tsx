@@ -225,7 +225,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
           {/* Family Dinner Section - Only show if any guest is invited */}
           {rsvp.guests.some((guest) => guest.is_invited_to_thursday_dinner) && (
             <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-              <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+              <h2 className="text-2xl font-['Alice',serif] text-[#659eb2] mb-2 text-center">
                 Dinner Party
               </h2>
 
@@ -244,7 +244,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                       href="https://maps.app.goo.gl/gJx62AnpMTYKsrut9"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#8E9B8E] hover:text-[#7A8A7A] underline"
+                      className="text-[#659eb2] hover:text-[#7A8A7A] underline"
                     >
                       Feriye Restaurant
                     </a>
@@ -280,7 +280,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                               defaultChecked={
                                 guest.is_attending_thursday_dinner === true
                               }
-                              className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                              className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                             />
                             <span className="text-black font-['Almarai']">
                               Will Attend
@@ -294,7 +294,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                               defaultChecked={
                                 guest.is_attending_thursday_dinner === false
                               }
-                              className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                              className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                             />
                             <span className="text-black font-['Almarai']">
                               Will Not Attend
@@ -315,7 +315,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* Welcome Party Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+            <h2 className="text-2xl font-['Alice',serif] text-[#659eb2] mb-2 text-center">
               Welcome Party
             </h2>
 
@@ -334,7 +334,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     href="https://maps.app.goo.gl/KBBq7pcw8jjvW19k6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#8E9B8E] hover:text-[#7A8A7A] underline"
+                    className="text-[#659eb2] hover:text-[#7A8A7A] underline"
                   >
                     Olea Bosphorus & The Bar
                   </a>
@@ -373,7 +373,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                           defaultChecked={
                             guest.is_attending_welcome_party === true
                           }
-                          className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                          className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                         />
                         <span className="text-black font-['Almarai']">
                           Will Attend
@@ -387,7 +387,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                           defaultChecked={
                             guest.is_attending_welcome_party === false
                           }
-                          className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                          className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                         />
                         <span className="text-black font-['Almarai']">
                           Will Not Attend
@@ -407,7 +407,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* Wedding Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+            <h2 className="text-2xl font-['Alice',serif] text-[#659eb2] mb-2 text-center">
               Wedding Ceremony & Reception
             </h2>
 
@@ -423,7 +423,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     href="https://maps.app.goo.gl/EQPrtGE75U5hKj3Z9"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-[#8E9B8E] hover:text-[#6b7a6b] transition-colors"
+                    className="underline text-[#659eb2] hover:text-[#6b7a6b] transition-colors"
                   >
                     Çırağan Palace, East Garden &amp; Bosphorus Pier Lounge
                   </a>
@@ -468,7 +468,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                                 e.target.value === "yes",
                               )
                             }
-                            className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                            className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                           />
                           <span className="text-black font-['Almarai']">
                             Will Attend
@@ -488,7 +488,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                                 e.target.value === "yes",
                               )
                             }
-                            className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                            className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                           />
                           <span className="text-black font-['Almarai']">
                             Will Not Attend
@@ -522,7 +522,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                                 e.target.value,
                               )
                             }
-                            className="bg-[#9fadb1]/50 border border-gray-300 text-black font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#8E9B8E] focus:border-[#8E9B8E] cursor-pointer w-32 text-left rounded px-2 py-1"
+                            className="bg-[#9fadb1]/50 border border-gray-300 text-black font-['Almarai'] focus:outline-none focus:ring-2 focus:ring-[#659eb2] focus:border-[#659eb2] cursor-pointer w-32 text-left rounded px-2 py-1"
                           >
                             <option value="">Select...</option>
                             <option value="beef">Beef</option>
@@ -589,7 +589,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* After Party Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+            <h2 className="text-2xl font-['Alice',serif] text-[#659eb2] mb-2 text-center">
               After Party
             </h2>
 
@@ -605,7 +605,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                     href="https://maps.app.goo.gl/89HvXQVtudM78bNw6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-[#8E9B8E] hover:text-[#6b7a6b] transition-colors"
+                    className="underline text-[#659eb2] hover:text-[#6b7a6b] transition-colors"
                   >
                     Çırağan Palace, Enderun Ballroom
                   </a>
@@ -639,7 +639,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                           defaultChecked={
                             guest.is_attending_after_party === true
                           }
-                          className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                          className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                         />
                         <span className="text-black font-['Almarai']">
                           Will Attend
@@ -653,7 +653,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                           defaultChecked={
                             guest.is_attending_after_party === false
                           }
-                          className="mr-2 text-[#8E9B8E] focus:ring-[#8E9B8E]"
+                          className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
                         />
                         <span className="text-black font-['Almarai']">
                           Will Not Attend
@@ -673,7 +673,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
           {/* Optional Information Section */}
           <div className="bg-white/60 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
+            <h2 className="text-2xl font-['Alice',serif] text-[#659eb2] mb-2 text-center">
               Optional Information
             </h2>
             <div className="border-t-2 border-gray-400 mb-6"></div>
@@ -713,7 +713,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
           <div className="text-center pt-8">
             <button
               type="submit"
-              className="bg-[#8E9B8E] hover:bg-[#7A8A7A] text-white font-['Almarai'] font-medium px-12 py-4 rounded-full transition-colors duration-200 cursor-pointer text-lg"
+              className="bg-[#659eb2] hover:bg-[#7A8A7A] text-white font-['Almarai'] font-medium px-12 py-4 rounded-full transition-colors duration-200 cursor-pointer text-lg"
             >
               Submit RSVP
             </button>

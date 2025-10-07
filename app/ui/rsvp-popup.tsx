@@ -99,12 +99,12 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[rgb(51,51,51)] hover:text-[rgb(51,51,51)] text-xl font-bold"
+          className="absolute top-4 right-4 text-[#659eb2] hover:text-[#4a7a8a] text-xl font-bold transition-colors"
           aria-label="Close popup"
         >
           ×
         </button>
-        <h2 className="text-2xl font-bold mb-6 text-center text-[rgb(51,51,51)] font-['Alice',serif]">
+        <h2 className="text-2xl font-bold mb-6 text-center text-[#659eb2] font-['Alice',serif]">
           RSVP
         </h2>
 
@@ -116,7 +116,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               onKeyDown={handleKeyPress}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
+              className="w-full px-4 py-2 border border-[#659eb2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#659eb2] focus:border-[#659eb2] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
               disabled={isLoading}
             />
             <input
@@ -125,14 +125,14 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               onKeyDown={handleKeyPress}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-2 focus:ring-[rgb(51,51,51)] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
+              className="w-full px-4 py-2 border border-[#659eb2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#659eb2] focus:border-[#659eb2] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
               disabled={isLoading}
             />
           </div>
           <button
             onClick={handleSearch}
             disabled={isLoading || !firstName.trim() || !lastName.trim()}
-            className="w-full px-4 py-2 bg-[rgb(51,51,51)] text-white rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-['Almarai',sans-serif]"
+            className="w-full px-4 py-2 bg-[#659eb2] text-white rounded-lg hover:bg-[#4a7a8a] disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-['Almarai',sans-serif]"
           >
             Search
           </button>
@@ -143,13 +143,13 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
           <div className="mt-6 space-y-4">
             {filteredRsvps.length > 0 ? (
               <div>
-                <h3 className="font-semibold text-[rgb(51,51,51)] mb-3">
+                <h3 className="font-semibold text-[#659eb2] mb-3">
                   Found RSVPs:
                 </h3>
                 {filteredRsvps.map((rsvp: RsvpGroup) => (
                   <div
                     key={rsvp.rsvp_id}
-                    className="p-3 border border-gray-200 rounded-lg mb-2"
+                    className="p-3 border border-[#659eb2] rounded-lg mb-2"
                   >
                     <div className="mb-2">
                       {rsvp.guests.map((guest: Guest, index: number) => (
@@ -165,7 +165,7 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
                     <Link
                       href={`/rsvp/${rsvp.rsvp_id}`}
                       onClick={onClose}
-                      className="mt-2 inline-block text-sm bg-[rgb(51,51,51)] text-white px-3 py-1 rounded-full hover:bg-gray-700 transition-colors"
+                      className="mt-2 inline-block text-sm bg-[#659eb2] text-white px-3 py-1 rounded-full hover:bg-[#4a7a8a] transition-colors"
                     >
                       Update RSVP
                     </Link>

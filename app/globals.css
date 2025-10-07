@@ -42,3 +42,33 @@
 body {
   background: rgb(248, 245, 239);
 }
+
+/* Custom radio button styling */
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #659eb2;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+
+input[type="radio"]:checked {
+  background-color: #659eb2;
+  border-color: #659eb2;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
