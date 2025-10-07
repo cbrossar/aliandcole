@@ -53,7 +53,7 @@ export default function Home() {
       {/* New section with green background */}
       <div
         className="w-full py-24 md:py-32 lg:py-40"
-        style={{ backgroundColor: "rgb(142, 155, 142)" }}
+        style={{ backgroundColor: "#8eb0bd" }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
           {/* Top section - Flowers image and Wedding announcement */}
@@ -237,7 +237,7 @@ export default function Home() {
       {/* RSVP section with green background */}
       <div
         className="w-full py-24 md:py-32 lg:py-40"
-        style={{ backgroundColor: "rgb(142, 155, 142)" }}
+        style={{ backgroundColor: "#8eb0bd" }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
