@@ -95,7 +95,7 @@ export default function HowWeMet() {
       {/* Proposal Story Text */}
       <FadeInOnScroll direction="up" delay={200}>
         <div className="px-8 py-16">
-          <p className="text-[22px] leading-relaxed max-w-2xl font-['Almarai']">
+          <p className="text-[22px] leading-relaxed max-w-2xl font-['Alice',serif]">
             Cole planned a weekend upstate, complete with a spa day and a
             farm-to-table dinner. Ali, certain this was the moment, wore her
             engagement dress that night. But the next afternoon, during a quiet
