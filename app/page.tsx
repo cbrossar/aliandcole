@@ -87,132 +87,29 @@ export default function Home() {
             </FadeInOnScroll>
           </div>
 
-          {/* Schedule heading */}
-          <div className="mb-12 md:mb-16">
+          {/* Divider line */}
+          <div className="border-t border-white opacity-50 mb-8"></div>
+
+          {/* Weekend Details heading */}
+          <div className="mt-24 mb-12 md:mb-16">
             <FadeInOnScroll direction="up">
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-['Alice',serif] text-center">
-                Schedule
+                Weekend Details
               </h1>
             </FadeInOnScroll>
           </div>
 
-          {/* Divider line */}
-          <div className="border-t border-white opacity-50 mb-8"></div>
-
-          {/* Schedule details */}
-          <div className="flex flex-col space-y-8">
-            {/* Friday 06.05.2026 */}
-            <FadeInOnScroll direction="up">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-['Alice',serif]">
-                    06.05.2026
-                  </h2>
-                  <p className="text-white text-base md:text-lg mt-2">
-                    Mandarin Oriental
-                  </p>
-                  <p className="text-white text-base md:text-lg mt-1">
-                    Cocktail Attire
-                  </p>
-                  <a
-                    href="https://maps.app.goo.gl/z6n3xurCrdPsn3Hc9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[rgb(221,197,118)] underline text-sm md:text-base mt-1 block"
-                  >
-                    View on Google Maps
-                  </a>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-white text-lg md:text-xl font-semibold">
-                      Welcome Party
-                    </span>
-                    <span className="text-white text-lg md:text-xl">
-                      {" "}
-                      – 6:00pm
-                    </span>
-                    <div className="mt-1">
-                      <span className="text-white text-base md:text-lg">
-                        Olea Bosphorus & The Bar
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FadeInOnScroll>
-
-            {/* Divider line */}
-            <FadeInOnScroll direction="up" delay={100}>
-              <div className="border-t border-white opacity-50"></div>
-            </FadeInOnScroll>
-
-            {/* Saturday 06.06.2026 */}
+          {/* Schedule image */}
+          <div className="flex justify-center">
             <FadeInOnScroll direction="up" delay={200}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-['Alice',serif]">
-                    06.06.2026
-                  </h2>
-                  <p className="text-white text-base md:text-lg mt-2">
-                    Çırağan Palace
-                  </p>
-                  <p className="text-white text-base md:text-lg mt-1">
-                    Black Tie
-                  </p>
-                  <a
-                    href="https://maps.app.goo.gl/TTsXXKpGgNVSeSaAA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[rgb(221,197,118)] underline text-sm md:text-base mt-1 block"
-                  >
-                    View on Google Maps
-                  </a>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-white text-lg md:text-xl font-semibold">
-                      Ceremony
-                    </span>
-                    <span className="text-white text-lg md:text-xl">
-                      {" "}
-                      – 6:00pm
-                    </span>
-                    <div className="mt-1">
-                      <span className="text-white text-base md:text-lg">
-                        East Garden
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-white text-lg md:text-xl font-semibold">
-                      Dinner & Dancing
-                    </span>
-                    <span className="text-white text-lg md:text-xl">
-                      {" "}
-                      – 8:00pm
-                    </span>
-                    <div className="mt-1">
-                      <span className="text-white text-base md:text-lg">
-                        Bosphorous Pier Lounge
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-white text-lg md:text-xl font-semibold">
-                      After Party
-                    </span>
-                    <span className="text-white text-lg md:text-xl">
-                      {" "}
-                      – 12:00am
-                    </span>
-                    <div className="mt-1">
-                      <span className="text-white text-base md:text-lg">
-                        Enderun Ballroom
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-full max-w-4xl">
+                <Image
+                  src="/images/home/schedule.png"
+                  alt="Wedding Schedule"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </FadeInOnScroll>
           </div>
