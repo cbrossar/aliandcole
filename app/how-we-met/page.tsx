@@ -33,7 +33,7 @@ export default function HowWeMet() {
                 We were both at USC — Cole in computer science, Ali in the
                 School of Medicine. Senior year, after the UCLA game, we shared
                 an Uber to a dance party in Silver Lake. The stamps inked across
-                our wrists read, “Be Dirty, Dance Clean.” And that we did.
+                our wrists read, <span className="italic">“Be Dirty, Dance Clean.”</span> And that we did.
               </p>
               {/* Spotify Player */}
               <div className="w-full">
