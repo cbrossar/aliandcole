@@ -2,19 +2,16 @@
 
 import Image from "next/image";
 import { FadeInOnScroll } from "../components/FadeInOnScroll";
-import { Pinyon_Script } from 'next/font/google'
-
-const pinyonScript = Pinyon_Script({ subsets: ['latin'], weight: '400' })
-
+// import { Pinyon_Script } from 'next/font/google'
 
 export default function Footer() {
   return (
-    <div 
-      className="w-full py-1 md:py-1.5 lg:py-2 relative border-t-8" 
-      style={{ 
-        borderTopColor: '#659eb2',
-        backgroundImage: 'url(/images/white.jpg)',
-        backgroundRepeat: 'repeat',
+    <div
+      className="w-full py-1 md:py-1.5 lg:py-2 relative border-t-8"
+      style={{
+        borderTopColor: "#659eb2",
+        backgroundImage: "url(/images/white.jpg)",
+        backgroundRepeat: "repeat",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 text-center relative z-10">

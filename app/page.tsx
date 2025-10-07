@@ -235,10 +235,7 @@ export default function Home() {
       </div>
 
       {/* RSVP section with green background */}
-      <div
-        className="w-full py-15"
-        style={{ backgroundColor: "#8eb0bd" }}
-      >
+      <div className="w-full py-15" style={{ backgroundColor: "#8eb0bd" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left side - RSVP Flowers image */}
@@ -279,7 +276,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
 
       {/* RSVP Popup */}
       {isRsvpPopupOpen && <RsvpPopup onClose={closeRsvpPopup} />}

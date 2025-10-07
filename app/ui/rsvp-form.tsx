@@ -223,7 +223,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <form onSubmit={handleSubmit} className="space-y-12">
           {/* Family Dinner Section - Only show if any guest is invited */}
-          {rsvp.guests.some(guest => guest.is_invited_to_thursday_dinner) && (
+          {rsvp.guests.some((guest) => guest.is_invited_to_thursday_dinner) && (
             <div className="bg-white/60 rounded-lg p-8 shadow-sm">
               <h2 className="text-2xl font-['Alice',serif] text-[#8E9B8E] mb-2 text-center">
                 Dinner Party
@@ -252,7 +252,8 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                 </div>
                 <div className="space-y-1">
                   <p className="text-black font-['Almarai']">
-                  Kindly join us for a family dinner to begin the celebrations.
+                    Kindly join us for a family dinner to begin the
+                    celebrations.
                   </p>
                 </div>
               </div>
@@ -260,7 +261,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
               <div className="space-y-6">
                 {rsvp.guests
-                  .filter(guest => guest.is_invited_to_thursday_dinner)
+                  .filter((guest) => guest.is_invited_to_thursday_dinner)
                   .map((guest: WeddingGuest, index, filteredGuests) => (
                     <div
                       key={`thursday_dinner_${guest.id}`}

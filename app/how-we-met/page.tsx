@@ -30,11 +30,10 @@ export default function HowWeMet() {
             <div></div>
             <div>
               <p className="text-left text-[22px] leading-relaxed font-['Alice',serif] mb-8">
-                We both went to USC—Cole studied computer science, and Ali was
-                in the school of medicine. Night of the UCLA game, we shared an
-                uber to a dance party in Silver Lake. The stamps inked across
-                our wrists read, &ldquo;Be Dirty, Dance Clean.&rdquo; And that
-                we did. The rest is history.
+                We were both at USC — Cole in computer science, Ali in the
+                School of Medicine. Senior year, after the UCLA game, we shared
+                an Uber to a dance party in Silver Lake. The stamps inked across
+                our wrists read, “Be Dirty, Dance Clean.” And that we did.
               </p>
               {/* Spotify Player */}
               <div className="w-full">
@@ -67,8 +66,7 @@ export default function HowWeMet() {
             </div>
             <div className="lg:pl-8">
               <p className="text-[28px] leading-relaxed font-['Alice',serif]">
-                USC known as the &ldquo;University of Spoiled Children,&rdquo;
-                and also where all of the greatest love stories begin.
+                USC: where Fight On met happily ever after ✌️❤️
               </p>
             </div>
           </div>
@@ -97,14 +95,14 @@ export default function HowWeMet() {
       {/* Proposal Story Text */}
       <FadeInOnScroll direction="up" delay={200}>
         <div className="px-8 py-16">
-          <p className="text-lg leading-relaxed max-w-2xl">
-            Cole took Ali upstate one weekend—complete with a spa day and a
-            farm-to-table dinner. Ali wore her engagement dress that night
-            convinced this was the moment. However, at a picnic the next day,
-            just when she least expected it, Cole—crutches and all—gracefully
-            got down on one knee. With tears in her eyes and string lights
-            twinkling in the trees, Ali said yes. Back in the city, a surprise
-            celebration with our closest friends and family was waiting.
+          <p className="text-[22px] leading-relaxed max-w-2xl font-['Almarai']">
+            Cole planned a weekend upstate, complete with a spa day and a
+            farm-to-table dinner. Ali, certain this was the moment, wore her
+            engagement dress that night. But the next afternoon, during a quiet
+            picnic, just when she least expected it, Cole chucked his crutches
+            and got down on one knee. With tears in her eyes and string lights
+            twinkling in the trees, Ali said yes. Back in Brooklyn, a surprise
+            celebration with their closest friends and family was waiting.
           </p>
         </div>
       </FadeInOnScroll>
@@ -115,11 +113,10 @@ export default function HowWeMet() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div className="lg:pr-8">
               <blockquote className="text-[28px] leading-relaxed font-['Alice',serif]">
-                We&apos;re going to completely change as people from 22 to 28.
-                We&apos;ll either grow together or grow apart. We&apos;ll just
-                have to wait and see.
+                We knew we&apos;d completely change from 21 to 30; the question
+                was whether we&apos;d grow together or apart. Luckily, we grew
+                together.
               </blockquote>
-              <p className="text-lg mt-4 italic">-Ali to Cole age 21</p>
             </div>
             <div className="flex justify-end">
               <div className="relative aspect-[3/4] w-full max-w-md">

@@ -2,7 +2,6 @@
 import { FadeInOnScroll } from "../components/FadeInOnScroll";
 import Image from "next/image";
 
-
 export default function Registry() {
   return (
     <div className="w-full min-h-screen mb-16">
