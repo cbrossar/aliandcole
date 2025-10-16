@@ -95,6 +95,7 @@ export async function updateRsvp(rsvp: WeddingRsvp) {
                     is_attending_wedding = ${guest.is_attending_wedding},
                     is_attending_welcome_party = ${guest.is_attending_welcome_party},
                     is_attending_after_party = ${guest.is_attending_after_party},
+                    is_attending_thursday_dinner = ${guest.is_attending_thursday_dinner},
                     food_selection = ${guest.food_selection},
                     dietary_restrictions = ${guest.dietary_restrictions}
                 WHERE id = ${guest.id}
