@@ -75,8 +75,11 @@ export default function Travel() {
                 the Bosphorus, with stunning views, gardens, and plenty of
                 history. We&apos;ll have a special room block here soon!
               </p>
+              <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
+                Please find our room block in the link below!
+              </p>
               <a
-                href="https://www.kempinski.com/en/ciragan-palace/overview"
+                href="https://www.kempinski.com/en/booking/select_room?hotelId=3161&clearBookingParams=1&room1Adults=2&startDate=2026-06-04&endDate=2026-06-07&promoCode=ALEX260604"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
