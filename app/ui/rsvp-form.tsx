@@ -3,6 +3,7 @@
 import { WeddingRsvp, WeddingGuest } from "@/lib/definitions";
 import { useActionState, useState, useTransition, useEffect } from "react";
 import { updateRSVP } from "../data/actions";
+import SuccessPopup from "./success-popup";
 
 export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   // Add CSS animation for fish swimming
@@ -129,6 +130,18 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
 
   const [formError, setFormError] = useState<string | null>(null);
   const [invalidFields, setInvalidFields] = useState<Set<string>>(new Set());
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+
+  // Show success popup when form submission is successful
+  useEffect(() => {
+    if (state.message && state.message.includes("successfully")) {
+      setShowSuccessPopup(true);
+    }
+  }, [state.message]);
+
+  const handleCloseSuccessPopup = () => {
+    setShowSuccessPopup(false);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -751,6 +764,12 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
           </div>
         </form>
       </div>
+
+      {/* Success Popup */}
+      <SuccessPopup 
+        isOpen={showSuccessPopup} 
+        onClose={handleCloseSuccessPopup} 
+      />
     </div>
   );
 }
