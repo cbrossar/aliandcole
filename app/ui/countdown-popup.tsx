@@ -52,7 +52,7 @@ export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps)
     >
       {/* Simple countdown text with background */}
       <div 
-        className="bg-white rounded-lg shadow-lg px-8 py-6 text-center relative"
+        className="bg-yellow-400 rounded-lg shadow-lg px-8 py-6 text-center relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button inside popup */}
@@ -63,7 +63,7 @@ export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps)
           <X size={20} />
         </button>
 
-        <div className="text-4xl md:text-5xl lg:text-6xl font-serif text-blue-800 tracking-wide">
+        <div className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-wide" style={{ color: '#659eb2' }}>
           <span className="block md:inline">{timeLeft.days} days {timeLeft.hours} hours</span>
           <span className="block md:inline"> {timeLeft.minutes} minutes {timeLeft.seconds} seconds</span>
         </div>
