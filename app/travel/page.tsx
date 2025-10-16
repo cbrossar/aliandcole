@@ -73,10 +73,10 @@ export default function Travel() {
                 If you want the full experience, stay where we&apos;re getting
                 married! The Çırağan Palace is a former Ottoman palace right on
                 the Bosphorus, with stunning views, gardens, and plenty of
-                history. We&apos;ll have a special room block here soon!
+                history.
               </p>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
-                Please find our room block in the link below!
+                Please find our room block in the link below! If you are interested in additional days, please let us know.
               </p>
               <a
                 href="https://www.kempinski.com/en/booking/select_room?hotelId=3161&clearBookingParams=1&room1Adults=2&startDate=2026-06-04&endDate=2026-06-07&promoCode=ALEX260604"
@@ -263,7 +263,7 @@ export default function Travel() {
             </p>
             <p className="text-center max-w-3xl font-['Alice',serif] mx-auto text-gray-700 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
               If you would like to set up an airport transfer to the Çırağan
-              Palace in advance, please reach out to our contact Gizem at{" "}
+              Palace in advance, please reach out to{" "}
               <a
                 href="mailto:concierge.ciraganpalace@kempinski.com"
                 className="text-blue-600 hover:text-blue-800 underline"
