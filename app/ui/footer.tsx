@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { FadeInOnScroll } from "../components/FadeInOnScroll";
+import CountdownPopup from "../ui/countdown-popup";
 // import { Pinyon_Script } from 'next/font/google'
 
 export default function Footer() {
+  const [isCountdownOpen, setIsCountdownOpen] = useState(false);
   return (
     <div
       className="w-full py-1 md:py-1.5 lg:py-2 relative border-t-8"
@@ -23,16 +26,27 @@ export default function Footer() {
             June 6, 2026
           </p> */}
           <div className="flex justify-center">
-            <Image
-              src="/images/C-and-A.png"
-              alt="C and A Logo"
-              width={60}
-              height={60}
-              className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
-            />
+            <button
+              onClick={() => setIsCountdownOpen(true)}
+              className="transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 rounded-full p-2"
+            >
+              <Image
+                src="/images/C-and-A.png"
+                alt="C and A Logo"
+                width={60}
+                height={60}
+                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 cursor-pointer"
+              />
+            </button>
           </div>
         </FadeInOnScroll>
       </div>
+      
+      {/* Countdown Popup */}
+      <CountdownPopup 
+        isOpen={isCountdownOpen} 
+        onClose={() => setIsCountdownOpen(false)} 
+      />
     </div>
   );
 }
