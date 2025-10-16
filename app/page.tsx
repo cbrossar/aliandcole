@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Tangerine } from 'next/font/google'
 import RsvpPopup from "./ui/rsvp-popup";
 import { FadeInOnScroll } from "./components/FadeInOnScroll";
 import { TypewriterText } from "./components/TypewriterText";
