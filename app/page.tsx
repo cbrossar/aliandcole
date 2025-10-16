@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Tangerine } from 'next/font/google'
 import RsvpPopup from "./ui/rsvp-popup";
 import { FadeInOnScroll } from "./components/FadeInOnScroll";
 import { TypewriterText } from "./components/TypewriterText";
@@ -115,6 +116,15 @@ export default function Home() {
                   className="w-full h-auto object-contain"
                 />
               </div>
+            </FadeInOnScroll>
+          </div>
+
+          {/* Pool message */}
+          <div className="flex justify-center mt-12 md:mt-16">
+            <FadeInOnScroll direction="up" delay={400}>
+              <p className="text-white text-base md:text-lg lg:text-xl font-['Tangerine',cursive] text-center leading-relaxed italic tracking-wide whitespace-nowrap">
+              Join us poolside at Çırağan on Sunday, we&apos;ll be there all day!
+              </p>
             </FadeInOnScroll>
           </div>
         </div>
