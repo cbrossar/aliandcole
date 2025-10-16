@@ -117,7 +117,6 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
               onChange={(e) => setFirstName(e.target.value)}
               onKeyDown={handleKeyPress}
               className="w-full px-4 py-2 border border-[#659eb2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#659eb2] focus:border-[#659eb2] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
-              disabled={isLoading}
             />
             <input
               type="text"
@@ -126,7 +125,6 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
               onChange={(e) => setLastName(e.target.value)}
               onKeyDown={handleKeyPress}
               className="w-full px-4 py-2 border border-[#659eb2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#659eb2] focus:border-[#659eb2] bg-white text-[rgb(51,51,51)] font-['Almarai',sans-serif]"
-              disabled={isLoading}
             />
           </div>
           <button
