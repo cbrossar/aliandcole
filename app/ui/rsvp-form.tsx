@@ -131,13 +131,14 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   const [formError, setFormError] = useState<string | null>(null);
   const [invalidFields, setInvalidFields] = useState<Set<string>>(new Set());
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [submissionCount, setSubmissionCount] = useState(0);
 
   // Show success popup when form submission is successful
   useEffect(() => {
     if (state.message && state.message.includes("successfully")) {
       setShowSuccessPopup(true);
     }
-  }, [state.message]);
+  }, [submissionCount, state.message]);
 
   const handleCloseSuccessPopup = () => {
     setShowSuccessPopup(false);
@@ -220,6 +221,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     setFormError(null);
     setInvalidFields(new Set());
     const formData = new FormData(form);
+    setSubmissionCount(prev => prev + 1);
 
     startTransition(() => {
       dispatch(formData);
@@ -643,39 +645,41 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   key={`after_party_${guest.id}`}
                   className={`${isFieldInvalid(`after_party_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""} ${index < rsvp.guests.length - 1 ? "border-b-2 border-gray-400 pb-6" : ""}`}
                 >
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-black font-['Almarai']">
-                      {guest.first_name} {guest.last_name}
-                    </span>
-                    <div className="flex space-x-3 sm:space-x-6">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name={`after_party_${guest.id}`}
-                          value="yes"
-                          defaultChecked={
-                            guest.is_attending_after_party === true
-                          }
-                          className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
-                        />
-                        <span className="text-black font-['Almarai']">
-                          Will Attend
-                        </span>
-                      </label>
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name={`after_party_${guest.id}`}
-                          value="no"
-                          defaultChecked={
-                            guest.is_attending_after_party === false
-                          }
-                          className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
-                        />
-                        <span className="text-black font-['Almarai']">
-                          Will Not Attend
-                        </span>
-                      </label>
+                  <div className="py-3">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
+                      <span className="text-black font-['Almarai']">
+                        {guest.first_name} {guest.last_name}
+                      </span>
+                      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name={`after_party_${guest.id}`}
+                            value="yes"
+                            defaultChecked={
+                              guest.is_attending_after_party === true
+                            }
+                            className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
+                          />
+                          <span className="text-black font-['Almarai']">
+                            Will Attend
+                          </span>
+                        </label>
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name={`after_party_${guest.id}`}
+                            value="no"
+                            defaultChecked={
+                              guest.is_attending_after_party === false
+                            }
+                            className="mr-2 text-[#659eb2] focus:ring-[#659eb2]"
+                          />
+                          <span className="text-black font-['Almarai']">
+                            Will Not Attend
+                          </span>
+                        </label>
+                      </div>
                     </div>
                   </div>
                   {isFieldInvalid(`after_party_${guest.id}`) && (
