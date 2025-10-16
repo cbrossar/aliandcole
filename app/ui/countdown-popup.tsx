@@ -63,9 +63,13 @@ export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps)
           <X size={20} />
         </button>
 
-        <div className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-wide" style={{ color: '#659eb2' }}>
-          <span className="block md:inline">{timeLeft.days} days {timeLeft.hours} hours</span>
-          <span className="block md:inline"> {timeLeft.minutes} minutes {timeLeft.seconds} seconds</span>
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif tracking-wide leading-tight" style={{ color: '#659eb2' }}>
+          <div className="block md:inline">
+            {timeLeft.days} days {timeLeft.hours} hours
+          </div>
+          <div className="block md:inline md:ml-2">
+            {timeLeft.minutes} minutes {timeLeft.seconds} seconds
+          </div>
         </div>
       </div>
     </div>
