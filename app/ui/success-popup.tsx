@@ -66,7 +66,7 @@ export default function SuccessPopup({ isOpen, onClose }: SuccessPopupProps) {
         {/* Success Message */}
         <div className="text-center">
           <h3 className="text-xl font-['Alice',serif] text-[#659eb2] mb-4">
-            Success!
+            Yaşasın!
           </h3>
           <p className="text-gray-700 font-['Almarai'] leading-relaxed mb-6">
             Your RSVP selections have successfully been recorded. Please feel free to update your selections until March 1st. We hope to see you in Istanbul!
