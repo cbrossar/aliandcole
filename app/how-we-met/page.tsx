@@ -2,8 +2,39 @@
 
 import Image from "next/image";
 import { FadeInOnScroll } from "../components/FadeInOnScroll";
+import { useState, useEffect, useRef } from "react";
 
 export default function HowWeMet() {
+  const [showConnectionGamePopup, setShowConnectionGamePopup] = useState(false);
+  const [hasShownPopup, setHasShownPopup] = useState(false);
+  const storySectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasShownPopup) {
+            setShowConnectionGamePopup(true);
+            setHasShownPopup(true);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+        rootMargin: "0px 0px -100px 0px" // Start a bit before the section is fully in view
+      }
+    );
+
+    if (storySectionRef.current) {
+      observer.observe(storySectionRef.current);
+    }
+
+    return () => {
+      if (storySectionRef.current) {
+        observer.unobserve(storySectionRef.current);
+      }
+    };
+  }, [hasShownPopup]);
   return (
     <div className="w-full min-h-screen">
       <FadeInOnScroll direction="up" duration={1000}>
@@ -33,7 +64,7 @@ export default function HowWeMet() {
                 We were both at USC — Cole in computer science, Ali in the
                 School of Medicine. Senior year, after the UCLA game, we shared
                 an Uber to a dance party in Silver Lake. The stamps inked across
-                our wrists read, <span className="italic">“Be Dirty, Dance Clean.”</span> And that we did.
+                our wrists read, <span className="italic">"Be Dirty, Dance Clean."</span> And that we did.
               </p>
               {/* Spotify Player */}
               <div className="w-full">
@@ -109,7 +140,7 @@ export default function HowWeMet() {
 
       {/* Quote and Wedding Photo Section */}
       <FadeInOnScroll direction="up" duration={800}>
-        <div className="px-8 py-16">
+        <div ref={storySectionRef} className="px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div className="lg:pr-8">
               <blockquote className="text-[28px] leading-relaxed font-['Alice',serif]">
@@ -157,6 +188,66 @@ export default function HowWeMet() {
           </div>
         </div>
       </FadeInOnScroll>
+
+      {/* Connection Game Popup */}
+      {showConnectionGamePopup && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={() => setShowConnectionGamePopup(false)}
+        >
+          <div 
+            className="bg-purple-100 rounded-lg p-8 max-w-sm mx-4 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+            style={{ backgroundColor: '#E8D5F2' }}
+          >
+            <div className="text-center">
+              {/* Connections Icon */}
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 rounded-lg border-2 border-black flex items-center justify-center" style={{ backgroundColor: '#E8D5F2' }}>
+                  <div className="grid grid-cols-2 gap-1 w-12 h-12">
+                    <div className="bg-white rounded-sm"></div>
+                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
+                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
+                    <div className="bg-white rounded-sm"></div>
+                    <div className="bg-white rounded-sm"></div>
+                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
+                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
+                    <div className="bg-white rounded-sm"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Subtitle */}
+              <p className="text-sm font-serif text-gray-700 mb-2">
+                How well do you know our...
+              </p>
+
+              {/* Connections Title */}
+              <h3 className="text-2xl font-serif font-bold text-black mb-8">
+                Connections
+              </h3>
+
+              {/* Play Button */}
+              <a
+                href="https://connections.swellgarfo.com/game/-Oc47n1NwMRtNbrBCIMH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-black hover:bg-gray-800 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200 cursor-pointer mb-4"
+              >
+                Play
+              </a>
+
+              {/* Close button */}
+              <button
+                onClick={() => setShowConnectionGamePopup(false)}
+                className="text-gray-600 hover:text-gray-800 text-sm transition-colors"
+              >
+                Maybe Later
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
