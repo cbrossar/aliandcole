@@ -167,7 +167,7 @@ export default function Travel() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
-              className="zui-svg-icon"
+              className="zui-svg-icon airplane-icon cursor-pointer hover:scale-110 transition-transform duration-200"
               width="64px"
               height="64px"
               viewBox="0 0 26 32"
@@ -180,6 +180,15 @@ export default function Travel() {
                 marginBottom: "24px",
               }}
               aria-labelledby="Airplane Outline15"
+              onClick={() => {
+                const icon = document.querySelector('.airplane-icon');
+                if (icon) {
+                  icon.classList.add('fly-away');
+                  setTimeout(() => {
+                    icon.classList.remove('fly-away');
+                  }, 4000);
+                }
+              }}
             >
               <title id="Airplane Outline15">Airplane Outline</title>
               <path
@@ -192,6 +201,135 @@ export default function Travel() {
               ></path>
             </svg>
           </div>
+
+          {/* CSS Animation Styles */}
+          <style jsx>{`
+            @keyframes flyAway {
+              0% {
+                transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+              }
+              15% {
+                transform: translateX(50px) translateY(-20px) rotate(15deg) scale(0.8);
+                opacity: 0.9;
+              }
+              30% {
+                transform: translateX(150px) translateY(-40px) rotate(30deg) scale(0.6);
+                opacity: 0.7;
+              }
+              45% {
+                transform: translateX(300px) translateY(-60px) rotate(45deg) scale(0.4);
+                opacity: 0.5;
+              }
+              60% {
+                transform: translateX(500px) translateY(-80px) rotate(60deg) scale(0.2);
+                opacity: 0.3;
+              }
+              75% {
+                transform: translateX(700px) translateY(-100px) rotate(75deg) scale(0.1);
+                opacity: 0.1;
+              }
+              90% {
+                transform: translateX(900px) translateY(-120px) rotate(90deg) scale(0.05);
+                opacity: 0.05;
+              }
+              100% {
+                transform: translateX(1000px) translateY(-140px) rotate(90deg) scale(0.01);
+                opacity: 0;
+              }
+            }
+
+            @keyframes flyBack {
+              0% {
+                transform: translateX(1000px) translateY(-140px) rotate(90deg) scale(0.01);
+                opacity: 0;
+              }
+              5% {
+                transform: translateX(900px) translateY(-170px) rotate(90deg) scale(0.03);
+                opacity: 0.03;
+              }
+              10% {
+                transform: translateX(800px) translateY(-200px) rotate(90deg) scale(0.05);
+                opacity: 0.05;
+              }
+              15% {
+                transform: translateX(700px) translateY(-230px) rotate(90deg) scale(0.07);
+                opacity: 0.07;
+              }
+              20% {
+                transform: translateX(500px) translateY(-300px) rotate(90deg) scale(0.1);
+                opacity: 0.1;
+              }
+              25% {
+                transform: translateX(350px) translateY(-325px) rotate(90deg) scale(0.15);
+                opacity: 0.15;
+              }
+              30% {
+                transform: translateX(200px) translateY(-350px) rotate(90deg) scale(0.2);
+                opacity: 0.2;
+              }
+              35% {
+                transform: translateX(50px) translateY(-325px) rotate(90deg) scale(0.25);
+                opacity: 0.25;
+              }
+              40% {
+                transform: translateX(-100px) translateY(-300px) rotate(90deg) scale(0.3);
+                opacity: 0.3;
+              }
+              45% {
+                transform: translateX(-200px) translateY(-250px) rotate(90deg) scale(0.35);
+                opacity: 0.35;
+              }
+              50% {
+                transform: translateX(-300px) translateY(-200px) rotate(90deg) scale(0.4);
+                opacity: 0.4;
+              }
+              55% {
+                transform: translateX(-350px) translateY(-150px) rotate(90deg) scale(0.45);
+                opacity: 0.45;
+              }
+              60% {
+                transform: translateX(-400px) translateY(-100px) rotate(90deg) scale(0.5);
+                opacity: 0.5;
+              }
+              65% {
+                transform: translateX(-375px) translateY(-50px) rotate(90deg) scale(0.55);
+                opacity: 0.55;
+              }
+              70% {
+                transform: translateX(-350px) translateY(0px) rotate(90deg) scale(0.6);
+                opacity: 0.6;
+              }
+              75% {
+                transform: translateX(-275px) translateY(25px) rotate(90deg) scale(0.65);
+                opacity: 0.65;
+              }
+              80% {
+                transform: translateX(-200px) translateY(50px) rotate(90deg) scale(0.7);
+                opacity: 0.7;
+              }
+              85% {
+                transform: translateX(-125px) translateY(35px) rotate(90deg) scale(0.75);
+                opacity: 0.8;
+              }
+              90% {
+                transform: translateX(-50px) translateY(20px) rotate(90deg) scale(0.8);
+                opacity: 0.9;
+              }
+              95% {
+                transform: translateX(-25px) translateY(10px) rotate(90deg) scale(0.9);
+                opacity: 0.95;
+              }
+              100% {
+                transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+              }
+            }
+
+            .airplane-icon.fly-away {
+              animation: flyAway 2s ease-in-out forwards, flyBack 2s ease-in-out 2s forwards;
+            }
+          `}</style>
 
           {/* Airport Subheader */}
           <div className="text-center mb-6">
