@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { FadeInOnScroll } from "../components/FadeInOnScroll";
+import { useState } from "react";
 
 export default function Travel() {
+  const [showBadBunnyGif, setShowBadBunnyGif] = useState(false);
   return (
     <div className="w-full min-h-screen">
       <FadeInOnScroll direction="up" duration={1000}>
@@ -365,7 +367,9 @@ export default function Travel() {
               strokeWidth="0.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="cursor-pointer hover:scale-110 transition-transform duration-200"
               style={{ color: "rgb(96, 91, 72)", marginBottom: "24px" }}
+              onClick={() => setShowBadBunnyGif(true)}
             >
               {/* Car body */}
               <path d="M3 17h18v-3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3z" />
@@ -412,6 +416,43 @@ export default function Travel() {
           </div>
         </div>
       </div>
+
+      {/* Bad Bunny GIF Popup */}
+      {showBadBunnyGif && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={() => setShowBadBunnyGif(false)}
+        >
+          <div 
+            className="bg-white rounded-lg p-4 max-w-md mx-4 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <button
+                onClick={() => setShowBadBunnyGif(false)}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div className="text-center">
+              <Image
+                src="/images/travel/bad-bunny-baile-inolvidable.gif"
+                alt="Bad Bunny Baile Inolvidable"
+                width={400}
+                height={300}
+                className="rounded-lg mx-auto"
+              />
+              <p className="text-gray-600 font-['Almarai'] mt-4 text-sm">
+                ¡Prepárate para un baile inolvidable! 💃🕺
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
