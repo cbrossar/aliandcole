@@ -221,7 +221,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
     setFormError(null);
     setInvalidFields(new Set());
     const formData = new FormData(form);
-    setSubmissionCount(prev => prev + 1);
+    setSubmissionCount((prev) => prev + 1);
 
     startTransition(() => {
       dispatch(formData);
@@ -468,7 +468,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                   <div
                     className={`${isFieldInvalid(`wedding_${guest.id}`) ? "border-l-4 border-red-500 pl-4" : ""}`}
                   >
-                    <div className={`py-3 ${weddingAttendance[guest.id] ? "border-b border-gray-300" : ""}`}>
+                    <div
+                      className={`py-3 ${weddingAttendance[guest.id] ? "border-b border-gray-300" : ""}`}
+                    >
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
                         <span className="text-black font-['Almarai']">
                           {guest.first_name} {guest.last_name}
@@ -479,7 +481,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                               type="radio"
                               name={`wedding_${guest.id}`}
                               value="yes"
-                              defaultChecked={guest.is_attending_wedding === true}
+                              defaultChecked={
+                                guest.is_attending_wedding === true
+                              }
                               onChange={(e) =>
                                 handleWeddingAttendanceChange(
                                   guest.id,
@@ -774,9 +778,9 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
       </div>
 
       {/* Success Popup */}
-      <SuccessPopup 
-        isOpen={showSuccessPopup} 
-        onClose={handleCloseSuccessPopup} 
+      <SuccessPopup
+        isOpen={showSuccessPopup}
+        onClose={handleCloseSuccessPopup}
       />
     </div>
   );

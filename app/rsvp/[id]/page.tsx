@@ -52,7 +52,8 @@ export default async function RsvpPage({
             </h1>
 
             <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed font-['Almarai', serif] font-light mb-8 lg:mb-12 text-white">
-              We are excited to share our special weekend with you. Kindly respond by the first of March.
+              We are excited to share our special weekend with you. Kindly
+              respond by the first of March.
             </p>
           </div>
         </div>

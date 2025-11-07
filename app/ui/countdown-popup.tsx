@@ -8,7 +8,10 @@ interface CountdownPopupProps {
   onClose: () => void;
 }
 
-export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps) {
+export default function CountdownPopup({
+  isOpen,
+  onClose,
+}: CountdownPopupProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -27,8 +30,12 @@ export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps)
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60),
+        );
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         setTimeLeft({ days, hours, minutes, seconds });
@@ -46,12 +53,12 @@ export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps)
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
       {/* Simple countdown text with background */}
-      <div 
+      <div
         className="bg-yellow-400 rounded-lg shadow-lg px-8 py-6 text-center relative"
         onClick={(e) => e.stopPropagation()}
       >
@@ -63,7 +70,10 @@ export default function CountdownPopup({ isOpen, onClose }: CountdownPopupProps)
           <X size={20} />
         </button>
 
-        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif tracking-wide leading-tight" style={{ color: '#659eb2' }}>
+        <div
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif tracking-wide leading-tight"
+          style={{ color: "#659eb2" }}
+        >
           <div className="block md:inline">
             {timeLeft.days} days {timeLeft.hours} hours
           </div>

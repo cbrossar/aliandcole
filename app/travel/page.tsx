@@ -59,8 +59,8 @@ export default function Travel() {
 
           {/* Hotel Recommendations */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
-            {/* The Ciragan Palace */}
             <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
+              {/* The Ciragan Palace */}
               <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
                 <img
                   src="/images/travel/kempinski-3.avif"
@@ -78,7 +78,8 @@ export default function Travel() {
                 history.
               </p>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
-                Please find our room block in the link below! If you are interested in additional days, please let us know.
+                Please find our room block in the link below! If you are
+                interested in additional days, please let us know.
               </p>
               <a
                 href="https://www.kempinski.com/en/booking/select_room?hotelId=3161&clearBookingParams=1&room1Adults=2&startDate=2026-06-04&endDate=2026-06-07&promoCode=ALEX260604"
@@ -90,26 +91,27 @@ export default function Travel() {
               </a>
             </div>
 
-            {/* The Stay */}
+            {/* The Radisson Blu Bosphorus Hotel */}
             <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
               <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
                 <img
-                  src="/images/travel/stay.png"
-                  alt="The Stay hotel"
+                  src="/images/travel/radisson-blu.avif"
+                  alt="The Radisson Blu Bosphorus Hotel"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
-                The Stay
+                The Radisson Blu Bosphorus Hotel
               </h3>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
-                A smaller, stylish spot with a modern vibe. The Stay is cozy but
-                chic, with thoughtful details and a great location for exploring
-                the city. Perfect if you&apos;re looking for something more
-                laid-back but still polished.
+                With a prime location right next to the Çırağan Palace and on
+                the Bosphorus, this modern hotel offers unbeatable convenience
+                for wedding guests. The Radisson Blu Bosphorus Hotel features a
+                large variety of room options at affordable prices, plus a spa
+                and restaurant. This is a great option for most guests.
               </p>
               <a
-                href="https://www.thestay.com.tr/the-stay-bosphorus-hotel.aspx"
+                href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-istanbul-bosphorus?facilitatorId=RHGSEM&cid=a%3Aps+b%3Aggl+c%3Aemea+i%3Abrand+e%3Ardb+d%3Aeerut+r%3Abrt+f%3Aen-US+g%3Aho+h%3ATRISTBOS+v%3Acf&gclsrc=aw.ds&gad_source=1&gad_campaignid=21322992130&gbraid=0AAAAADtKuEU1LoiGOx7vhcnktrlPSQ3cw&gclid=CjwKCAiAzrbIBhA3EiwAUBaUdb6VQFpGuY2dX-dyk7WGCZhMRbppM62AF4YLsWUKQK04r03qWPNyvxoCiRQQAvD_BwE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
@@ -117,6 +119,38 @@ export default function Travel() {
                 View
               </a>
             </div>
+
+            {/* Conrad Istanbul Bosphorus */}
+            <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
+              <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
+                <img
+                  src="/images/travel/conrad.jpg"
+                  alt="Conrad Istanbul Bosphorus"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+              Conrad Istanbul Bosphorus
+              </h3>
+              <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
+                Conveniently located close to the Çırağan Palace, this Hilton
+                property offers stunning panoramic views of Istanbul and the
+                Bosphorus from its hilltop setting. The Conrad Istanbul Bosphorus
+                features a spa, indoor and outdoor pools, and a tennis club. Note
+                that while it&apos;s very close to the palace, it&apos;s about a
+                15-20 minute walk up a hill.
+              </p>
+              <a
+                href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=ISTHC&arrivalDate=2026-06-04&departureDate=2026-06-07&room1NumAdults=2&displayCurrency=USD&WT.mc_id=zINDA0EMEA1CI2OLX3ggl4ACBI_Advance_Traditional_Metasearch5ISTHCCI6MULTIBR7ML8i150895_122953832_9083689&utm_source=intlmeta&utm_medium=intlmeta&utm_campaign=googlehpa&gclid=CjwKCAiAzrbIBhA3EiwAUBaUdQSvHTEk4VQuZYFeMmu8f6VlqXzVx954_lOD6-5C9mHI-f8Ox9n6dhoCwjAQAvD_BwE&dsclid=74022629279281152&gad_source=7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+              >
+                View
+              </a>
+            </div>
+
+            
 
             {/* The Swiss Hotel */}
             <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
@@ -134,10 +168,67 @@ export default function Travel() {
                 A classic favorite in Istanbul — Swissôtel has beautiful
                 Bosphorus views, a huge spa, and lots of restaurants. It&apos;s
                 a great mix of luxury and convenience, and a wonderful home base
-                for the weekend.
+                for the weekend. It will be a 10-15 minute drive to the Çırağan
+                Palace.
               </p>
               <a
                 href="https://www.swissotel.com/hotels/istanbul/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+              >
+                View
+              </a>
+            </div>
+            
+            {/* Çırağan Hotel Bosphorus */}
+            <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
+              <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
+                <img
+                  src="/images/travel/ciragan-hotel.avif"
+                  alt="Çırağan Hotel Bosphorus"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+                Çırağan Hotel Bosphorus
+              </h3>
+              <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
+                Located literally right behind the Çırağan Palace Kempinski, the
+                Çırağan Hotel Bosphorus offers great convenience for wedding
+                guests. This new, modern hotel is budget-friendly and just a short
+                5-minute walk up a hill from the palace.
+              </p>
+              <a
+                href="https://ciraganhotel.com/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+              >
+                View
+              </a>
+            </div>
+            
+            {/* Sanasaryan Han Hotel, Old City */}
+            <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
+              <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
+                <img
+                  src="/images/travel/sanasaryan.jpg"
+                  alt="Sanasaryan Han Hotel, Old City"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+                Sanasaryan Han Hotel, Old City
+              </h3>
+              <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
+                If you&apos;re looking for a luxurious stay in the old city near
+                tourist attractions like the Hagia Sophia, Topkapi Palace, and
+                Cisterns, this Marriott property is a wonderful choice. The
+                The Sanasaryan Han Hotel offers exceptional comfort and elegance. Please allow at least 30 minutes to drive to the Çırağan Palace from the hotel.
+              </p>
+              <a
+                href="https://www.marriott.com/en-us/hotels/istlc-sanasaryan-han-a-luxury-collection-hotel-istanbul/overview/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
@@ -183,11 +274,11 @@ export default function Travel() {
               }}
               aria-labelledby="Airplane Outline15"
               onClick={() => {
-                const icon = document.querySelector('.airplane-icon');
+                const icon = document.querySelector(".airplane-icon");
                 if (icon) {
-                  icon.classList.add('fly-away');
+                  icon.classList.add("fly-away");
                   setTimeout(() => {
-                    icon.classList.remove('fly-away');
+                    icon.classList.remove("fly-away");
                   }, 4000);
                 }
               }}
@@ -212,114 +303,141 @@ export default function Travel() {
                 opacity: 1;
               }
               15% {
-                transform: translateX(50px) translateY(-20px) rotate(15deg) scale(0.8);
+                transform: translateX(50px) translateY(-20px) rotate(15deg)
+                  scale(0.8);
                 opacity: 0.9;
               }
               30% {
-                transform: translateX(150px) translateY(-40px) rotate(30deg) scale(0.6);
+                transform: translateX(150px) translateY(-40px) rotate(30deg)
+                  scale(0.6);
                 opacity: 0.7;
               }
               45% {
-                transform: translateX(300px) translateY(-60px) rotate(45deg) scale(0.4);
+                transform: translateX(300px) translateY(-60px) rotate(45deg)
+                  scale(0.4);
                 opacity: 0.5;
               }
               60% {
-                transform: translateX(500px) translateY(-80px) rotate(60deg) scale(0.2);
+                transform: translateX(500px) translateY(-80px) rotate(60deg)
+                  scale(0.2);
                 opacity: 0.3;
               }
               75% {
-                transform: translateX(700px) translateY(-100px) rotate(75deg) scale(0.1);
+                transform: translateX(700px) translateY(-100px) rotate(75deg)
+                  scale(0.1);
                 opacity: 0.1;
               }
               90% {
-                transform: translateX(900px) translateY(-120px) rotate(90deg) scale(0.05);
+                transform: translateX(900px) translateY(-120px) rotate(90deg)
+                  scale(0.05);
                 opacity: 0.05;
               }
               100% {
-                transform: translateX(1000px) translateY(-140px) rotate(90deg) scale(0.01);
+                transform: translateX(1000px) translateY(-140px) rotate(90deg)
+                  scale(0.01);
                 opacity: 0;
               }
             }
 
             @keyframes flyBack {
               0% {
-                transform: translateX(1000px) translateY(-140px) rotate(90deg) scale(0.01);
+                transform: translateX(1000px) translateY(-140px) rotate(90deg)
+                  scale(0.01);
                 opacity: 0;
               }
               5% {
-                transform: translateX(900px) translateY(-170px) rotate(90deg) scale(0.03);
+                transform: translateX(900px) translateY(-170px) rotate(90deg)
+                  scale(0.03);
                 opacity: 0.03;
               }
               10% {
-                transform: translateX(800px) translateY(-200px) rotate(90deg) scale(0.05);
+                transform: translateX(800px) translateY(-200px) rotate(90deg)
+                  scale(0.05);
                 opacity: 0.05;
               }
               15% {
-                transform: translateX(700px) translateY(-230px) rotate(90deg) scale(0.07);
+                transform: translateX(700px) translateY(-230px) rotate(90deg)
+                  scale(0.07);
                 opacity: 0.07;
               }
               20% {
-                transform: translateX(500px) translateY(-300px) rotate(90deg) scale(0.1);
+                transform: translateX(500px) translateY(-300px) rotate(90deg)
+                  scale(0.1);
                 opacity: 0.1;
               }
               25% {
-                transform: translateX(350px) translateY(-325px) rotate(90deg) scale(0.15);
+                transform: translateX(350px) translateY(-325px) rotate(90deg)
+                  scale(0.15);
                 opacity: 0.15;
               }
               30% {
-                transform: translateX(200px) translateY(-350px) rotate(90deg) scale(0.2);
+                transform: translateX(200px) translateY(-350px) rotate(90deg)
+                  scale(0.2);
                 opacity: 0.2;
               }
               35% {
-                transform: translateX(50px) translateY(-325px) rotate(90deg) scale(0.25);
+                transform: translateX(50px) translateY(-325px) rotate(90deg)
+                  scale(0.25);
                 opacity: 0.25;
               }
               40% {
-                transform: translateX(-100px) translateY(-300px) rotate(90deg) scale(0.3);
+                transform: translateX(-100px) translateY(-300px) rotate(90deg)
+                  scale(0.3);
                 opacity: 0.3;
               }
               45% {
-                transform: translateX(-200px) translateY(-250px) rotate(90deg) scale(0.35);
+                transform: translateX(-200px) translateY(-250px) rotate(90deg)
+                  scale(0.35);
                 opacity: 0.35;
               }
               50% {
-                transform: translateX(-300px) translateY(-200px) rotate(90deg) scale(0.4);
+                transform: translateX(-300px) translateY(-200px) rotate(90deg)
+                  scale(0.4);
                 opacity: 0.4;
               }
               55% {
-                transform: translateX(-350px) translateY(-150px) rotate(90deg) scale(0.45);
+                transform: translateX(-350px) translateY(-150px) rotate(90deg)
+                  scale(0.45);
                 opacity: 0.45;
               }
               60% {
-                transform: translateX(-400px) translateY(-100px) rotate(90deg) scale(0.5);
+                transform: translateX(-400px) translateY(-100px) rotate(90deg)
+                  scale(0.5);
                 opacity: 0.5;
               }
               65% {
-                transform: translateX(-375px) translateY(-50px) rotate(90deg) scale(0.55);
+                transform: translateX(-375px) translateY(-50px) rotate(90deg)
+                  scale(0.55);
                 opacity: 0.55;
               }
               70% {
-                transform: translateX(-350px) translateY(0px) rotate(90deg) scale(0.6);
+                transform: translateX(-350px) translateY(0px) rotate(90deg)
+                  scale(0.6);
                 opacity: 0.6;
               }
               75% {
-                transform: translateX(-275px) translateY(25px) rotate(90deg) scale(0.65);
+                transform: translateX(-275px) translateY(25px) rotate(90deg)
+                  scale(0.65);
                 opacity: 0.65;
               }
               80% {
-                transform: translateX(-200px) translateY(50px) rotate(90deg) scale(0.7);
+                transform: translateX(-200px) translateY(50px) rotate(90deg)
+                  scale(0.7);
                 opacity: 0.7;
               }
               85% {
-                transform: translateX(-125px) translateY(35px) rotate(90deg) scale(0.75);
+                transform: translateX(-125px) translateY(35px) rotate(90deg)
+                  scale(0.75);
                 opacity: 0.8;
               }
               90% {
-                transform: translateX(-50px) translateY(20px) rotate(90deg) scale(0.8);
+                transform: translateX(-50px) translateY(20px) rotate(90deg)
+                  scale(0.8);
                 opacity: 0.9;
               }
               95% {
-                transform: translateX(-25px) translateY(10px) rotate(90deg) scale(0.9);
+                transform: translateX(-25px) translateY(10px) rotate(90deg)
+                  scale(0.9);
                 opacity: 0.95;
               }
               100% {
@@ -329,7 +447,9 @@ export default function Travel() {
             }
 
             .airplane-icon.fly-away {
-              animation: flyAway 2s ease-in-out forwards, flyBack 2s ease-in-out 2s forwards;
+              animation:
+                flyAway 2s ease-in-out forwards,
+                flyBack 2s ease-in-out 2s forwards;
             }
           `}</style>
 
@@ -419,11 +539,11 @@ export default function Travel() {
 
       {/* Bad Bunny GIF Popup */}
       {showBadBunnyGif && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
           onClick={() => setShowBadBunnyGif(false)}
         >
-          <div 
+          <div
             className="bg-white rounded-lg p-4 max-w-md mx-4 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -432,7 +552,14 @@ export default function Travel() {
                 onClick={() => setShowBadBunnyGif(false)}
                 className="text-gray-500 hover:text-gray-700 transition-colors"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>

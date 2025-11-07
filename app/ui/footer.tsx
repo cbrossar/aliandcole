@@ -41,11 +41,11 @@ export default function Footer() {
           </div>
         </FadeInOnScroll>
       </div>
-      
+
       {/* Countdown Popup */}
-      <CountdownPopup 
-        isOpen={isCountdownOpen} 
-        onClose={() => setIsCountdownOpen(false)} 
+      <CountdownPopup
+        isOpen={isCountdownOpen}
+        onClose={() => setIsCountdownOpen(false)}
       />
     </div>
   );

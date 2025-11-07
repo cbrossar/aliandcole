@@ -21,8 +21,8 @@ export default function HowWeMet() {
       },
       {
         threshold: 0.5, // Trigger when 50% of the section is visible
-        rootMargin: "0px 0px -100px 0px" // Start a bit before the section is fully in view
-      }
+        rootMargin: "0px 0px -100px 0px", // Start a bit before the section is fully in view
+      },
     );
 
     if (storySectionRef.current) {
@@ -64,7 +64,11 @@ export default function HowWeMet() {
                 We were both at USC — Cole in computer science, Ali in the
                 School of Medicine. Senior year, after the UCLA game, we shared
                 an Uber to a dance party in Silver Lake. The stamps inked across
-                our wrists read, <span className="italic">&ldquo;Be Dirty, Dance Clean.&rdquo;</span> And that we did.
+                our wrists read,{" "}
+                <span className="italic">
+                  &ldquo;Be Dirty, Dance Clean.&rdquo;
+                </span>{" "}
+                And that we did.
               </p>
               {/* Spotify Player */}
               <div className="w-full">
@@ -191,27 +195,42 @@ export default function HowWeMet() {
 
       {/* Connection Game Popup */}
       {showConnectionGamePopup && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
           onClick={() => setShowConnectionGamePopup(false)}
         >
-          <div 
+          <div
             className="bg-purple-100 rounded-lg p-8 max-w-sm mx-4 shadow-xl"
             onClick={(e) => e.stopPropagation()}
-            style={{ backgroundColor: '#E8D5F2' }}
+            style={{ backgroundColor: "#E8D5F2" }}
           >
             <div className="text-center">
               {/* Connections Icon */}
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 rounded-lg border-2 border-black flex items-center justify-center" style={{ backgroundColor: '#E8D5F2' }}>
+                <div
+                  className="w-16 h-16 rounded-lg border-2 border-black flex items-center justify-center"
+                  style={{ backgroundColor: "#E8D5F2" }}
+                >
                   <div className="grid grid-cols-2 gap-1 w-12 h-12">
                     <div className="bg-white rounded-sm"></div>
-                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
-                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
+                    <div
+                      className="bg-purple-200 rounded-sm"
+                      style={{ backgroundColor: "#E8D5F2" }}
+                    ></div>
+                    <div
+                      className="bg-purple-200 rounded-sm"
+                      style={{ backgroundColor: "#E8D5F2" }}
+                    ></div>
                     <div className="bg-white rounded-sm"></div>
                     <div className="bg-white rounded-sm"></div>
-                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
-                    <div className="bg-purple-200 rounded-sm" style={{ backgroundColor: '#E8D5F2' }}></div>
+                    <div
+                      className="bg-purple-200 rounded-sm"
+                      style={{ backgroundColor: "#E8D5F2" }}
+                    ></div>
+                    <div
+                      className="bg-purple-200 rounded-sm"
+                      style={{ backgroundColor: "#E8D5F2" }}
+                    ></div>
                     <div className="bg-white rounded-sm"></div>
                   </div>
                 </div>

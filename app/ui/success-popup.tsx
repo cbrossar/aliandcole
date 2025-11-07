@@ -43,7 +43,9 @@ export default function SuccessPopup({ isOpen, onClose }: SuccessPopupProps) {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 style={{
-                  animation: showAnimation ? "checkmark 0.6s ease-in-out 0.3s both" : "none",
+                  animation: showAnimation
+                    ? "checkmark 0.6s ease-in-out 0.3s both"
+                    : "none",
                 }}
               >
                 <path
@@ -69,9 +71,11 @@ export default function SuccessPopup({ isOpen, onClose }: SuccessPopupProps) {
             Yaşasın!
           </h3>
           <p className="text-gray-700 font-['Almarai'] leading-relaxed mb-6">
-            Your RSVP selections have successfully been recorded. Please feel free to update your selections until March 1st. We hope to see you in Istanbul!
+            Your RSVP selections have successfully been recorded. Please feel
+            free to update your selections until March 1st. We hope to see you
+            in Istanbul!
           </p>
-          
+
           {/* Close Button */}
           <button
             onClick={onClose}

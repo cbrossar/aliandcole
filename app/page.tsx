@@ -26,7 +26,7 @@ export default function Home() {
           <div className="flex flex-col justify-start space-y-0 lg:space-y-8 pt-4 pb-0 lg:pt-36 col-span-1 lg:col-span-2 order-1 lg:order-1">
             <FadeInOnScroll direction="left" delay={200}>
               <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#659eb2] font-['Alice',serif]">
-                <TypewriterText 
+                <TypewriterText
                   text="Celebrating Ali & Cole"
                   speed={150}
                   delay={500}
@@ -122,7 +122,8 @@ export default function Home() {
           <div className="flex justify-center mt-12 md:mt-16">
             <FadeInOnScroll direction="up" delay={400}>
               <p className="text-white text-base md:text-lg lg:text-xl font-['Tangerine',cursive] text-center leading-relaxed italic tracking-wide whitespace-nowrap">
-              Join us poolside at Çırağan on Sunday, we&apos;ll be there all day!
+                Join us poolside at Çırağan on Sunday, we&apos;ll be there all
+                day!
               </p>
             </FadeInOnScroll>
           </div>

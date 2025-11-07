@@ -10,12 +10,12 @@ interface TypewriterTextProps {
   onComplete?: () => void;
 }
 
-export function TypewriterText({ 
-  text, 
-  className = "", 
-  speed = 100, 
+export function TypewriterText({
+  text,
+  className = "",
+  speed = 100,
   delay = 0,
-  onComplete 
+  onComplete,
 }: TypewriterTextProps) {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,8 +45,8 @@ export function TypewriterText({
     }
 
     const timer = setTimeout(() => {
-      setDisplayText(prev => prev + text[currentIndex]);
-      setCurrentIndex(prev => prev + 1);
+      setDisplayText((prev) => prev + text[currentIndex]);
+      setCurrentIndex((prev) => prev + 1);
     }, speed);
 
     return () => clearTimeout(timer);
