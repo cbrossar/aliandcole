@@ -153,7 +153,7 @@ export default function Travel() {
                 Bosphorus from its hilltop setting. The Conrad Istanbul Bosphorus
                 features a spa, indoor and outdoor pools, and a tennis club. Note
                 that while it&apos;s very close to the palace, it&apos;s about a
-                15-20 minute walk up a hill.
+                20 minute walk up a hill.
               </p>
               <a
                 href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=ISTHC&arrivalDate=2026-06-04&departureDate=2026-06-07&room1NumAdults=2&displayCurrency=USD&WT.mc_id=zINDA0EMEA1CI2OLX3ggl4ACBI_Advance_Traditional_Metasearch5ISTHCCI6MULTIBR7ML8i150895_122953832_9083689&utm_source=intlmeta&utm_medium=intlmeta&utm_campaign=googlehpa&gclid=CjwKCAiAzrbIBhA3EiwAUBaUdQSvHTEk4VQuZYFeMmu8f6VlqXzVx954_lOD6-5C9mHI-f8Ox9n6dhoCwjAQAvD_BwE&dsclid=74022629279281152&gad_source=7"
@@ -187,7 +187,7 @@ export default function Travel() {
                 A classic favorite in Istanbul — Swissôtel has beautiful
                 Bosphorus views, a huge spa, and lots of restaurants. It&apos;s
                 a great mix of luxury and convenience, and a wonderful home base
-                for the weekend. It will be a 10-15 minute drive to the Çırağan
+                for the weekend. It will be a 15 minute drive to the Çırağan
                 Palace.
               </p>
               <a
