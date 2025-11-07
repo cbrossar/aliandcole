@@ -107,13 +107,13 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
+              <h3 className="text-xl sm:text-2xl font-serif mb-2 text-gray-800">
                 The Radisson Blu Bosphorus Hotel
-                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
-                  <BiWalk />
-                  <span>10 min walk</span>
-                </span>
               </h3>
+              <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4 text-sm font-normal text-gray-600">
+                <BiWalk />
+                <span>10 min walk</span>
+              </div>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 With a prime location right next to the Çırağan Palace and on
                 the Bosphorus, this modern hotel offers unbeatable convenience
@@ -140,13 +140,13 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
+              <h3 className="text-xl sm:text-2xl font-serif mb-2 text-gray-800">
                 Conrad Istanbul Bosphorus
-                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
-                  <BiWalk />
-                  <span>20 min walk</span>
-                </span>
               </h3>
+              <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4 text-sm font-normal text-gray-600">
+                <BiWalk />
+                <span>20 min walk</span>
+              </div>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 Conveniently located close to the Çırağan Palace, this Hilton
                 property offers stunning panoramic views of Istanbul and the
@@ -176,13 +176,13 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
+              <h3 className="text-xl sm:text-2xl font-serif mb-2 text-gray-800">
                 Swissôtel The Bosphorus
-                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
-                  <LiaCarSideSolid />
-                  <span>15 min drive</span>
-                </span>
               </h3>
+              <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4 text-sm font-normal text-gray-600">
+                <LiaCarSideSolid />
+                <span>15 min drive</span>
+              </div>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 A classic favorite in Istanbul — Swissôtel has beautiful
                 Bosphorus views, a huge spa, and lots of restaurants. It&apos;s
@@ -209,13 +209,13 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
+              <h3 className="text-xl sm:text-2xl font-serif mb-2 text-gray-800">
                 Çırağan Hotel Bosphorus
-                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
-                  <BiWalk />
-                  <span>5 min walk</span>
-                </span>
               </h3>
+              <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4 text-sm font-normal text-gray-600">
+                <BiWalk />
+                <span>5 min walk</span>
+              </div>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 Located literally right behind the Çırağan Palace Kempinski, the
                 Çırağan Hotel Bosphorus offers great convenience for wedding
@@ -241,13 +241,13 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
+              <h3 className="text-xl sm:text-2xl font-serif mb-2 text-gray-800">
                 Sanasaryan Han Hotel, Old City
-                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
-                  <LiaCarSideSolid />
-                  <span>30 min drive</span>
-                </span>
               </h3>
+              <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4 text-sm font-normal text-gray-600">
+                <LiaCarSideSolid />
+                <span>30 min drive</span>
+              </div>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 If you&apos;re looking for a luxurious stay in the old city near
                 tourist attractions like the Hagia Sophia, Topkapi Palace, and
