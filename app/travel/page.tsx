@@ -220,7 +220,7 @@ export default function Travel() {
                 Located literally right behind the Çırağan Palace Kempinski, the
                 Çırağan Hotel Bosphorus offers great convenience for wedding
                 guests. This new, modern hotel is budget-friendly and just a short
-                5-minute walk up a hill from the palace.
+                5 minute walk up a hill from the palace.
               </p>
               <a
                 href="https://ciraganhotel.com/en/"
