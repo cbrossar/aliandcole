@@ -102,7 +102,7 @@ export default function Travel() {
             <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
               <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
                 <img
-                  src="/images/travel/radisson-blu.avif"
+                  src="/images/travel/radisson-blu.png"
                   alt="The Radisson Blu Bosphorus Hotel"
                   className="w-full h-full object-cover"
                 />
@@ -135,7 +135,7 @@ export default function Travel() {
             <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
               <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
                 <img
-                  src="/images/travel/conrad.jpg"
+                  src="/images/travel/conrad.png"
                   alt="Conrad Istanbul Bosphorus"
                   className="w-full h-full object-cover"
                 />
@@ -204,7 +204,7 @@ export default function Travel() {
             <div className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow duration-300">
               <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg mb-4 sm:mb-6 overflow-hidden">
                 <img
-                  src="/images/travel/ciragan-hotel.avif"
+                  src="/images/travel/ciragan-hotel.png"
                   alt="Çırağan Hotel Bosphorus"
                   className="w-full h-full object-cover"
                 />
