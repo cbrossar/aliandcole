@@ -85,7 +85,7 @@ export default function Travel() {
                 href="https://www.kempinski.com/en/booking/select_room?hotelId=3161&clearBookingParams=1&room1Adults=2&startDate=2026-06-04&endDate=2026-06-07&promoCode=ALEX260604"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+                className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
@@ -114,7 +114,7 @@ export default function Travel() {
                 href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-istanbul-bosphorus?facilitatorId=RHGSEM&cid=a%3Aps+b%3Aggl+c%3Aemea+i%3Abrand+e%3Ardb+d%3Aeerut+r%3Abrt+f%3Aen-US+g%3Aho+h%3ATRISTBOS+v%3Acf&gclsrc=aw.ds&gad_source=1&gad_campaignid=21322992130&gbraid=0AAAAADtKuEU1LoiGOx7vhcnktrlPSQ3cw&gclid=CjwKCAiAzrbIBhA3EiwAUBaUdb6VQFpGuY2dX-dyk7WGCZhMRbppM62AF4YLsWUKQK04r03qWPNyvxoCiRQQAvD_BwE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+                className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
@@ -144,7 +144,7 @@ export default function Travel() {
                 href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=ISTHC&arrivalDate=2026-06-04&departureDate=2026-06-07&room1NumAdults=2&displayCurrency=USD&WT.mc_id=zINDA0EMEA1CI2OLX3ggl4ACBI_Advance_Traditional_Metasearch5ISTHCCI6MULTIBR7ML8i150895_122953832_9083689&utm_source=intlmeta&utm_medium=intlmeta&utm_campaign=googlehpa&gclid=CjwKCAiAzrbIBhA3EiwAUBaUdQSvHTEk4VQuZYFeMmu8f6VlqXzVx954_lOD6-5C9mHI-f8Ox9n6dhoCwjAQAvD_BwE&dsclid=74022629279281152&gad_source=7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+                className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
@@ -175,7 +175,7 @@ export default function Travel() {
                 href="https://www.swissotel.com/hotels/istanbul/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+                className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
@@ -203,7 +203,7 @@ export default function Travel() {
                 href="https://ciraganhotel.com/en/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+                className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
@@ -225,13 +225,13 @@ export default function Travel() {
                 If you&apos;re looking for a luxurious stay in the old city near
                 tourist attractions like the Hagia Sophia, Topkapi Palace, and
                 Cisterns, this Marriott property is a wonderful choice. The
-                The Sanasaryan Han Hotel offers exceptional comfort and elegance. Please allow at least 30 minutes to drive to the Çırağan Palace from the hotel.
+                Sanasaryan Han Hotel offers exceptional comfort and elegance. Please allow at least 30 minutes to drive to the Çırağan Palace from the hotel.
               </p>
               <a
                 href="https://www.marriott.com/en-us/hotels/istlc-sanasaryan-han-a-luxury-collection-hotel-istanbul/overview/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
+                className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
