@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { FadeInOnScroll } from "../components/FadeInOnScroll";
+import { BiWalk } from "react-icons/bi";
+import { LiaCarSideSolid } from "react-icons/lia";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Travel() {
@@ -68,9 +71,13 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+              <h3 className="text-xl sm:text-2xl font-serif mb-2 text-gray-800">
                 Çırağan Palace Kempinski
               </h3>
+              <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4 text-sm font-normal text-gray-600">
+                <FaMapMarkerAlt />
+                <span>Venue</span>
+              </div>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 If you want the full experience, stay where we&apos;re getting
                 married! The Çırağan Palace is a former Ottoman palace right on
@@ -100,8 +107,12 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
                 The Radisson Blu Bosphorus Hotel
+                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
+                  <BiWalk />
+                  <span>10 min walk</span>
+                </span>
               </h3>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 With a prime location right next to the Çırağan Palace and on
@@ -129,8 +140,12 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
-              Conrad Istanbul Bosphorus
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
+                Conrad Istanbul Bosphorus
+                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
+                  <BiWalk />
+                  <span>20 min walk</span>
+                </span>
               </h3>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 Conveniently located close to the Çırağan Palace, this Hilton
@@ -161,8 +176,12 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
                 Swissôtel The Bosphorus
+                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
+                  <LiaCarSideSolid />
+                  <span>15 min drive</span>
+                </span>
               </h3>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 A classic favorite in Istanbul — Swissôtel has beautiful
@@ -190,8 +209,12 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
                 Çırağan Hotel Bosphorus
+                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
+                  <BiWalk />
+                  <span>5 min walk</span>
+                </span>
               </h3>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 Located literally right behind the Çırağan Palace Kempinski, the
@@ -218,8 +241,12 @@ export default function Travel() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800">
+              <h3 className="text-xl sm:text-2xl font-serif mb-3 sm:mb-4 text-gray-800 flex items-center justify-center gap-2 flex-wrap">
                 Sanasaryan Han Hotel, Old City
+                <span className="flex items-center gap-1 text-sm font-normal text-gray-600">
+                  <LiaCarSideSolid />
+                  <span>30 min drive</span>
+                </span>
               </h3>
               <p className="text-sm sm:text-sm text-left mb-4 sm:mb-6 text-gray-600 leading-relaxed">
                 If you&apos;re looking for a luxurious stay in the old city near
