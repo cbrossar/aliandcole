@@ -88,14 +88,16 @@ export default function Travel() {
                 Please find our room block in the link below! If you are
                 interested in additional days, please let us know.
               </p>
+              {process.env.NEXT_PUBLIC_ROOM_BLOCK_URL && (
               <a
-                href={process.env.NEXT_PUBLIC_ROOM_BLOCK_URL}
+                  href={process.env.NEXT_PUBLIC_ROOM_BLOCK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto px-6 sm:px-8 py-2 sm:py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-white font-medium text-gray-700 inline-block text-sm sm:text-base"
               >
                 View
               </a>
+              )}
             </div>
 
             {/* The Radisson Blu Bosphorus Hotel */}
