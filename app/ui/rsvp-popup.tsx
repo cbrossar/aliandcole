@@ -68,7 +68,6 @@ export default function RsvpPopup({ onClose }: RsvpPopupProps) {
 
     const filtered = allRsvps.filter((rsvp) =>
       rsvp.guests.some((guest) => {
-        console.log("guest", guest);
         const guestNormalizedFirstName = normalizeText(guest.first_name);
         const guestNormalizedLastName = normalizeText(guest.last_name);
 

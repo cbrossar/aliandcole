@@ -35,14 +35,24 @@ export default function Registry() {
         <p className="text-lg font-medium font-['Alice',serif] mb-8">
           xoxo Ali & Cole
         </p>
-        <a
-          href="https://www.zola.com/wedding/coleandali2026/registry"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#659eb2] text-white px-8 py-3 rounded-lg font-['Alice',serif] text-lg hover:bg-[#7a8a7a] transition-colors duration-200"
-        >
-          View Our Registry
-        </a>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://www.zola.com/wedding/coleandali2026/registry"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#659eb2] text-white px-8 py-3 rounded-lg font-['Alice',serif] text-lg hover:bg-[#7a8a7a] transition-colors duration-200"
+          >
+            Zola Registry
+          </a>
+          <a
+            href="https://overthemoon.com/apps/registry/ozmeral-brossart-300d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#659eb2] text-white px-8 py-3 rounded-lg font-['Alice',serif] text-lg hover:bg-[#7a8a7a] transition-colors duration-200"
+          >
+            Over the Moon Registry
+          </a>
+        </div>
       </div>
     </div>
   );
