@@ -44,8 +44,8 @@ export const venues: Venue[] = [
     neighborhood: "Beşiktaş",
     description: "Wedding venue",
     type: "wedding",
-    lat: 41.0465,
-    lng: 29.024,
+    lat: 41.0439752,
+    lng: 29.0161433,
   },
   {
     name: "Mandarin Oriental – Olea Bosphorus Bar",
@@ -65,8 +65,8 @@ export const places: Place[] = [
     description:
       "Right next to the Çırağan Palace, modern hotel with a variety of room options at affordable prices. 10 min walk to venue",
     category: "stay",
-    lat: 41.0458,
-    lng: 29.0218,
+    lat: 41.04752,
+    lng: 29.024571,
   },
   {
     name: "Conrad Istanbul Bosphorus",
@@ -74,8 +74,8 @@ export const places: Place[] = [
     description:
       "Panoramic Bosphorus views from its hilltop setting, with spa, pools, and tennis club. 20 min walk to venue",
     category: "stay",
-    lat: 41.0448,
-    lng: 29.0198,
+    lat: 41.0471,
+    lng: 29.0095,
   },
   {
     name: "Swissôtel The Bosphorus",
@@ -83,8 +83,8 @@ export const places: Place[] = [
     description:
       "Beautiful Bosphorus views, huge spa, and lots of restaurants. 15 min drive to venue",
     category: "stay",
-    lat: 41.0432,
-    lng: 29.0108,
+    lat: 41.0415,
+    lng: 28.9971,
   },
   {
     name: "Çırağan Hotel Bosphorus",
@@ -92,8 +92,8 @@ export const places: Place[] = [
     description:
       "Located right behind the Çırağan Palace, modern and budget-friendly. 5 min walk to venue",
     category: "stay",
-    lat: 41.0472,
-    lng: 29.0232,
+    lat: 41.0439523,
+    lng: 29.010892,
   },
   {
     name: "Sanasaryan Han Hotel",
@@ -101,8 +101,8 @@ export const places: Place[] = [
     description:
       "Luxury Marriott property near Hagia Sophia, Topkapı Palace, and Cisterns. 30 min drive to venue",
     category: "stay",
-    lat: 41.0112,
-    lng: 28.9762,
+    lat: 41.0158,
+    lng: 28.9753,
   },
 
   // ── Brunch ──────────────────────────────────────────────
@@ -145,8 +145,8 @@ export const places: Place[] = [
     neighborhood: "Etiler",
     description: "Vegan lunch spot",
     category: "brunch",
-    lat: 41.0812,
-    lng: 29.0278,
+    lat: 41.0796,
+    lng: 29.0332,
   },
   {
     name: "Delicatessen",
@@ -187,8 +187,8 @@ export const places: Place[] = [
     description:
       "French inspired bistro, would also recommend for a nice hungover brunch",
     category: "brunch",
-    lat: 41.0522,
-    lng: 28.9788,
+    lat: 41.0564,
+    lng: 28.9812,
   },
   {
     name: "Kruvasan",
@@ -233,8 +233,8 @@ export const places: Place[] = [
       "Turkish food with a modern twist, reservation recommended",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0328,
-    lng: 28.9778,
+    lat: 41.0291,
+    lng: 28.9731,
   },
   {
     name: "Alaf",
@@ -292,8 +292,8 @@ export const places: Place[] = [
       "Turkish food with a modern twist and great cocktails, located inside a Turkish bath",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0162,
-    lng: 28.9698,
+    lat: 41.0107,
+    lng: 28.9754,
   },
   {
     name: "Saloncuma",
@@ -311,8 +311,8 @@ export const places: Place[] = [
     description: "Seafood place by the Bosphorus",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0838,
-    lng: 29.0552,
+    lat: 41.0883,
+    lng: 29.0568,
   },
   {
     name: "Günaydın Kebap",
@@ -332,8 +332,8 @@ export const places: Place[] = [
       "2 Michelin star restaurant with exceptional food, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0518,
-    lng: 28.9792,
+    lat: 41.0581,
+    lng: 28.9802,
   },
   {
     name: "Gallada",
@@ -352,8 +352,8 @@ export const places: Place[] = [
       "1 Michelin star restaurant with a plant based menu option, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0338,
-    lng: 28.9768,
+    lat: 41.0238,
+    lng: 28.9735,
   },
   {
     name: "Mikla",
@@ -362,8 +362,8 @@ export const places: Place[] = [
       "1 Michelin star rooftop restaurant with impeccable views of Istanbul, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0342,
-    lng: 28.9782,
+    lat: 41.0311,
+    lng: 28.974,
   },
   {
     name: "Okra",
@@ -392,8 +392,8 @@ export const places: Place[] = [
       "An Istanbul staple, with breath taking views of the Bosphorus, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0528,
-    lng: 29.0142,
+    lat: 41.0645,
+    lng: 29.0319,
   },
   {
     name: "Araka",
@@ -422,8 +422,8 @@ export const places: Place[] = [
       "Turkish food with a modern twist, reservation is highly recommended",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0348,
-    lng: 28.9772,
+    lat: 41.0295,
+    lng: 28.9755,
   },
 
   // ── Dinner: International ───────────────────────────────
@@ -492,8 +492,8 @@ export const places: Place[] = [
     description: "Classic Italian restaurant with outdoor seating",
     category: "dinner",
     subcategory: "International",
-    lat: 41.0802,
-    lng: 29.0272,
+    lat: 41.0788,
+    lng: 29.0323,
   },
   {
     name: "Inari Omakase",
@@ -511,8 +511,8 @@ export const places: Place[] = [
       "Trendy restaurant that turns into a clubby scene which continues into the night",
     category: "dinner",
     subcategory: "International",
-    lat: 41.082,
-    lng: 29.0292,
+    lat: 41.0779,
+    lng: 29.0317,
   },
   {
     name: "Smelt & Co",
@@ -622,8 +622,8 @@ export const places: Place[] = [
     neighborhood: "Beyoğlu",
     description: "Members club and hotel",
     category: "nightlife",
-    lat: 41.033,
-    lng: 28.9785,
+    lat: 41.0306,
+    lng: 28.9733,
   },
   {
     name: "Nardis Jazz Club",
@@ -638,16 +638,16 @@ export const places: Place[] = [
     neighborhood: "Beyoğlu",
     description: "Bar in Beyoğlu",
     category: "nightlife",
-    lat: 41.0334,
-    lng: 28.977,
+    lat: 41.0292,
+    lng: 28.9731,
   },
   {
     name: "Momo",
     neighborhood: "Bebek",
     description: "Bar in Bebek",
     category: "nightlife",
-    lat: 41.0766,
-    lng: 29.0435,
+    lat: 41.0767,
+    lng: 29.039,
   },
   {
     name: "Alexandra Cocktail Bar",
@@ -888,8 +888,8 @@ export const places: Place[] = [
     description: "Historic market filled with spices and Turkish delights",
     category: "visit",
     subcategory: "History",
-    lat: 41.0167,
-    lng: 28.9706,
+    lat: 41.0165,
+    lng: 28.9705,
   },
   {
     name: "Topkapi Palace Museum",
@@ -913,12 +913,12 @@ export const places: Place[] = [
   // ── Visit: Arts & Culture ───────────────────────────────
   {
     name: "Istanbul Museum of Modern Art",
-    neighborhood: "Karaköy",
-    description: "Contemporary art museum",
+    neighborhood: "Beyoğlu",
+    description: "Contemporary art museum in stunning Renzo Piano building at Galataport",
     category: "visit",
     subcategory: "Arts & Culture",
-    lat: 41.0235,
-    lng: 28.9835,
+    lat: 41.0259,
+    lng: 28.9828,
   },
   {
     name: "Istanbul Archaeological Museums",
@@ -944,8 +944,8 @@ export const places: Place[] = [
     description: "Contemporary art space",
     category: "visit",
     subcategory: "Arts & Culture",
-    lat: 41.0832,
-    lng: 29.0558,
+    lat: 41.0893,
+    lng: 29.0566,
   },
   {
     name: "Zeyrek Çinili Hamam",
@@ -962,8 +962,8 @@ export const places: Place[] = [
     description: "Contemporary art museum",
     category: "visit",
     subcategory: "Arts & Culture",
-    lat: 41.0418,
-    lng: 28.9828,
+    lat: 41.0409,
+    lng: 28.9788,
   },
   {
     name: "SALT",
@@ -971,8 +971,8 @@ export const places: Place[] = [
     description: "Cultural institution and research center",
     category: "visit",
     subcategory: "Arts & Culture",
-    lat: 41.0278,
-    lng: 28.9745,
+    lat: 41.0321,
+    lng: 28.9761,
   },
   {
     name: "Dirimart",
@@ -1018,8 +1018,8 @@ export const places: Place[] = [
     description: "Luxury stores in one of Istanbul's premier shopping malls",
     category: "do",
     subcategory: "Explore",
-    lat: 41.1088,
-    lng: 29.0558,
+    lat: 41.1183,
+    lng: 29.0356,
   },
   {
     name: "Zorlu Center",
@@ -1065,8 +1065,8 @@ export const places: Place[] = [
     description: "Enjoy nature at Belgrad Forest's trails",
     category: "do",
     subcategory: "Wellness",
-    lat: 41.1798,
-    lng: 28.9798,
+    lat: 41.1306,
+    lng: 29.0414,
   },
   {
     name: "Dive into the Bosphorus",
