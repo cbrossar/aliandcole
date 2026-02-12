@@ -892,7 +892,7 @@ export const places: Place[] = [
     lng: 28.9706,
   },
   {
-    name: "Topkapı Palace",
+    name: "Topkapi Palace Museum",
     neighborhood: "Fatih",
     description: "Former residence of Ottoman sultans",
     category: "visit",

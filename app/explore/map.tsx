@@ -45,6 +45,9 @@ export default function ExploreMap() {
   const getCategoryColor = (cat: Category) =>
     categories.find((c) => c.id === cat)?.color || "#999";
 
+  const mapsUrl = (name: string, neighborhood: string) =>
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + " " + neighborhood + " Istanbul")}`;
+
   return (
     <div>
       {/* Venue legend */}
@@ -139,6 +142,14 @@ export default function ExploreMap() {
                   <div className="text-gray-600 mt-2 text-sm font-semibold">
                     {venue.description}
                   </div>
+                  <a
+                    href={mapsUrl(venue.name, venue.neighborhood)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-xs text-[#659eb2] hover:underline"
+                  >
+                    Open in Google Maps &rarr;
+                  </a>
                 </div>
               </Popup>
             </Marker>
@@ -180,6 +191,14 @@ export default function ExploreMap() {
                   <div className="text-gray-600 mt-2 text-sm leading-relaxed">
                     {place.description}
                   </div>
+                  <a
+                    href={mapsUrl(place.name, place.neighborhood)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-xs text-[#659eb2] hover:underline"
+                  >
+                    Open in Google Maps &rarr;
+                  </a>
                 </div>
               </Popup>
             </CircleMarker>
