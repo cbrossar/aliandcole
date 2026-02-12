@@ -6,7 +6,6 @@ export type Category =
   | "shop"
   | "visit"
   | "do"
-  | "taste"
   | "stay";
 
 export const categories: { id: Category; label: string; color: string }[] = [
@@ -18,7 +17,6 @@ export const categories: { id: Category; label: string; color: string }[] = [
   { id: "shop", label: "Shop", color: "#E84393" },
   { id: "visit", label: "Visit", color: "#2980B9" },
   { id: "do", label: "Do", color: "#27AE60" },
-  { id: "taste", label: "Taste", color: "#E67E22" },
 ];
 
 export interface Place {
@@ -1089,41 +1087,4 @@ export const places: Place[] = [
     lng: 28.9548,
   },
 
-  // ── Taste ───────────────────────────────────────────────
-  {
-    name: "Simit",
-    neighborhood: "Street vendors citywide",
-    description:
-      "Turkish version of bagels with sesame, best enjoyed fresh from street vendors",
-    category: "taste",
-    lat: 41.0155,
-    lng: 28.9718,
-  },
-  {
-    name: "Döner",
-    neighborhood: "Grand Bazaar area",
-    description:
-      "Turkish version of gyro/shawarma (but better), best in casual takeaway spots. Try Gül Ebru or Dönerci Şahin Usta near Grand Bazaar",
-    category: "taste",
-    lat: 41.0102,
-    lng: 28.9692,
-  },
-  {
-    name: "Rakı",
-    neighborhood: "Available citywide",
-    description:
-      "Traditional Turkish liquor, goes best with seafood, grilled meat and mezzes",
-    category: "taste",
-    lat: 41.0208,
-    lng: 28.9788,
-  },
-  {
-    name: "Lokum (Turkish Delight)",
-    neighborhood: "Eminönü",
-    description:
-      "Traditional confections with a variety of flavors. Ali Muhiddin Hacı Bekir in Eminönü is one of the best to take home as a souvenir",
-    category: "taste",
-    lat: 41.0178,
-    lng: 28.9712,
-  },
 ];
