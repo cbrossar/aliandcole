@@ -6,9 +6,11 @@ export type Category =
   | "shop"
   | "visit"
   | "do"
-  | "taste";
+  | "taste"
+  | "stay";
 
 export const categories: { id: Category; label: string; color: string }[] = [
+  { id: "stay", label: "Stay", color: "#4A6741" },
   { id: "brunch", label: "Brunch", color: "#E8927C" },
   { id: "dinner", label: "Dinner", color: "#C4555A" },
   { id: "coffee", label: "Coffee", color: "#A0522D" },
@@ -58,6 +60,53 @@ export const venues: Venue[] = [
 ];
 
 export const places: Place[] = [
+  // ── Stay ─────────────────────────────────────────────────
+  {
+    name: "Radisson Blu Bosphorus Hotel",
+    neighborhood: "Beşiktaş",
+    description:
+      "Right next to the Çırağan Palace, modern hotel with a variety of room options at affordable prices. 10 min walk to venue",
+    category: "stay",
+    lat: 41.0458,
+    lng: 29.0218,
+  },
+  {
+    name: "Conrad Istanbul Bosphorus",
+    neighborhood: "Beşiktaş",
+    description:
+      "Panoramic Bosphorus views from its hilltop setting, with spa, pools, and tennis club. 20 min walk to venue",
+    category: "stay",
+    lat: 41.0448,
+    lng: 29.0198,
+  },
+  {
+    name: "Swissôtel The Bosphorus",
+    neighborhood: "Beşiktaş",
+    description:
+      "Beautiful Bosphorus views, huge spa, and lots of restaurants. 15 min drive to venue",
+    category: "stay",
+    lat: 41.0432,
+    lng: 29.0108,
+  },
+  {
+    name: "Çırağan Hotel Bosphorus",
+    neighborhood: "Beşiktaş",
+    description:
+      "Located right behind the Çırağan Palace, modern and budget-friendly. 5 min walk to venue",
+    category: "stay",
+    lat: 41.0472,
+    lng: 29.0232,
+  },
+  {
+    name: "Sanasaryan Han Hotel",
+    neighborhood: "Fatih (Old City)",
+    description:
+      "Luxury Marriott property near Hagia Sophia, Topkapı Palace, and Cisterns. 30 min drive to venue",
+    category: "stay",
+    lat: 41.0112,
+    lng: 28.9762,
+  },
+
   // ── Brunch ──────────────────────────────────────────────
   {
     name: "Petra HQ",
