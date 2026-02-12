@@ -16,7 +16,7 @@ export default function Explore() {
         className="text-4xl font-['Alice',serif] font-bold mb-8 mt-12"
         style={{ color: "#659eb2" }}
       >
-        Our Favorite Places
+        Explore Istanbul
       </h1>
       <div className="w-full max-w-6xl px-4">
         <ExploreMap />
