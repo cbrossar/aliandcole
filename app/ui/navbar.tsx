@@ -76,6 +76,12 @@ export default function NavBar() {
                 Travel
               </Link>
               <Link
+                href="/explore"
+                className={`${styles.navLink} ${isActive("/explore") ? styles.navLinkActive : ""}`}
+              >
+                Explore
+              </Link>
+              <Link
                 href="/registry"
                 className={`${styles.navLink} ${isActive("/registry") ? styles.navLinkActive : ""}`}
               >
@@ -118,6 +124,12 @@ export default function NavBar() {
                 className={`${styles.navLink} ${isActive("/travel") ? styles.navLinkActive : ""} text-sm`}
               >
                 Travel
+              </Link>
+              <Link
+                href="/explore"
+                className={`${styles.navLink} ${isActive("/explore") ? styles.navLinkActive : ""} text-sm`}
+              >
+                Explore
               </Link>
               <Link
                 href="/registry"
@@ -180,6 +192,13 @@ export default function NavBar() {
               onClick={closeMobileMenu}
             >
               Travel
+            </Link>
+            <Link
+              href="/explore"
+              className={`${styles.navLink} ${isActive("/explore") ? styles.navLinkActive : ""} text-lg`}
+              onClick={closeMobileMenu}
+            >
+              Explore
             </Link>
             <Link
               href="/registry"
