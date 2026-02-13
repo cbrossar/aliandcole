@@ -1,0 +1,37 @@
+app/explore/data.ts
+  dd9b5268587c0833 172-177
+  6b003c31ee75a0f6 2-3,14-15,110,115,124,132,136-137,142,150,159,180-185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.3",
+  "base_commit_sha": "5fba3ec006dfa95479efcab6e34362ae6ce54701",
+  "prompts": {
+    "6b003c31ee75a0f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e684c449-8558-497d-ac77-2efd374e1ca5",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>",
+      "messages": [],
+      "total_additions": 49,
+      "total_deletions": 37,
+      "accepted_lines": 22,
+      "overriden_lines": 2
+    },
+    "dd9b5268587c0833": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6c218718-8f84-4f3c-8e22-755fa9105c10",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 3,
+      "accepted_lines": 9,
+      "overriden_lines": 0
+    }
+  }
+}
