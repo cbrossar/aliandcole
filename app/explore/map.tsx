@@ -1,9 +1,9 @@
 "use client";
 
-import { MapContainer, TileLayer, CircleMarker, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, CircleMarker, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { places, venues, categories, type Category } from "./data";
 
 const starIcon = L.divIcon({
@@ -22,6 +22,61 @@ const diamondIcon = L.divIcon({
   popupAnchor: [0, -13],
 });
 
+function LocateButton({
+  onLocate,
+}: {
+  onLocate: (lat: number, lng: number) => void;
+}) {
+  const map = useMap();
+  const [locating, setLocating] = useState(false);
+
+  const handleClick = useCallback(() => {
+    if (!navigator.geolocation) return;
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        onLocate(latitude, longitude);
+        map.flyTo([latitude, longitude], 14);
+        setLocating(false);
+      },
+      () => setLocating(false),
+      { enableHighAccuracy: true, timeout: 10000 },
+    );
+  }, [map, onLocate]);
+
+  return (
+    <button
+      onClick={handleClick}
+      disabled={locating}
+      className="absolute top-3 right-3 z-[1000] bg-white rounded-lg shadow-md px-3 py-2 text-sm font-['Almarai'] text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-1.5"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={locating ? "animate-pulse" : ""}
+      >
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+      </svg>
+      {locating ? "Locating..." : "My Location"}
+    </button>
+  );
+}
+
+const userLocationIcon = L.divIcon({
+  html: `<div style="width:14px;height:14px;background:#4285F4;border:3px solid white;border-radius:50%;box-shadow:0 0 0 2px rgba(66,133,244,0.3),0 0 8px rgba(66,133,244,0.4);"></div>`,
+  className: "",
+  iconSize: [14, 14],
+  iconAnchor: [7, 7],
+});
+
 export default function ExploreMap() {
   const [activeCategories, setActiveCategories] = useState<Set<Category>>(
     new Set(categories.map((c) => c.id)),
@@ -37,6 +92,8 @@ export default function ExploreMap() {
       return new Set([id]);
     });
   };
+
+  const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
 
   const filteredPlaces = places.filter((p) =>
     activeCategories.has(p.category),
@@ -93,7 +150,7 @@ export default function ExploreMap() {
 
       {/* Map */}
       <div
-        className="rounded-lg overflow-hidden shadow-lg explore-map"
+        className="rounded-lg overflow-hidden shadow-lg explore-map relative"
         style={{ height: "65vh", minHeight: "400px" }}
       >
         <style>{`
@@ -121,6 +178,14 @@ export default function ExploreMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
+          <LocateButton onLocate={(lat, lng) => setUserLocation([lat, lng])} />
+          {userLocation && (
+            <Marker position={userLocation} icon={userLocationIcon} zIndexOffset={2000}>
+              <Popup>
+                <span className="font-['Almarai'] text-sm">You are here</span>
+              </Popup>
+            </Marker>
+          )}
           {venues.map((venue) => (
             <Marker
               key={venue.type}
