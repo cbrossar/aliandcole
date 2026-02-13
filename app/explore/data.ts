@@ -50,12 +50,12 @@ export const venues: Venue[] = [
     lng: 29.0161433,
   },
   {
-    name: "Mandarin Oriental – Olea & Bar",
+    name: "Mandarin Oriental Bosphorus",
     neighborhood: "Beşiktaş",
-    description: "Welcome party",
+    description: "Welcome party at the Olea & Bar",
     type: "welcome",
-    lat: 41.0571059,
-    lng: 29.032348,
+    lat: 41.0570193,
+    lng: 29.0356217,
   },
 ];
 
