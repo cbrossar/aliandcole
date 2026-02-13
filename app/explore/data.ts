@@ -304,6 +304,15 @@ export const places: Place[] = [
 
   // ── Dinner: Fine Dining ─────────────────────────────────
   {
+    name: "Feriye Lokantasi",
+    neighborhood: "Beşiktaş",
+    description:"Spectacular dinner spot on the Bosphorus",
+    category: "dinner",
+    subcategory: "Fine Dining",
+    lat: 41.0471157,
+    lng: 29.024335,
+  },
+  {
     name: "TURK Fatih Tutak",
     neighborhood: "Bomonti",
     description:
@@ -800,6 +809,15 @@ export const places: Place[] = [
   },
 
   // ── Visit: History & Architecture ───────────────────────
+  {
+    name: "Ortaköy Square",
+    neighborhood: "Beşiktaş",
+    description: "Lively square with famous mosque and market",
+    category: "visit",
+    subcategory: "History",
+    lat: 41.0475105,
+    lng: 29.0258132,
+  },
   {
     name: "Blue Mosque",
     neighborhood: "Fatih",
