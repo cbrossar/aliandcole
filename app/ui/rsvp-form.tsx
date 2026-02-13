@@ -82,7 +82,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
   const initialState = { message: "", errors: {} };
   const updateRSVPWithId = updateRSVP.bind(null, rsvp.id);
   const [state, dispatch] = useActionState(updateRSVPWithId, initialState);
-  const [, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
   // Track wedding attendance for each guest to show/hide dinner selection
   const [weddingAttendance, setWeddingAttendance] = useState<{
@@ -738,9 +738,10 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
           <div className="text-center pt-8">
             <button
               type="submit"
-              className="bg-[#659eb2] hover:bg-[#7A8A7A] text-white font-['Almarai'] font-medium px-12 py-4 rounded-full transition-colors duration-200 cursor-pointer text-lg"
+              disabled={isPending}
+              className="bg-[#659eb2] hover:bg-[#7A8A7A] text-white font-['Almarai'] font-medium px-12 py-4 rounded-full transition-colors duration-200 cursor-pointer text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit RSVP
+              {isPending ? "Submitting..." : "Submit RSVP"}
             </button>
 
             {/* Status Messages */}
