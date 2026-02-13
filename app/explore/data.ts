@@ -171,7 +171,7 @@ export const places: Place[] = [
   {
     name: "Şehzade Cağ Kebap",
     neighborhood: "Fatih",
-    description: "Fire kababs",
+    description: "Best kababs around",
     category: "lunch",
     lat: 41.0139781,
     lng: 28.9752568,
