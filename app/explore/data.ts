@@ -192,8 +192,8 @@ export const places: Place[] = [
     description: "Classic Turkish mezzes, reservation recommended",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0222,
-    lng: 28.9772,
+    lat: 41.0247498,
+    lng: 28.9801935,
   },
   {
     name: "Asmalı Cavit",
@@ -211,8 +211,8 @@ export const places: Place[] = [
       "Turkish food with a modern twist, reservation recommended",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0291,
-    lng: 28.9731,
+    lat: 41.0291185,
+    lng: 28.9730937,
   },
   {
     name: "Alaf",
@@ -225,14 +225,14 @@ export const places: Place[] = [
     lng: 29.0368,
   },
   {
-    name: "Müver",
+    name: "Mürver",
     neighborhood: "Karaköy",
     description:
       "Turkish food with a modern twist and great rooftop views, reservation recommended",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0218,
-    lng: 28.9782,
+    lat: 41.024767,
+    lng: 28.9800579,
   },
   {
     name: "Balıkçı Abdullah",
@@ -265,13 +265,13 @@ export const places: Place[] = [
   },
   {
     name: "Lokanta 1741",
-    neighborhood: "Eminönü",
+    neighborhood: "Fatih",
     description:
       "Turkish food with a modern twist and great cocktails, located inside a Turkish bath",
     category: "dinner",
     subcategory: "Turkish",
-    lat: 41.0107,
-    lng: 28.9754,
+    lat: 41.0106091,
+    lng: 28.9753116,
   },
   {
     name: "Saloncuma",
@@ -329,8 +329,8 @@ export const places: Place[] = [
       "Turkish-Asian fusion by Fatih Tutak, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0212,
-    lng: 28.9768,
+    lat: 41.022992,
+    lng: 28.9779435,
   },
   {
     name: "Neolokal",
@@ -339,8 +339,8 @@ export const places: Place[] = [
       "1 Michelin star restaurant with a plant based menu option, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0238,
-    lng: 28.9735,
+    lat: 41.0238362,
+    lng: 28.9734027,
   },
   {
     name: "Mikla",
@@ -500,15 +500,6 @@ export const places: Place[] = [
     subcategory: "International",
     lat: 41.0779,
     lng: 29.0317,
-  },
-  {
-    name: "Smelt & Co",
-    neighborhood: "Balat",
-    description: "Seafood and plant based cuisine",
-    category: "dinner",
-    subcategory: "International",
-    lat: 41.0332,
-    lng: 28.9488,
   },
   {
     name: "Gün Lokantası",
