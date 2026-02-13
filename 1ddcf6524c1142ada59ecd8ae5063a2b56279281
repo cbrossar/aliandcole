@@ -1,0 +1,23 @@
+app/explore/map.tsx
+  dd9b5268587c0833 3,6,25-79,96-97,153,181-188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.3",
+  "base_commit_sha": "1ddcf6524c1142ada59ecd8ae5063a2b56279281",
+  "prompts": {
+    "dd9b5268587c0833": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6c218718-8f84-4f3c-8e22-755fa9105c10",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>",
+      "messages": [],
+      "total_additions": 68,
+      "total_deletions": 3,
+      "accepted_lines": 68,
+      "overriden_lines": 0
+    }
+  }
+}
