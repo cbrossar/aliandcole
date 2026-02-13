@@ -349,8 +349,8 @@ export const places: Place[] = [
       "1 Michelin star rooftop restaurant with impeccable views of Istanbul, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0311,
-    lng: 28.974,
+    lat: 41.0310369,
+    lng: 28.9741962,
   },
   {
     name: "Okra",
@@ -404,13 +404,13 @@ export const places: Place[] = [
   },
   {
     name: "Yeni Lokanta",
-    neighborhood: "Beyoğlu",
+    neighborhood: "",
     description:
       "Turkish food with a modern twist, reservation is highly recommended",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0295,
-    lng: 28.9755,
+    lat: 41.0295319,
+    lng: 28.9756319,
   },
 
   // ── Dinner: International ───────────────────────────────
@@ -421,8 +421,8 @@ export const places: Place[] = [
       "Historic Russian restaurant with amazing ambiance and drinks, reservation recommended",
     category: "dinner",
     subcategory: "International",
-    lat: 41.0332,
-    lng: 28.9758,
+    lat: 41.0328458,
+    lng: 28.9760525,
   },
   {
     name: "Beymen Brasserie",
