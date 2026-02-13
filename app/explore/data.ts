@@ -1,5 +1,6 @@
 export type Category =
-  | "brunch"
+  | "breakfast"
+  | "lunch"
   | "dinner"
   | "coffee"
   | "nightlife"
@@ -10,7 +11,8 @@ export type Category =
 
 export const categories: { id: Category; label: string; color: string }[] = [
   { id: "stay", label: "Stay", color: "#4A6741" },
-  { id: "brunch", label: "Brunch", color: "#E8927C" },
+  { id: "breakfast", label: "Breakfast", color: "#E8927C" },
+  { id: "lunch", label: "Lunch", color: "#D4764E" },
   { id: "dinner", label: "Dinner", color: "#C4555A" },
   { id: "coffee", label: "Coffee", color: "#A0522D" },
   { id: "nightlife", label: "Nightlife", color: "#8E44AD" },
@@ -105,106 +107,82 @@ export const places: Place[] = [
     lng: 28.9753,
   },
 
-  // ── Brunch ──────────────────────────────────────────────
-  {
-    name: "Petra HQ",
-    neighborhood: "Gayrettepe",
-    description:
-      "Extensive brunch menu, concept store inside, ideal for a hungover brunch :)",
-    category: "brunch",
-    lat: 41.0728,
-    lng: 28.9878,
-  },
-  {
-    name: "Petra Roasting Co",
-    neighborhood: "Bebek",
-    description:
-      "Cafe with garden seating, might get pretty crowded on the weekends",
-    category: "brunch",
-    lat: 41.0773,
-    lng: 29.0438,
-  },
-  {
-    name: "Mangerie",
-    neighborhood: "Bebek",
-    description: "Great views, reservation recommended",
-    category: "brunch",
-    lat: 41.0779,
-    lng: 29.0448,
-  },
-  {
-    name: "Lucca",
-    neighborhood: "Bebek",
-    description: "Bistro/restaurant with outdoor seating",
-    category: "brunch",
-    lat: 41.0776,
-    lng: 29.0428,
-  },
-  {
-    name: "Bi Nevi Deli",
-    neighborhood: "Etiler",
-    description: "Vegan lunch spot",
-    category: "brunch",
-    lat: 41.0796,
-    lng: 29.0332,
-  },
-  {
-    name: "Delicatessen",
-    neighborhood: "Etiler",
-    description: "Trendy spot with cozy garden",
-    category: "brunch",
-    lat: 41.0818,
-    lng: 29.0268,
-  },
+  // ── Breakfast ───────────────────────────────────────────
   {
     name: "Journey",
     neighborhood: "Cihangir",
     description: "Eclectic cafe, more traditionally Turkish",
-    category: "brunch",
-    lat: 41.0312,
-    lng: 28.9828,
-  },
-  {
-    name: "Pandeli",
-    neighborhood: "Eminönü",
-    description: "Historic restaurant located in the Spice Bazaar",
-    category: "brunch",
-    lat: 41.0168,
-    lng: 28.9708,
-  },
-  {
-    name: "Kıyı",
-    neighborhood: "Tarabya",
-    description:
-      "Traditional Turkish seafood, best for late lunch on Sundays, reservation is a must",
-    category: "brunch",
-    lat: 41.1272,
-    lng: 29.0532,
+    category: "breakfast",
+    lat: 41.0301457,
+    lng: 28.9837991,
   },
   {
     name: "Batard",
     neighborhood: "Bomonti",
     description:
       "French inspired bistro, would also recommend for a nice hungover brunch",
-    category: "brunch",
-    lat: 41.0564,
-    lng: 28.9812,
+    category: "breakfast",
+    lat: 41.0563974,
+    lng: 28.9811711,
   },
   {
     name: "Kruvasan",
     neighborhood: "Nişantaşı",
     description: "Lol brunch spot with fresh croissants",
-    category: "brunch",
-    lat: 41.0478,
-    lng: 28.9932,
+    category: "breakfast",
+    lat: 41.0447298,
+    lng: 28.9911143,
+  },
+
+  // ── Lunch ─────────────────────────────────────────────
+  {
+    name: "Bi Nevi Deli",
+    neighborhood: "Etiler",
+    description: "Vegan lunch spot",
+    category: "lunch",
+    lat: 41.088102,
+    lng: 29.0374649,
+  },
+  {
+    name: "Pandeli",
+    neighborhood: "Eminönü",
+    description: "Historic restaurant located in the Spice Bazaar",
+    category: "lunch",
+    lat: 41.0170699,
+    lng: 28.9712869,
+  },
+  {
+    name: "Kıyı",
+    neighborhood: "Tarabya",
+    description:
+      "Traditional Turkish seafood, best for late lunch on Sundays, reservation is a must",
+    category: "lunch",
+    lat: 41.1272,
+    lng: 29.0532,
   },
   {
     name: "Casa Cooklife",
     neighborhood: "Bomonti",
     description: "Asian inspired brunch spot",
-    category: "brunch",
-    lat: 41.0528,
-    lng: 28.9778,
+    category: "breakfast",
+    lat: 41.0580685,
+    lng: 28.9778697,
+  },
+  {
+    name: "Şehzade Cağ Kebap",
+    neighborhood: "Fatih",
+    description: "Fire kababs",
+    category: "lunch",
+    lat: 41.0139781,
+    lng: 28.9752568,
+  },
+  {
+    name: "Mira",
+    neighborhood: "Bebek",
+    description: "Restaurant in Bebek",
+    category: "lunch",
+    lat: 41.0674257,
+    lng: 29.0444508,
   },
 
   // ── Dinner: Turkish ─────────────────────────────────────
@@ -537,11 +515,20 @@ export const places: Place[] = [
   // ── Coffee & Snacks ─────────────────────────────────────
   {
     name: "Petra Roasting Co",
-    neighborhood: "Multiple locations",
+    neighborhood: "Gayrettepe",
+    description:
+      "Extensive brunch menu, concept store inside, ideal for a hungover brunch :)",
+    category: "coffee",
+    lat: 41.0622075,
+    lng: 29.0095032,
+  },
+  {
+    name: "Petra Roasting Co",
+    neighborhood: "Bebek",
     description: "Specialty coffee roasters",
     category: "coffee",
-    lat: 41.0775,
-    lng: 29.044,
+    lat: 41.0807546,
+    lng: 29.0392717,
   },
   {
     name: "Kronotrop",
