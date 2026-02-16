@@ -739,8 +739,8 @@ export const places: Place[] = [
     description: "Traditional Turkish delight shop",
     category: "shop",
     subcategory: "Lifestyle",
-    lat: 41.0298653,
-    lng: 28.8204812,
+    lat: 41.015742,
+    lng: 28.973492,
   },
   {
     name: "Ali Muhiddin Haci Bekir",
