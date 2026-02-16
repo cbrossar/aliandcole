@@ -731,7 +731,7 @@ export const places: Place[] = [
     category: "shop",
     subcategory: "Lifestyle",
     lat: 41.029924,
-    lng: 28.8208247,
+    lng: 28.97326,
   },
   {
     name: "Ali Muhiddin Hacı Bekir Lokumları",
