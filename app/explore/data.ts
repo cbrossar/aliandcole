@@ -973,8 +973,8 @@ export const places: Place[] = [
     description: "Pamper yourself with a traditional Turkish bath experience",
     category: "do",
     subcategory: "Wellness",
-    lat: 41.0258,
-    lng: 28.9808,
+    lat: 41.0261906,
+    lng: 28.9806317,
   },
 
   {
