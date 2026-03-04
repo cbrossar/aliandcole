@@ -987,13 +987,13 @@ export const places: Place[] = [
     lng: 28.9885021,
   },
   {
-    name: "Dive into the Bosphorus",
-    neighborhood: "Bebek",
-    description: "Take a dip in the waters of the Bosphorus",
+    name: "Bebek Coast",
+    neighborhood: "",
+    description: "Walk along the coast of Bebek and take a dip in the waters of the Bosphorus",
     category: "do",
     subcategory: "Wellness",
-    lat: 41.0785,
-    lng: 29.0452,
+    lat: 41.077536,
+    lng: 29.0437101,
   },
   {
     name: "Yıldız Park",
