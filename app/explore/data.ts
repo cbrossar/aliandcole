@@ -751,6 +751,15 @@ export const places: Place[] = [
     lat: 41.0349828,
     lng: 28.9678059,
   },
+  {
+    name: "Zorlu Center",
+    neighborhood: "Beşiktaş",
+    description: "Luxury stores and entertainment complex",
+    category: "shop",
+    subcategory: "Explore",
+    lat: 41.0669934,
+    lng: 29.0155549,
+  },
 
   // ── Visit: History & Architecture ───────────────────────
   {
@@ -938,31 +947,23 @@ export const places: Place[] = [
     lng: 28.9758,
   },
   {
-    name: "İstinyePark Mall",
+    name: "İstinyePark",
     neighborhood: "İstinye",
     description: "Luxury stores in one of Istanbul's premier shopping malls",
     category: "do",
     subcategory: "Explore",
-    lat: 41.1183,
-    lng: 29.0356,
+    lat: 41.110394,
+    lng: 29.0332318,
   },
+
   {
-    name: "Zorlu Center",
-    neighborhood: "Beşiktaş",
-    description: "Luxury stores and entertainment complex",
-    category: "do",
-    subcategory: "Explore",
-    lat: 41.0662,
-    lng: 29.0168,
-  },
-  {
-    name: "Ferry from Europe to Asia",
-    neighborhood: "Kadıköy",
+    name: "Beşiktaş Ferry Terminal",
+    neighborhood: "",
     description: "Ride the ferry across the Bosphorus to the Asian side",
     category: "do",
     subcategory: "Explore",
-    lat: 41.0058,
-    lng: 29.0228,
+    lat: 41.0412729,
+    lng: 29.0031865,
   },
 
   // ── Do: Nature & Wellness ──────────────────────────────
@@ -975,23 +976,15 @@ export const places: Place[] = [
     lat: 41.0258,
     lng: 28.9808,
   },
+
   {
-    name: "Walk along the Bosphorus",
-    neighborhood: "Bebek–Arnavutköy",
-    description: "Scenic waterfront walk between Bebek and Arnavutköy",
-    category: "do",
-    subcategory: "Wellness",
-    lat: 41.0722,
-    lng: 29.0388,
-  },
-  {
-    name: "Belgrad Forest",
-    neighborhood: "Sarıyer",
+    name: "Belgrade Forest Nature Preserve",
+    neighborhood: "",
     description: "Enjoy nature at Belgrad Forest's trails",
     category: "do",
     subcategory: "Wellness",
-    lat: 41.1306,
-    lng: 29.0414,
+    lat: 41.184012,
+    lng: 28.9885021,
   },
   {
     name: "Dive into the Bosphorus",
@@ -1003,13 +996,12 @@ export const places: Place[] = [
     lng: 29.0452,
   },
   {
-    name: "Row at the Golden Horn",
-    neighborhood: "Eminönü",
-    description: "Rowing on the historic Golden Horn waterway",
+    name: "Yıldız Park",
+    neighborhood: "",
+    description: "Suburban public park with cafes & a hilltop museum in an Ottoman palace dating from the 1880s.",
     category: "do",
     subcategory: "Wellness",
-    lat: 41.0198,
-    lng: 28.9548,
+    lat: 41.0491431,
+    lng: 29.0126828,
   },
-
 ];
