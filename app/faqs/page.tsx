@@ -35,8 +35,48 @@ export default function FAQs() {
         "We look forward to celebrating with you and we love your little ones! But our ceremony and reception will be adult only events so please plan ahead.",
     },
     {
-      question: "What should I wear to the wedding?",
-      answer: "The dress code is Black Tie — long dresses and tuxedos.",
+      question: "What should I wear to the wedding? Where can I rent a tuxedo?",
+      answer: (
+        <>
+          <p className="mb-3">
+            The dress code is Black Tie — long dresses and tuxedos.
+          </p>
+          <p className="mb-2">
+            If you&apos;d like to rent a tuxedo in Istanbul, we recommend{" "}
+            <a
+              href="https://www.google.com/maps/place/London+Smokin/@41.0680167,28.9973979,12z/data=!4m16!1m9!3m8!1s0x14cab7127eafe3f9:0x34a8efc65dd7c07d!2sLondon+Smokin!8m2!3d41.0500078!4d28.9869859!9m1!1b1!16s%2Fg%2F11f043hnrl!3m5!1s0x14cab7127eafe3f9:0x34a8efc65dd7c07d!8m2!3d41.0500078!4d28.9869859!16s%2Fg%2F11f043hnrl?hl=tr&entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+              className="text-blue-600 hover:text-blue-800 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              London Smokin
+            </a>
+            :
+          </p>
+          <ul className="list-disc pl-5 mb-3 space-y-1">
+            <li>
+              Contact number (English-speaking): +90 553 111 7012 (Gökhan
+              Aras)
+            </li>
+            <li>
+              Ideally, visit 3 days in advance. If you go 1 day before,
+              they&apos;ll do their best to accommodate, but it&apos;s a busy
+              period, so the earlier, the better!
+            </li>
+            <li>
+              They mentioned with so many people coming, it may be difficult to
+              estimate timing precisely.
+            </li>
+            <li>
+              Prices generally range between 10,000 TL and 20,000 TL.
+            </li>
+          </ul>
+          <p>
+            If you&apos;re in the US, it&apos;s often easiest to use a service
+            like The Black Tux instead.
+          </p>
+        </>
+      ),
     },
     {
       question: "What's the weather like in June?",

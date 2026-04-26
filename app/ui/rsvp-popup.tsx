@@ -9,6 +9,8 @@ const normalizeText = (text: string): string => {
     .toLowerCase()
     .normalize("NFD") // Decompose characters with diacritics
     .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+    // Turkish ı (dotless i) has no NFD decomposition; map to ASCII i so it is not stripped
+    .replace(/\u0131/g, "i")
     .replace(/[^a-z0-9\s]/g, "") // Remove all non-alphanumeric characters except spaces
     .trim();
 };
