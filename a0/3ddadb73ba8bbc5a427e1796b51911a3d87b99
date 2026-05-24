@@ -1,0 +1,37 @@
+app/explore/data.ts
+  s_b64e1fb9033684::t_c4fbe9ebe9b555 374,376
+  s_b64e1fb9033684::t_b0740be24617a4 187,190-191,194
+  h_998b1ea8355d1a 188-189,192-193,212-213,379-380
+  s_b64e1fb9033684::t_32799cd98381d0 200,206-211
+app/explore/map.tsx
+  s_b64e1fb9033684::t_252031458a7332 319-320
+  s_b64e1fb9033684::t_c9bb4d4dc70c10 123-142
+  s_b64e1fb9033684::t_ed51b7b027a57b 194
+  s_b64e1fb9033684::t_955d7e99c68294 351-363,365-398,400-401
+  s_b64e1fb9033684::t_16ebcd322a2a27 224
+  s_b64e1fb9033684::t_52964f4a8fe900 6
+  s_b64e1fb9033684::t_0584e0373e8a65 265-267,269,277-280
+  s_b64e1fb9033684::t_3e07f5418118a6 73-93
+  s_b64e1fb9033684::t_caf902922c23bb 323-350,364,399,402-406
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "a03ddadb73ba8bbc5a427e1796b51911a3d87b99",
+  "prompts": {},
+  "humans": {
+    "h_998b1ea8355d1a": {
+      "author": "Cole Brossart <cole.brossart@scribehow.com>"
+    }
+  },
+  "sessions": {
+    "s_b64e1fb9033684": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6b4988aa-204c-47a2-9acb-d3f818d6fc67",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>"
+    }
+  }
+}
