@@ -184,16 +184,33 @@ export const places: Place[] = [
     lat: 41.0674257,
     lng: 29.0444508,
   },
+  {
+    name: "Ali Ocakbaşı Karaköy",
+    neighborhood: "Karaköy",
+    description: "Kebab spot with a beautiful lunch view of the Bosphorus",
+    category: "lunch",
+    lat: 41.0224857,
+    lng: 28.9727743,
+  },
 
   // ── Dinner: Turkish ─────────────────────────────────────
   {
     name: "Karaköy Lokantası",
     neighborhood: "Karaköy",
-    description: "Classic Turkish mezzes, reservation recommended",
+    description: "No view but excellent food, classic Turkish mezzes — reservation recommended",
     category: "dinner",
     subcategory: "Turkish",
     lat: 41.0247498,
     lng: 28.9801935,
+  },
+  {
+    name: "Mükellef",
+    neighborhood: "Karaköy",
+    description: "Modern, contemporary Turkish food close to the peninsula and the hamam, with views of Galata Tower",
+    category: "dinner",
+    subcategory: "Turkish",
+    lat: 41.023627,
+    lng: 28.9770315,
   },
   {
     name: "Asmalı Cavit",
@@ -354,13 +371,13 @@ export const places: Place[] = [
   },
   {
     name: "Ulus 29",
-    neighborhood: "Beşiktaş",
+    neighborhood: "Ulus",
     description:
-      "An Istanbul staple, with breath taking views of the Bosphorus, reservation is a must",
+      "Modern, contemporary and trendy Istanbul staple with breathtaking Bosphorus views — right next to Sunset, reservation is a must",
     category: "dinner",
     subcategory: "Fine Dining",
-    lat: 41.0647857,
-    lng: 29.0319305,
+    lat: 41.0646702,
+    lng: 29.0321083,
   },
   {
     name: "Araka",

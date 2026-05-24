@@ -3,7 +3,7 @@
 import { MapContainer, TileLayer, CircleMarker, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { places, venues, categories, type Category } from "./data";
 
 const starIcon = L.divIcon({
@@ -70,6 +70,27 @@ function LocateButton({
   );
 }
 
+function FlyToSelected({
+  selected,
+  markerRefs,
+}: {
+  selected: { lat: number; lng: number; key: string } | null;
+  markerRefs: React.MutableRefObject<Map<string, L.CircleMarker>>;
+}) {
+  const map = useMap();
+  useEffect(() => {
+    if (!selected) return;
+    map.flyTo([selected.lat, selected.lng], 15, { duration: 0.6 });
+    const marker = markerRefs.current.get(selected.key);
+    if (marker) {
+      const open = () => marker.openPopup();
+      const t = setTimeout(open, 650);
+      return () => clearTimeout(t);
+    }
+  }, [selected, map, markerRefs]);
+  return null;
+}
+
 const userLocationIcon = L.divIcon({
   html: `<div style="width:14px;height:14px;background:#4285F4;border:3px solid white;border-radius:50%;box-shadow:0 0 0 2px rgba(66,133,244,0.3),0 0 8px rgba(66,133,244,0.4);"></div>`,
   className: "",
@@ -98,6 +119,26 @@ export default function ExploreMap() {
   const filteredPlaces = places.filter((p) =>
     activeCategories.has(p.category),
   );
+
+  const markerRefs = useRef<Map<string, L.CircleMarker>>(new Map());
+  const mapWrapperRef = useRef<HTMLDivElement>(null);
+  const [selected, setSelected] = useState<{
+    lat: number;
+    lng: number;
+    key: string;
+  } | null>(null);
+
+  const placeKey = (p: (typeof places)[number]) =>
+    `${p.category}-${p.name}-${p.lat}-${p.lng}`;
+
+  const handleSelectPlace = (p: (typeof places)[number]) => {
+    const key = placeKey(p);
+    setSelected({ lat: p.lat, lng: p.lng, key });
+    mapWrapperRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   const getCategoryColor = (cat: Category) =>
     categories.find((c) => c.id === cat)?.color || "#999";
@@ -150,6 +191,7 @@ export default function ExploreMap() {
 
       {/* Map */}
       <div
+        ref={mapWrapperRef}
         className="rounded-lg overflow-hidden shadow-lg explore-map relative"
         style={{ height: "65vh", minHeight: "400px" }}
       >
@@ -179,6 +221,7 @@ export default function ExploreMap() {
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
           <LocateButton onLocate={(lat, lng) => setUserLocation([lat, lng])} />
+          <FlyToSelected selected={selected} markerRefs={markerRefs} />
           {userLocation && (
             <Marker position={userLocation} icon={userLocationIcon} zIndexOffset={2000}>
               <Popup>
@@ -219,9 +262,11 @@ export default function ExploreMap() {
               </Popup>
             </Marker>
           ))}
-          {filteredPlaces.map((place, i) => (
+          {filteredPlaces.map((place, i) => {
+            const key = placeKey(place);
+            return (
             <CircleMarker
-              key={`${place.category}-${place.name}-${i}`}
+              key={`${key}-${i}`}
               center={[place.lat, place.lng]}
               radius={7}
               fillColor={getCategoryColor(place.category)}
@@ -229,6 +274,10 @@ export default function ExploreMap() {
               stroke={true}
               weight={2}
               color="#ffffff"
+              ref={(ref) => {
+                if (ref) markerRefs.current.set(key, ref);
+                else markerRefs.current.delete(key);
+              }}
             >
               <Popup>
                 <div className="min-w-[180px]">
@@ -267,8 +316,93 @@ export default function ExploreMap() {
                 </div>
               </Popup>
             </CircleMarker>
-          ))}
+            );
+          })}
         </MapContainer>
+      </div>
+
+      {/* List of places below map, grouped by category */}
+      <div className="mt-8 space-y-8">
+        {categories
+          .filter((cat) => activeCategories.has(cat.id))
+          .map((cat) => {
+            const placesInCat = filteredPlaces.filter(
+              (p) => p.category === cat.id,
+            );
+            if (placesInCat.length === 0) return null;
+            return (
+              <div key={cat.id}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span
+                    className="inline-block w-3 h-3 rounded-full"
+                    style={{ backgroundColor: cat.color }}
+                  />
+                  <h2
+                    className="text-xl font-['Alice',serif] font-bold"
+                    style={{ color: cat.color }}
+                  >
+                    {cat.label}
+                  </h2>
+                  <span className="text-sm text-gray-400 font-['Almarai']">
+                    ({placesInCat.length})
+                  </span>
+                </div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {placesInCat.map((place, i) => {
+                    const key = placeKey(place);
+                    const isSelected = selected?.key === key;
+                    return (
+                    <li key={`${key}-${i}`}>
+                      <button
+                        type="button"
+                        onClick={() => handleSelectPlace(place)}
+                        className={`w-full text-left rounded-lg border bg-white p-4 hover:shadow-md transition-all cursor-pointer ${
+                          isSelected
+                            ? "border-[#659eb2] shadow-md ring-2 ring-[#659eb2]/20"
+                            : "border-gray-200"
+                        }`}
+                      >
+                        <div
+                          className="font-bold text-base text-gray-900"
+                          style={{ fontFamily: "'Alice', serif" }}
+                        >
+                          {place.name}
+                        </div>
+                        <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                          {place.neighborhood && (
+                            <span className="text-xs text-gray-500 font-['Almarai']">
+                              {place.neighborhood}
+                            </span>
+                          )}
+                          {place.subcategory && (
+                            <span
+                              className="px-1.5 py-0.5 rounded-full text-white text-[10px] leading-tight"
+                              style={{ backgroundColor: cat.color }}
+                            >
+                              {place.subcategory}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-gray-600 mt-2 text-sm leading-relaxed font-['Almarai']">
+                          {place.description}
+                        </p>
+                        <a
+                          href={mapsUrl(place.name, place.neighborhood)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-block mt-2 text-xs text-[#659eb2] hover:underline font-['Almarai']"
+                        >
+                          Open in Google Maps &rarr;
+                        </a>
+                      </button>
+                    </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
