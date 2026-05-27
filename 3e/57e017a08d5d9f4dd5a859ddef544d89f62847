@@ -1,0 +1,28 @@
+app/page.tsx
+  h_998b1ea8355d1a 127
+  s_be3ad034ec99ca::t_f7f293438305ec 121,124-126,128-134
+app/ui/rsvp-form.tsx
+  s_be3ad034ec99ca::t_ea8c6e0dbc66b0 370-375
+  h_998b1ea8355d1a 342
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "3e57e017a08d5d9f4dd5a859ddef544d89f62847",
+  "prompts": {},
+  "humans": {
+    "h_998b1ea8355d1a": {
+      "author": "Cole Brossart <cole.brossart@scribehow.com>"
+    }
+  },
+  "sessions": {
+    "s_be3ad034ec99ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7a52f655-bad1-4d3b-b1cf-aef41366a664",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>"
+    }
+  }
+}
