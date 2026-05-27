@@ -118,9 +118,20 @@ export default function Home() {
             </FadeInOnScroll>
           </div>
 
-          {/* Pool message */}
+          {/* Friday boat shuttles */}
           <div className="flex justify-center mt-12 md:mt-16">
             <FadeInOnScroll direction="up" delay={400}>
+              <div className="text-white text-base md:text-lg lg:text-xl font-['Tangerine',cursive] text-center leading-relaxed italic tracking-wide">
+                <p>Friday Welcome Party Boat Shuttles:</p>
+                <p>6:30 – 7:00 PM depart from Çırağan docks</p>
+                <p>10:15 – 11:00 PM head back to Çırağan</p>
+              </div>
+            </FadeInOnScroll>
+          </div>
+
+          {/* Pool message */}
+          <div className="flex justify-center mt-8 md:mt-10">
+            <FadeInOnScroll direction="up" delay={500}>
               <p className="text-white text-base md:text-lg lg:text-xl font-['Tangerine',cursive] text-center leading-relaxed italic tracking-wide whitespace-nowrap">
                 Join us poolside at Çırağan on Sunday, we&apos;ll be there all
                 day!

@@ -339,7 +339,7 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
             <div className="text-center mb-6 space-y-4">
               <div className="space-y-1">
                 <p className="text-black font-['Almarai'] text-lg">
-                  Friday, June 5, 2026 - 6pm
+                  Friday, June 5, 2026 - 7pm
                 </p>
                 <p className="text-black font-['Almarai'] italic">
                   Hosted by Rich and Laura Brossart
@@ -366,6 +366,12 @@ export default function EditRSVPForm({ rsvp }: { rsvp: WeddingRsvp }) {
                 <p className="text-black font-['Almarai']">
                   <span className="italic">Bosphorus Chic</span> — cocktail
                   dresses (color encouraged), summer jackets, no tie required.
+                </p>
+                <p className="text-black font-['Almarai']">
+                  Boat shuttles will depart from the docks at Çırağan between
+                  6:30 PM and 7:00 PM to transport guests to the venue, with
+                  return shuttles provided at the end of the evening from 10:15
+                  to 11:00 PM.
                 </p>
               </div>
             </div>
