@@ -424,6 +424,16 @@ export const places: Place[] = [
 
   // ── Dinner: International ───────────────────────────────
   {
+    name: "Banyan",
+    neighborhood: "Ortaköy",
+    description:
+      "Asian fusion with great cocktails and views",
+    category: "dinner",
+    subcategory: "International",
+    lat: 41.047707,
+    lng: 29.025105,
+  },
+  {
     name: "1924 Istanbul",
     neighborhood: "Beyoğlu",
     description:
