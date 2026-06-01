@@ -418,8 +418,8 @@ export const places: Place[] = [
       "Excellent little Palestinian restaurant serving a different authentic dish each day. No reservation needed",
     category: "dinner",
     subcategory: "International",
-    lat: 41.0462,
-    lng: 29.0103,
+    lat: 41.042923,
+    lng: 29.00812,
   },
 
   // ── Dinner: International ───────────────────────────────
