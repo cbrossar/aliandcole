@@ -169,18 +169,30 @@ export default function ExploreMap() {
             <button
               key={cat.id}
               onClick={() => toggleCategory(cat.id)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-['Almarai'] transition-all cursor-pointer ${
-                isActive
-                  ? "text-white shadow-sm"
-                  : "text-gray-400 border border-gray-300"
-              }`}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-['Almarai'] border transition-all duration-200 cursor-pointer hover:-translate-y-0.5"
               style={
-                isActive ? { backgroundColor: cat.color } : { backgroundColor: "white" }
+                isActive
+                  ? {
+                      backgroundColor: cat.color,
+                      borderColor: cat.color,
+                      color: "#fff",
+                      boxShadow: `0 2px 8px ${cat.color}59`,
+                    }
+                  : {
+                      backgroundColor: `${cat.color}12`,
+                      borderColor: `${cat.color}40`,
+                      color: cat.color,
+                    }
               }
             >
+              <span
+                className="inline-block w-1.5 h-1.5 rounded-full"
+                style={{ backgroundColor: isActive ? "#fff" : cat.color }}
+              />
               {cat.label}
               <span
-                className={`text-xs ${isActive ? "text-white/70" : "text-gray-300"}`}
+                className="text-xs"
+                style={{ color: isActive ? "rgba(255,255,255,0.75)" : `${cat.color}99` }}
               >
                 {count}
               </span>
