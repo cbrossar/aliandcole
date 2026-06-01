@@ -84,11 +84,9 @@ export async function getRsvpById(id: string) {
 }
 
 export async function updateRsvp(rsvp: WeddingRsvp) {
-  console.log("Updating RSVP:", rsvp);
   try {
     //update guests
     for (const guest of rsvp.guests) {
-      console.log("Updating guest:", guest);
       await sql`
                 UPDATE wedding_guests
                 SET
@@ -119,7 +117,6 @@ export async function updateRsvp(rsvp: WeddingRsvp) {
 }
 
 export async function getRsvps() {
-  // TODO only fetch guest names and ids
   try {
     const result = await sql`
         SELECT 
