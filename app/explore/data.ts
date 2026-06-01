@@ -410,6 +410,18 @@ export const places: Place[] = [
     lng: 28.9756319,
   },
 
+  // ── Dinner: Palestinian ─────────────────────────────────
+  {
+    name: "Atara",
+    neighborhood: "Beşiktaş",
+    description:
+      "Excellent little Palestinian restaurant serving a different authentic dish each day. No reservation needed",
+    category: "dinner",
+    subcategory: "International",
+    lat: 41.042923,
+    lng: 29.00812,
+  },
+
   // ── Dinner: International ───────────────────────────────
   {
     name: "1924 Istanbul",
