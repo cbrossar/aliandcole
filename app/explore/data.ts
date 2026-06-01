@@ -415,7 +415,7 @@ export const places: Place[] = [
     name: "Banyan",
     neighborhood: "Ortaköy",
     description:
-      "Asian fusion with great cocktails and views, reservation recommended",
+      "Asian fusion with great cocktails and views",
     category: "dinner",
     subcategory: "International",
     lat: 41.047707,
