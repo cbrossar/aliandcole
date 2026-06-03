@@ -9,16 +9,18 @@ export type Category =
   | "do"
   | "stay";
 
+// Türkiye-inspired palette drawn from İznik tiles & Ottoman textiles:
+// jewel-toned, slightly earthy, and harmonized with the site's teal/cream theme.
 export const categories: { id: Category; label: string; color: string }[] = [
-  { id: "stay", label: "Stay", color: "#4A6741" },
-  { id: "breakfast", label: "Breakfast", color: "#E8927C" },
-  { id: "lunch", label: "Lunch", color: "#D4764E" },
-  { id: "dinner", label: "Dinner", color: "#C4555A" },
-  { id: "coffee", label: "Coffee", color: "#A0522D" },
-  { id: "nightlife", label: "Nightlife", color: "#8E44AD" },
-  { id: "shop", label: "Shop", color: "#E84393" },
-  { id: "visit", label: "Visit", color: "#2980B9" },
-  { id: "do", label: "Do", color: "#27AE60" },
+  { id: "stay", label: "Stay", color: "#1F6F6B" }, // İznik teal
+  { id: "breakfast", label: "Breakfast", color: "#D99A2B" }, // saffron
+  { id: "lunch", label: "Lunch", color: "#C2703D" }, // terracotta
+  { id: "dinner", label: "Dinner", color: "#B23A30" }, // İznik bole red
+  { id: "coffee", label: "Coffee", color: "#7A4A32" }, // Turkish coffee brown
+  { id: "nightlife", label: "Nightlife", color: "#6A4A7C" }, // aubergine
+  { id: "shop", label: "Shop", color: "#B05A78" }, // kilim rose
+  { id: "visit", label: "Visit", color: "#2C6FA6" }, // cobalt / Bosphorus blue
+  { id: "do", label: "Do", color: "#4C8B5B" }, // Ottoman emerald
 ];
 
 export interface Place {
@@ -410,6 +412,18 @@ export const places: Place[] = [
     lng: 28.9756319,
   },
 
+  // ── Dinner: Palestinian ─────────────────────────────────
+  {
+    name: "Atara",
+    neighborhood: "Beşiktaş",
+    description:
+      "Excellent little Palestinian restaurant serving a different authentic dish each day. No reservation needed",
+    category: "dinner",
+    subcategory: "International",
+    lat: 41.042923,
+    lng: 29.00812,
+  },
+
   // ── Dinner: International ───────────────────────────────
   {
     name: "Bellini",
@@ -420,6 +434,16 @@ export const places: Place[] = [
     subcategory: "International",
     lat: 41.0443,
     lng: 29.0161433,
+  },
+  {
+    name: "Banyan",
+    neighborhood: "Ortaköy",
+    description:
+      "Asian fusion with great cocktails and views",
+    category: "dinner",
+    subcategory: "International",
+    lat: 41.047707,
+    lng: 29.025105,
   },
   {
     name: "1924 Istanbul",
