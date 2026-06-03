@@ -418,7 +418,7 @@ export const places: Place[] = [
       "Homemade Italian with a great view inside the Çırağan Palace",
     category: "dinner",
     subcategory: "International",
-    lat: 41.0439752,
+    lat: 41.0443,
     lng: 29.0161433,
   },
   {
