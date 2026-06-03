@@ -415,7 +415,7 @@ export const places: Place[] = [
     name: "Bellini",
     neighborhood: "Beşiktaş",
     description:
-      "Italian restaurant inside the Çırağan Palace Kempinski, right at the wedding venue",
+      "Homemade Italian with a great view inside the Çırağan Palace",
     category: "dinner",
     subcategory: "International",
     lat: 41.0439752,
