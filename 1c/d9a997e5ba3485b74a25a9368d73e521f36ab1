@@ -1,0 +1,21 @@
+app/photos/page.tsx
+  s_c0a4398892556d::t_7eeec55bf2db97 9
+  s_c0a4398892556d::t_2766ab360ccad6 7-8,10
+  s_c0a4398892556d::t_4caa2e4939b6f1 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "1cd9a997e5ba3485b74a25a9368d73e521f36ab1",
+  "prompts": {},
+  "sessions": {
+    "s_c0a4398892556d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "946f96d9-fbfa-44cf-bc96-1231c4f81a67",
+        "model": "grok-4.5"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>"
+    }
+  }
+}
