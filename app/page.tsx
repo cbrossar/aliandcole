@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import RsvpPopup from "./ui/rsvp-popup";
 import { FadeInOnScroll } from "./components/FadeInOnScroll";
@@ -20,34 +21,44 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full min-h-screen px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-1 lg:gap-16 min-h-[80vh]">
-          {/* Text content - order-1 on mobile, order-1 on desktop */}
-          <div className="flex flex-col justify-start space-y-0 lg:space-y-8 pt-4 pb-0 lg:pt-36 col-span-1 lg:col-span-2 order-1 lg:order-1">
+      <div className="w-full min-h-screen px-6 md:px-8 lg:px-12 pt-10 md:pt-16 lg:pt-24 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-[80vh]">
+          <div className="flex flex-col justify-start pt-4 lg:pt-20 col-span-1 lg:col-span-5 order-1">
             <FadeInOnScroll direction="left" delay={200}>
-              <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#659eb2] font-['Alice',serif]">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#659eb2] font-['Alice',serif]">
                 <TypewriterText
-                  text="Celebrating Ali & Cole"
-                  speed={150}
+                  text={"Thank you for celebrating\nAli & Cole"}
+                  speed={80}
                   delay={500}
-                  className="block"
+                  className="block whitespace-pre-line"
                 />
               </h1>
             </FadeInOnScroll>
           </div>
 
-          {/* Image - order-2 on mobile, order-2 on desktop */}
-          <div className="flex justify-center lg:justify-end col-span-1 lg:col-span-4 order-2 lg:order-2">
-            <FadeInOnScroll direction="right" delay={400}>
-              <div className="relative w-full max-w-sm lg:max-w-4xl xl:max-w-5xl">
-                <Image
-                  src="/images/home/look-back-edits.JPG"
-                  alt="Ali and Cole"
-                  width={1000}
-                  height={1500}
-                  className="w-full h-auto shadow-lg object-cover object-center"
-                  priority
-                />
+          <div className="flex justify-center lg:justify-end col-span-1 lg:col-span-7 order-2">
+            <FadeInOnScroll direction="right" delay={400} className="w-full flex justify-center lg:justify-end">
+              <div className="w-full max-w-[360px] md:max-w-[420px] lg:max-w-[480px]">
+                <div className="relative aspect-[720/962] w-full overflow-hidden shadow-lg bg-black">
+                  <video
+                    src="/videos/teaser.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    className="absolute inset-0 h-full w-full object-cover"
+                    aria-label="Ali and Cole wedding teaser"
+                  />
+                </div>
+                <div className="mt-6 text-center lg:text-right">
+                  <Link
+                    href="/photos"
+                    className="text-[#659eb2] text-lg md:text-xl font-['Alice',serif] underline underline-offset-4 hover:opacity-80 transition-opacity"
+                  >
+                    See more photos
+                  </Link>
+                </div>
               </div>
             </FadeInOnScroll>
           </div>

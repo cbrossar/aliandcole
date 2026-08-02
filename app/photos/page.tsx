@@ -6,12 +6,12 @@ const sections = [
   {
     title: "Welcome Party",
     href: "https://photos.app.goo.gl/HUL3MQCGzX6GedQv5",
-    image: "/images/photos/welcome-party.png",
+    image: "/images/photos/welcome-party.jpg",
   },
   {
     title: "Ali's Preparations",
     href: "https://photos.app.goo.gl/zf6wZ3HbcxTdSrLJ9",
-    image: "/images/photos/preparation.png",
+    image: "/images/photos/preparation.jpg",
   },
   {
     title: "Cole's Preparations",
