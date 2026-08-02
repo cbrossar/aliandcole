@@ -5,7 +5,7 @@ import Image from "next/image";
 const sections = [
   {
     title: "Welcome Party",
-    href: "https://photos.app.goo.gl/HUL3MQCGzX6GedQv5",
+    href: "https://photos.app.goo.gl/GTdXVRTssw7nXnUm7",
     image: "/images/photos/welcome-party.jpg",
   },
   {
