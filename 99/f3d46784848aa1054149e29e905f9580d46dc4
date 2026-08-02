@@ -1,0 +1,28 @@
+app/photos/page.tsx
+  s_c0a4398892556d::t_2717d5233428d5 60
+  s_c0a4398892556d::t_1dfbb007836414 1-4,58-59,70,73,77,83-84,86-89
+  s_c0a4398892556d::t_dd96b083573c75 5-57,61-69,71-72,74-76,78-82,85
+app/ui/navbar.tsx
+  s_c0a4398892556d::t_783198677e3122 91-95
+  s_c0a4398892556d::t_067213f9c5e2de 147-151
+  s_c0a4398892556d::t_3a06f51bc3c57b 223-228
+  s_c0a4398892556d::t_67c183af355c2e 90
+  s_c0a4398892556d::t_0b8af16035175a 146
+  s_c0a4398892556d::t_9db16ce2adab56 222
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "99f3d46784848aa1054149e29e905f9580d46dc4",
+  "prompts": {},
+  "sessions": {
+    "s_c0a4398892556d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "946f96d9-fbfa-44cf-bc96-1231c4f81a67",
+        "model": "grok-4.5"
+      },
+      "human_author": "Cole Brossart <cole.brossart@scribehow.com>"
+    }
+  }
+}
