@@ -88,6 +88,12 @@ export default function NavBar() {
                 Registry
               </Link>
               <Link
+                href="/photos"
+                className={`${styles.navLink} ${isActive("/photos") ? styles.navLinkActive : ""}`}
+              >
+                Photos
+              </Link>
+              <Link
                 href="/faqs"
                 className={`${styles.navLink} ${isActive("/faqs") ? styles.navLinkActive : ""}`}
               >
@@ -136,6 +142,12 @@ export default function NavBar() {
                 className={`${styles.navLink} ${isActive("/registry") ? styles.navLinkActive : ""} text-sm`}
               >
                 Registry
+              </Link>
+              <Link
+                href="/photos"
+                className={`${styles.navLink} ${isActive("/photos") ? styles.navLinkActive : ""} text-sm`}
+              >
+                Photos
               </Link>
               <Link
                 href="/faqs"
@@ -206,6 +218,13 @@ export default function NavBar() {
               onClick={closeMobileMenu}
             >
               Registry
+            </Link>
+            <Link
+              href="/photos"
+              className={`${styles.navLink} ${isActive("/photos") ? styles.navLinkActive : ""} text-lg`}
+              onClick={closeMobileMenu}
+            >
+              Photos
             </Link>
             <Link
               href="/faqs"
