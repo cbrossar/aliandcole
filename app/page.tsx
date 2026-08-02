@@ -56,7 +56,7 @@ export default function Home() {
                     href="/photos"
                     className="text-[#659eb2] text-lg md:text-xl font-['Alice',serif] underline underline-offset-4 hover:opacity-80 transition-opacity"
                   >
-                    See more photos
+                    More photos
                   </Link>
                 </div>
               </div>
